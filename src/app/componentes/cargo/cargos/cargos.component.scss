@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+.card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px rgba(34, 35, 58, 0.5);
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  position: relative;
+}
+.card h2 {
+  margin: 0;
+  padding: 0 1rem;
+}
+.card .title {
+  // padding: 1rem;
+  text-align: right;
+  color: green;
+  font-weight: bold;
+  font-size: 15px;
+}
+.card .desc {
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+}
+.card .actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.card svg {
+  width: 85px;
+  height: 85px;
+  margin: 0 auto;
+}
+
+.img-avatar {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  border: 6px solid white;
+  background-image: linear-gradient(-60deg, #f4d03f 0%, #b0c794 100%);
+  top: 15px;
+  left: 85px;
+}
+
+.card h2 {
+  margin-left: 30px;
+}
+
+.card-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.title-total {
+  padding: 2em 1.5em 1em 1em;
+}
+
+path {
+  fill: white;
+}
+
+.img-portada {
+  width: 100%;
+}
+
+.portada {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-image: url('../../../../assets/cervejas.jpeg');
+  background-position: bottom right;
+  background-size: cover;
+}
+
+button {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #f4d03f;
+  cursor: pointer;
+  transition:.5s;
+  &:hover{
+    color: #3e515b  ;
+    transform: rotate(20deg)
+  }
+}

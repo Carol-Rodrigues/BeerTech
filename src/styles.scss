@@ -1,1 +1,88 @@
+
 /* You can add global styles to this file, and also import other style files */
+@import "@angular/material/theming";
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-orange, 700, 200, 100);
+$custom-app-secondary: mat-palette($mat-brown, 400);
+$custom-app-warn: mat-palette($mat-red, A700);
+
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-warn);
+
+@include angular-material-theme($custom-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.home-card {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 4%;
+}
+
+mat-card-content {
+  text-align: center;
+}
+
+.logo {
+  width: 5%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  font-size: medium;
+}
+
+table {
+  width: 100%;
+}
+
+.bg {
+  background-color: whitesmoke;
+}
+
+// .home-header-image {
+//   background-image: url('./assets/International/ Beer/ Day-bro.svg');
+//   background-size: cover;
+// }
+
+.cor-mensagem {
+  background-color: #f4d03f;
+  color: black;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.card-form {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+mat-form-field {
+  margin-left: 7%
+}
+
+.titulo {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botoes {
+  text-align: center;
+  margin-left: 20%
+}

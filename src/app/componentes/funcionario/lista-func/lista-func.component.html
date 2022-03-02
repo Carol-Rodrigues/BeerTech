@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-4">
+    <div class="card card-foto">
+      <div>
+        <button mat-stroked-button class="btn botao-add" routerLink="/cadastrarFunc/{{id_cargo}}">Adicionar Funcionários</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="row m-5">
+      <div class="col-4" *ngFor="let func of func">
+        <div class="card-pessoa mb-4">
+          <div class="picture">
+            <img src="../../../assets/user.png" alt="" style="width: 100px;">
+          </div>
+          <div class="name">
+            <p>{{func.func_nome}}</p>
+          </div>
+          <div class="jobtitle">
+            <p>{{func.func_cidade}}</p>
+          </div>
+          <div class="buttons">
+            <div class="button1">
+              <button class="bot-card" routerLink="/editarFunc/{{func.id_funcionario}}/{{id_cargo}}">Editar</button>
+            </div>
+            <div class="button2">
+              <button class="bot-card" type="button" routerLink="/excluirFunc/{{func.id_funcionario}}">Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

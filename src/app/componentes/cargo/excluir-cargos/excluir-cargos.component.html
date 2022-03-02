@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="card mat-elevation-z4 card-form">
+  <div class="card-body">
+    <button mat-mini-fab color="primary" routerLink="/cargos" title="Voltar página" [ngStyle]="{'color':'white'}">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+    <div class="titulo">
+      <h1>Exclusão do Cargo</h1>
+      <h3>#{{cargo.id_cargo}} {{cargo.car_nome}}</h3>
+    </div>
+
+    <form class="example-form" [formGroup]="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cargo</mat-label>
+        <input type="text" matInput placeholder="Cargo" [(ngModel)]="cargo.car_nome" name="car_nome"
+          formControlName="car_nome" readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Atribuição</mat-label>
+        <input type="text" matInput placeholder="Atribuição" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao"
+          formControlName="car_atribuicao" readonly>
+      </mat-form-field>
+      <div class="botoes">
+        <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>
+      </div>
+
+      <!-- Modal de confirmação para excluir turma -->
+      <ng-template #modalExcluir let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="excluir">Aviso</h4>
+          <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente excluir #{{cargo.id_cargo}} {{cargo.car_nome}}?</p>
+        </div>
+        <div class="modal-footer">
+          <button mat-raised-button type="button" (click)="modal.close('Save click')" class="mx-3">Cancelar</button>
+          <button mat-raised-button type="button" (click)="excluirCargo();modal.close('Save click')" color="warn">Excluir</button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

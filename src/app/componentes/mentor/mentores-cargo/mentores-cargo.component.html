@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="fundo">
+  <div class="card mat-elevation-z4 card-form">
+    <div class="card-body">
+      <button mat-mini-fab color="primary" routerLink="/cargos" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+      <div class="titulo">
+        <h1>Programa de Mentoria</h1>
+      </div>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Nome do(a) Mentor(a)</mat-label>
+          <input type="text" matInput placeholder="Nome" [(ngModel)]="mentor.mentor_nome" name="mentor_nome" formControlName="mentor_nome">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Cargo do(a) Mentor(a)</mat-label>
+          <input type="text" matInput placeholder="Cargo" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo" formControlName="mentor_cargo">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Foto do(a) Mentor(a)</mat-label>
+          <input type="text" matInput placeholder="Foto" [(ngModel)]="mentor.mentor_foto" name="mentor_foto" formControlName="mentor_foto">
+        </mat-form-field>
+        <div class="botoes">
+
+          <button mat-raised-button class="btn btn-warning" *ngIf="mentorCadastrado">Alterar dados do Mentor</button>
+          <div *ngIf="!mentorCadastrado">
+            <mat-form-field>
+              <mat-label>Mentores disponíveis:</mat-label>
+              <mat-select [(ngModel)]="mentorSemCargo" name="mentorSemCargo" (ngModelChange)="mostrarMentor()">
+                <mat-option *ngFor="let mentor of mentoresSemCargo" [value]="mentor">
+                  {{mentor.mentor_nome}} - {{mentor.mentor_cargo}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button mat-raised-button class="btn btn-warning" class="mx-5">Confirmar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

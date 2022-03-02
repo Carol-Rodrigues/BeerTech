@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div style="text-align: center;" class="mt-4">
+  <h1>Lista completa de Funcionários(as)</h1>
+</div>
+<mat-form-field appearance="standard">
+  <mat-label>Buscar</mat-label>
+  <input matInput (keyup)="filtrar($event)" placeholder="Ex. João da Silva" #input>
+</mat-form-field>
+<section style="overflow-x:auto" class="table-container container mat-elevation-z3 p-0">
+  <table mat-table [dataSource]="tabelaFunc" matSort>
+    <!-- Coluna ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let func"> {{func.id_funcionario}} </td>
+    </ng-container>
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+      <td mat-cell *matCellDef="let func"> {{func.func_nome}} </td>
+    </ng-container>
+    <!-- Coluna cidade -->
+    <ng-container matColumnDef="cidade">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cidade </span></th>
+      <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.func_cidade}}</span> </td>
+    </ng-container>
+    <!-- Coluna nome do cargo -->
+    <ng-container matColumnDef="cargo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cargo </span></th>
+      <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.car_nome}}</span> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--Paginação da tabela, utilizando o mat-paginator-->
+  <mat-paginator #paginatorFunc [pageSizeOptions]="[8, 10, 15]" showFirstLastButtons></mat-paginator>
+</section>
+<app-footer></app-footer>

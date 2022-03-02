@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="card mat-elevation-z4 card-form">
+  <div class="card-body">
+    <button mat-mini-fab color="primary" routerLink="/funcCargo/{{id_cargo}}" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+    <div class="titulo">
+      <h1>Cadastro de Funcionários</h1>
+    </div>
+
+    <form class="example-form" [formGroup]="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput placeholder="Nome" [(ngModel)]="func.func_nome" name="func_nome" formControlName="func_nome">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cidade</mat-label>
+        <input type="text" matInput placeholder="Cidade" [(ngModel)]="func.func_cidade" name="func_cidade" formControlName="func_cidade">
+      </mat-form-field>
+      <div class="botoes">
+        <button mat-raised-button color="accent" (click)="cadastrarFunc()" [disabled]="!form.valid">Cadastrar</button>
+        <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

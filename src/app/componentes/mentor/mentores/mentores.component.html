@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div style="text-align: center;" class="mt-4">
+  <h1>Lista completa de Mentores</h1>
+</div>
+<mat-form-field appearance="standard">
+  <mat-label>Buscar</mat-label>
+  <input matInput (keyup)="filtrar($event)" placeholder="Ex. Supervisor" #input>
+</mat-form-field>
+<section style="overflow-x:auto" class="table-container container mat-elevation-z3 p-0">
+  <table mat-table [dataSource]="tabelaMentor">
+    <!-- Coluna ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let mentor"> {{mentor.id_mentor}} </td>
+    </ng-container>
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let mentor"> {{mentor.mentor_nome}} </td>
+    </ng-container>
+    <!-- Coluna nome do cargo -->
+    <ng-container matColumnDef="cargo">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Cargo </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.mentor_cargo}}</span> </td>
+    </ng-container>
+    <!-- Coluna foto -->
+    <ng-container matColumnDef="foto">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Foto </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.mentor_foto}}</span> </td>
+    </ng-container>
+    <!-- Coluna id_cargo -->
+    <ng-container matColumnDef="mentorado">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">ID Mentorado </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.id_cargo}}</span> </td>
+    </ng-container>
+    <!-- Coluna ocupado -->
+    <ng-container matColumnDef="ocupado">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Ocupado </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.tem_cargo}}</span> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--Paginação da tabela, utilizando o mat-paginator-->
+  <mat-paginator #paginatorFunc [pageSizeOptions]="[8, 10, 15]" showFirstLastButtons></mat-paginator>
+</section>
+<app-footer></app-footer>

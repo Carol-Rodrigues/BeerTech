@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="text-light">
+  <img class="logo" src="../../../assets/International Beer Day-pana.png" routerLink="">
+  <img src="../../../assets/nome.png" style="width: 130px;">
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon>keyboard_arrow_down</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="cargo">Cargos</button>
+      <button mat-menu-item [matMenuTriggerFor]="func">Funcionários</button>
+      <button mat-menu-item [matMenuTriggerFor]="mentor">Mentores</button>
+    </mat-menu>
+    <mat-menu #cargo="matMenu">
+      <button mat-menu-item routerLink="/cargos">Lista</button>
+      <button mat-menu-item routerLink="/cadastrarCargo">Adicionar</button>
+    </mat-menu>
+    <mat-menu #func="matMenu">
+      <button mat-menu-item routerLink="/funcionario">Lista</button>
+    </mat-menu>
+    <mat-menu #mentor="matMenu">
+      <button mat-menu-item routerLink="/mentores">Lista</button>
+    </mat-menu>
+</mat-toolbar>

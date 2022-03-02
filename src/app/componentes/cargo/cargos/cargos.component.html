@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="row m-5">
+  <div *ngFor="let cargo of cargos" class="col-3 my-2">
+    <div class="card h-100">
+      <div class="img-avatar">
+        <img src="../../../assets/trigo.png" alt="" style="width: 65px;">
+      </div>
+      <div class="card-text">
+        <div class="portada">
+        </div>
+        <div class="title-total">
+          <div class="title">#{{cargo.id_cargo}}</div>
+          <h2>{{cargo.car_nome}}</h2>
+          <div class="desc">{{cargo.car_atribuicao}}</div>
+          <div class="actions h-25">
+            <button><i class="fas fa-pencil" title="Editar Cargo" routerLink="/editarCargo/{{cargo.id_cargo}}"></i></button>
+            <button><i class="far fa-trash-alt" title="Excluir Cargo" routerLink="/excluirCargo/{{cargo.id_cargo}}"></i></button>
+            <button><i class="fas fa-user-friends" title="Funcionários" routerLink="/funcCargo/{{cargo.id_cargo}}"></i></button>
+            <button><i class="fa-solid fa-medal" title="Mentor" routerLink="/mentor/{{cargo.id_cargo}}"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

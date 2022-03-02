@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="card mat-elevation-z4 card-form">
+  <div class="card-body">
+    <button mat-mini-fab color="primary" routerLink="/cargos" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+    <div class="titulo">
+      <h1>Cadastro de Cargos</h1>
+    </div>
+
+    <form class="example-form" [formGroup]="form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cargo</mat-label>
+        <input type="text" matInput placeholder="Cargo" [(ngModel)]="cargo.car_nome" name="car_nome" formControlName="car_nome">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Atribuição</mat-label>
+        <input type="text" matInput placeholder="Atribuição" [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao" formControlName="car_atribuicao">
+      </mat-form-field>
+      <div class="botoes">
+        <button mat-raised-button color="accent" (click)="cadastrarCargo()" [disabled]="!form.valid">Cadastrar</button>
+        <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>
