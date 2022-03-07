@@ -40,11 +40,11 @@ export class EditarCargosComponent implements OnInit {
     this.cargoService.editarCargo(this.cargo).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo editado com sucesso!")
-        this.router.navigate([`/cargos`])
+        this.router.navigate([`/cargo`])
       },
       error: () => {
         this.cargoService.mensagem("Erro ao editar o cargo.")
-        this.router.navigate([`/cargos`])
+        this.router.navigate([`/cargo`])
       },
       next: () => console.log("Cargo editado")
     })

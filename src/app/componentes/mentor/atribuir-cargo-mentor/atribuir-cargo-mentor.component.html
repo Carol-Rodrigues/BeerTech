@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados do Mentor</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Mentor</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_nome" name="mentor_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Cargo do Mentor</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
+            </div>
+            <button class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <h5 class="card-title mx-3">Cargo do Mentorado: </h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome Cargo</label>
+            <input type="text" readonly [(ngModel)]="cargo.car_nome" class="form-control" name="tu_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descrição da Cargo</label>
+            <input type="text" readonly class="form-control" [(ngModel)]="cargo.car_atribuicao" name="tu_descricao">
+          </div>
+          <hr>
+          <div class="card">
+            <h5 class="card-title my-4"> Escolha uma nova Cargo para o mentor:</h5>
+
+
+            <div class="card-body">
+              <select [(ngModel)]="cargoSemMentorEscolhido" name="cargoSemMentorEscolhida"
+                (ngModelChange)="escolherCargo()">
+                <option *ngFor="let cargo of cargosSemMentor" [ngValue]="cargo">
+                  {{cargo.tu_nome}} - {{cargo.tu_descricao}}
+                </option>
+              </select>
+              <button (click)=" atribuirCargo()" class="btn btn-primary my-3">Salvar</button>
+            </div>
+          </div>
+          <hr>
+          <div class="card my-3">
+            <h5 class="card-title">Deixar Mentor sem Cargo?</h5>
+            <div class="card-body">
+              <button class="btn btn-secondary">Confirmar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FuncionariosService } from '../../../services/funcionarios.service';
@@ -19,7 +20,10 @@ export class FuncionariosComponent implements OnInit {
     'id',
     'nome',
     'cidade',
-    'cargo'
+    'id_cargo',
+    'cargo',
+    'atribuir',
+    'acoes'
   ];
 
   // Variável para armazenar os func na tabela
@@ -35,7 +39,11 @@ export class FuncionariosComponent implements OnInit {
 
   funcionarios: any[] = []
 
-  constructor(private funcService: FuncionariosService, private modalService: NgbModal, private observer: BreakpointObserver) { }
+  id_cargo: any = ""
+
+  constructor(private funcService: FuncionariosService, private modalService: NgbModal, private observer: BreakpointObserver, private route: ActivatedRoute) {
+    this.id_cargo = this.route.snapshot.paramMap.get("id_cargo")!
+  }
 
   ngOnInit(): void {
     this.mostrarTodosFuncs()
@@ -55,31 +63,36 @@ export class FuncionariosComponent implements OnInit {
     // });
   }
 
-  ngAfterViewInit (){
-  }
-
   mostrarTodosFuncs() {
-    this.funcService.funcsComCargos().subscribe((resultado) => {
-      console.log(resultado)
+    this.funcService.buscarTodosFuncs().subscribe((resultado) => {
+      // console.log(resultado)
 
-      resultado.forEach((func: any) => {
+      resultado.forEach((func: any[]) => {
 
         let funcsECargos: any = {
           id_funcionario: "",
           func_nome: "",
           func_cidade: "",
+          id_cargo: "",
           car_nome: "",
           car_atribuicao: ""
         }
 
-        funcsECargos.id_funcionario = func[0],
-        funcsECargos.func_nome = func[1],
-        funcsECargos.func_cidade = func[2],
-        funcsECargos.car_nome = func[3],
-        funcsECargos.car_atribuicao = func[4]
+        funcsECargos.id_funcionario = func[0]
+        funcsECargos.func_nome = func[1]
+        funcsECargos.func_cidade = func[2]
+        if (func[3] != null) {
+          funcsECargos.id_cargo = func[3]
+          funcsECargos.car_nome = func[4]
+          funcsECargos.car_atribuicao = func[5]
+        } else {
+          funcsECargos.id_cargo = "0"
+          funcsECargos.car_nome = "----"
+          funcsECargos.car_atribuicao = "----"
+        }
 
         this.funcionarios.push(funcsECargos)
-        // console.log(func)
+        console.log(funcsECargos)
       });
 
       this.tabelaFunc = new MatTableDataSource(this.funcionarios);

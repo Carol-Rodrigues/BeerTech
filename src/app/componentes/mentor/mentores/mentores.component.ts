@@ -15,9 +15,9 @@ export class MentoresComponent implements OnInit {
     'id',
     'nome',
     'cargo',
-    'foto',
-    'mentorado',
-    'ocupado'
+    'id_mentorado',
+    'cargo_mentorado',
+    'atrib_mentorado'
   ];
 
   // Variável para armazenar os mentores na tabela
@@ -28,7 +28,7 @@ export class MentoresComponent implements OnInit {
   // estabelecendo breakpoint do paginator
   bpPaginator: boolean = false;
 
-  mentores: Mentor[] = []
+  mentores: any = []
 
   constructor(private mentorService: MentorService) { }
 
@@ -37,9 +37,36 @@ export class MentoresComponent implements OnInit {
   }
 
   mostrarTodosMentores() {
-    this.mentorService.mostrarTodosMentores().subscribe((res) => {
-      this.mentores = res
-      this.tabelaMentor = res
+    this.mentorService.mostrarTodosMentores().subscribe(resultado => {
+
+      console.log(resultado)
+
+      resultado.forEach((mentor: any[]) => {
+
+        let mentorComCargo: any = {
+          id_mentor: '',
+          mentor_nome: '',
+          mentor_cargo: '',
+          id_cargo: '',
+          car_nome: '',
+          car_atribuicao: ''
+        }
+
+        mentorComCargo.id_mentor = mentor[0]
+        mentorComCargo.mentor_nome = mentor[1]
+        mentorComCargo.mentor_cargo = mentor[2]
+        if (mentor[3] != null) {
+          mentorComCargo.id_cargo = mentor[3]
+          mentorComCargo.car_nome = mentor[4]
+          mentorComCargo.car_atribuicao = mentor[5]
+        } else {
+          mentorComCargo.id_cargo = "0"
+          mentorComCargo.car_nome = "----"
+          mentorComCargo.car_atribuicao = "----"
+        }
+        this.mentores.push(mentorComCargo)
+        this.tabelaMentor = this.mentores
+      });
     })
   }
 

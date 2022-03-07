@@ -1,0 +1,132 @@
+<app-header></app-header>
+<div class="container">
+  <button id="botao-volta" mat-mini-fab color="primary" routerLink="/funcionarios" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+  <div class="row">
+    <div class="col-6 mx-5" style="margin-top: 1%">
+      <div class="container-fluid row" id="container-func">
+        <div id="func-card" class="col">
+          <img src="../../../../assets/funcionario-fundo.png" style="height: 380px;">
+        </div>
+        <!-- <div class="card mat-elevation-z4 card-form"> -->
+        <div id="info-func" class="col">
+          <div class="titulo">
+            <h1>Dados do(a) Funcionário(a)</h1>
+          </div>
+          <form class="cargo-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>ID do(a) Funcionário(a)</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="funcionario.id_funcionario"
+                name="id_funcionario">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>CPF do(a) Funcionário(a)</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="funcionario.id_funcionario"
+                name="cpf_funcionario">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nome do(a) Funcionário(a)</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="funcionario.func_nome"
+                name="func_nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Cidade do(a) Funcionário(a)</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="funcionario.func_cidade"
+                name="func_cidade">
+            </mat-form-field>
+          </form>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="col-5" style="margin-top: 1%">
+      <div class="card" id="card-cargo">
+        <div class="card-body">
+          <div class="titulo">
+            <h1>Cargo</h1>
+          </div>
+          <form class="mentor-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>ID do Cargo</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargoEscolhido.id_cargo" name="id_cargo">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nome do Cargo</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargoEscolhido.car_nome" name="car_nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Atribuição</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargoEscolhido.car_atribuicao" name="car_atribuicao">
+            </mat-form-field>
+          </form>
+          <hr>
+          <div class="card">
+            <div class="titulo mt-3">
+              <h1>Atualizar Cargo</h1>
+            </div>
+            <div class="card-body">
+              <div class="buttons">
+                <div class="button1 mx-2">
+                  <button class="bot-card" (click)="open(modalAlterar)">Alterar</button>
+
+                  <!-- Modal de confirmação para alterar cargo -->
+                  <ng-template #modalAlterar let-modal>
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="excluir">Escolha o Cargo desejado:</h4>
+                      <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body modal-mentor" style="margin: 0 auto;">
+                      <label for="cargoEscolhido">Nome do Cargo</label>
+                      <select [(ngModel)]="cargoEscolhido" name="cargoEscolhido" (ngModelChange)="mostrarCargo()"
+                        id="cargoEscolhido">
+                        <option value="" disabled selected [ngValue]="cargoEscolhido">- - -</option>
+                        <option *ngFor="let cargo of cargos" [ngValue]="cargo">
+                          #{{cargo.id_cargo}} - {{cargo.car_nome}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="modal-footer">
+                      <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                        class="mx-3">Cancelar</button>
+                      <button mat-raised-button type="button" (click)="atribuirCargo();modal.close('Save click')"
+                        color="accent">Confirmar</button>
+                    </div>
+                  </ng-template>
+
+                </div>
+                <div class="button2">
+                  <button class="bot-card" type="button" (click)="open(modalExcluir)">Desvincular</button>
+
+                  <!-- Modal de confirmação para excluir cargo -->
+                  <ng-template #modalExcluir let-modal>
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="excluir">Aviso</h4>
+                      <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Deseja realmente desvincular o Cargo <strong>#{{cargoEscolhido.id_cargo}} {{cargoEscolhido.car_nome}}
+                      </strong> do(a) Funcionário(a) selecionado(a)?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                        class="mx-3">Cancelar</button>
+                      <button mat-raised-button type="button"
+                        (click)="deixarFuncionarioSemCargo();modal.close('Save click')" color="warn">Excluir</button>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

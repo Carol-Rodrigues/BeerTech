@@ -2,9 +2,9 @@
 <div class="row">
   <div class="col-4">
     <div class="card card-foto">
-      <div>
-        <button mat-stroked-button class="btn botao-add" routerLink="/cadastrarFunc/{{id_cargo}}">Adicionar Funcionários</button>
-      </div>
+      <!-- <div>
+        <button mat-stroked-button class="btn botao-add" routerLink="cargo/{{id_cargo}}/funcionario/cadastro">Adicionar Funcionários</button>
+      </div> -->
     </div>
   </div>
   <div class="col-8">
@@ -22,10 +22,10 @@
           </div>
           <div class="buttons">
             <div class="button1">
-              <button class="bot-card" routerLink="/editarFunc/{{func.id_funcionario}}/{{id_cargo}}">Editar</button>
+              <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{id_cargo}}">Editar</button>
             </div>
             <div class="button2">
-              <button class="bot-card" type="button" routerLink="/excluirFunc/{{func.id_funcionario}}">Excluir</button>
+              <button class="bot-card" type="button" routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
             </div>
           </div>
         </div>

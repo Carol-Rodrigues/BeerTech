@@ -45,11 +45,11 @@ export class ExcluirCargosComponent implements OnInit {
     this.cargoService.excluirCargo(this.cargo.id_cargo).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo excluído com sucesso!")
-        this.router.navigate([`/cargos`])
+        this.router.navigate([`/cargo`])
       },
       error: () => {
         this.cargoService.mensagem("Erro ao excluir o cargo.")
-        this.router.navigate([`/cargos`])
+        this.router.navigate([`/cargo`])
       },
       next: () => console.log("Cargo excluído.")
     })

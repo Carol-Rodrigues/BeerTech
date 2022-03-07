@@ -22,9 +22,23 @@ export class MentorService {
     return this.http.get<Mentor[]>(URL)
   }
 
-  mostrarTodosMentores(): Observable<Mentor[]>{
-    const URL = `${this.baseUrl}/mentor`
-    return this.http.get<Mentor[]>(URL)
+  mostrarTodosMentores(): Observable<any>{
+    const URL = `${this.baseUrl}/mentor/mentor-cargo`
+    return this.http.get<any>(URL)
   }
 
+  buscarUmMentor(id_mentor:String):Observable<Mentor>{
+    const url = `${this.baseUrl}/mentor/${id_mentor}`
+    return this.http.get<Mentor>(url)
+  }
+
+  cadastrarMentor(mentor: Mentor): Observable<Mentor>{
+    const URL = `${this.baseUrl}/mentor`
+    return this.http.post<Mentor>(URL, mentor)
+  }
+
+  buscarMentorPeloNome(mentor_nome:String):Observable<Mentor>{
+    const url = `${this.baseUrl}/mentor-nome/${mentor_nome}`
+    return this.http.get<Mentor>(url)
+  }
 }

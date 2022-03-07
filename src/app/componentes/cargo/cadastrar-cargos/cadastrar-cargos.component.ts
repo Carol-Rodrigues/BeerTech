@@ -32,7 +32,7 @@ export class CadastrarCargosComponent implements OnInit {
     this.cargoService.cadastrar(this.cargo).subscribe((resultado) => {
       // alert("Cargo cadastrado com sucesso!")
       this.cargoService.mensagem("Cargo cadastrado com sucesso!")
-      this.router.navigate(["/cargos"])
+      this.router.navigate(["/cargo"])
     })
   }
 

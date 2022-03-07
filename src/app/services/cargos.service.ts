@@ -44,6 +44,30 @@ export class CargosService {
     return this.http.put<void>(URL, cargo)
   }
 
+  mostrarCargosSemMentor():Observable<Cargo[]>{
+    const url = `${this.baseUrl}/cargoSemMentor`
+    return this.http.get<Cargo[]>(url)
+  }
+
+  buscarCargoDoMentor(id_mentor:String):Observable<Cargo>{
+    //http://localhost:8080/escola/turma/turma-professor/1
+    const url = `${this.baseUrl}/cargo/cargo-mentor/${id_mentor}`
+    return this.http.get<Cargo>(url)
+  }
+
+  buscarTodosCargos():Observable<any>{
+    const url = `${this.baseUrl}/cargo/cargo-mentor`
+    return this.http.get<any>(url)
+  }
+
+  deixarCargoSemMentor(cargo:Cargo,id_cargo:String, id_mentor:String):Observable<void>{
+
+    //http://localhost:8080/escola/turma/tirarProfessor/3/2
+    const url = `${this.baseUrl}/cargo/tirarMentor/${id_cargo}/${id_mentor}`
+    return this.http.put<void>(url,cargo);
+
+  }
+
   // Método referente ao MatSnackBar do Material, para mostrar mensagem quando as funções de CRUD funcionarem
   mensagem(msg: string): void {
     this.snackBar.open(msg, "X", {

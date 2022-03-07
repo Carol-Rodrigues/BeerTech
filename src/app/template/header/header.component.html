@@ -8,13 +8,15 @@
       <button mat-menu-item [matMenuTriggerFor]="mentor">Mentores</button>
     </mat-menu>
     <mat-menu #cargo="matMenu">
-      <button mat-menu-item routerLink="/cargos">Lista</button>
-      <button mat-menu-item routerLink="/cadastrarCargo">Adicionar</button>
+      <button mat-menu-item routerLink="/cargo">Lista</button>
+      <button mat-menu-item routerLink="/cargo/cadastrar">Adicionar</button>
     </mat-menu>
     <mat-menu #func="matMenu">
-      <button mat-menu-item routerLink="/funcionario">Lista</button>
+      <button mat-menu-item routerLink="/funcionarios">Lista</button>
+      <button mat-menu-item routerLink="/funcionario/cadastrar">Adicionar</button>
     </mat-menu>
     <mat-menu #mentor="matMenu">
-      <button mat-menu-item routerLink="/mentores">Lista</button>
+      <button mat-menu-item routerLink="/mentores/listaMentor">Lista</button>
+      <button mat-menu-item routerLink="/mentores/cadastrar">Adicionar</button>
     </mat-menu>
 </mat-toolbar>

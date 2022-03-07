@@ -1,3 +1,4 @@
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { CargosService } from './../../../services/cargos.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -32,7 +33,9 @@ export class MentoresCargoComponent implements OnInit {
   mentoresSemCargo: any
   mentorSemCargo: any = []
 
-  constructor(private mentorService: MentorService, private route: ActivatedRoute, private router: Router, private cargoService: CargosService, private fb: FormBuilder) {
+  closeResult = '';
+
+  constructor(private mentorService: MentorService, private route: ActivatedRoute, private router: Router, private cargoService: CargosService, private fb: FormBuilder, private modalService: NgbModal) {
     this.id_cargo = this.route.snapshot.paramMap.get("id_cargo")
 
     this.form = this.fb.group({
@@ -43,14 +46,21 @@ export class MentoresCargoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.buscarCargo()
     this.buscarMentorDoCargo()
     this.buscarMentorSemCargo()
+  }
+
+  buscarCargo() {
+    this.cargoService.mostrarCargo(this.id_cargo).subscribe(resultado => {
+      this.cargo = resultado
+    })
   }
 
   buscarMentorDoCargo() {
     this.mentorService.buscarMentorCargo(this.id_cargo).subscribe((resultado) => {
 
-      if(resultado == undefined) {
+      if (resultado == undefined) {
         this.cargoService.mensagem("Para esse cargo não há mentor definido.")
         this.mentorCadastrado = false
       } else {
@@ -80,12 +90,50 @@ export class MentoresCargoComponent implements OnInit {
     this.cargoService.atribuirMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
         this.cargoService.mensagem("Mentor atribuído com sucesso.")
+        this.router.navigate(['/cargo'])
       },
       error: () => {
         this.cargoService.mensagem("Erro ao atribuir mentor.")
+        this.router.navigate(['/cargo'])
       },
       next: () => console.log("Mentor atribuído")
     })
   }
 
+  deixarCargoSemMentor() {
+    this.cargoService.deixarCargoSemMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
+      complete: () => {
+        this.cargoService.mensagem("Mentor desvinculado com sucesso.")
+        this.router.navigate(['/cargo'])
+      },
+      error: () => {
+        this.cargoService.mensagem("Erro: o mentor não foi retirado do cargo.")
+        this.router.navigate(['/cargo'])
+      }
+    })
+  }
+
+  // Função para abrir modal
+  open(content: any) {
+    //formato do modal
+    this.modalService.open(content, { size: 'md' }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
+  } //open
+
+  // Função para fechar modal
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  } //getDismissReason
 }

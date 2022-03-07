@@ -1,3 +1,4 @@
+import { Cargo } from './../models/cargosModel';
 import { Funcionario } from './../models/funcionariosModel';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -23,8 +24,8 @@ export class FuncionariosService {
     return this.http.get<Funcionario>(URL)
   }
 
-  cadastrarFunc(func: Funcionario, id_cargo: string): Observable<Funcionario> {
-    const URL = `${this.baseUrl}/funcionario/?cargo=${id_cargo}` //tem que ser igual ao PostMapping do Eclipse
+  cadastrarFunc(func: Funcionario): Observable<Funcionario> {
+    const URL = `${this.baseUrl}/funcionario` //tem que ser igual ao PostMapping do Eclipse
     return this.http.post<Funcionario>(URL, func)
   }
 
@@ -38,19 +39,31 @@ export class FuncionariosService {
     return this.http.get<string>(URL)
   }
 
-  editarFunc(func: Funcionario, id_funcionario: String, id_cargo: String): Observable<Funcionario> {
+  editarFunc(func: Funcionario, id_funcionario:String, id_cargo: String): Observable<Funcionario> {
     const URL = `${this.baseUrl}/funcionario/${id_funcionario}?cargo=${id_cargo}` //tem que ser igual ao PutMapping do Eclipse
     return this.http.put<Funcionario>(URL, func)
   }
 
-  buscarTodosFuncs(): Observable<any[]> {
-    const URL = `${this.baseUrl}/funcionario/`
-    return this.http.get<any[]>(URL)
+  editarFuncSemCargo(func: Funcionario, id_funcionario:String): Observable<Funcionario> {
+    const URL = `${this.baseUrl}/funcionarioSemCargo/${id_funcionario}` //tem que ser igual ao PutMapping do Eclipse
+    return this.http.put<Funcionario>(URL, func)
   }
 
-  funcsComCargos():Observable<any[]>{
-    const url = `${this.baseUrl}/funcionario-cargo`
-    return this.http.get<any[]>(url)
+  buscarTodosFuncs(): Observable<any> {
+    const URL = `${this.baseUrl}/funcionario-cargo`
+    return this.http.get<any>(URL)
+  }
+
+  atribuirCargo(cargo: Cargo, id_funcionario:String):Observable<Funcionario>{
+    //http://localhost:8080/escola/aluno/inserirTurma/8
+    const url = `${this.baseUrl}/funcionario/inserirCargo/${id_funcionario}`
+    return this.http.put<Funcionario>(url,cargo)
+  }
+
+  deixarFuncSemCargo(func: Funcionario, id_funcionario:String):Observable<Funcionario>{
+    //http://localhost:8080/escola/aluno/deixarSemTurma/4
+    const url = `${this.baseUrl}/funcionario/deixarSemCargo/${id_funcionario}`
+    return this.http.put<Funcionario>(url,func)
   }
 
   // Método referente ao MatSnackBar do Material, para mostrar mensagem quando as funções de CRUD funcionarem

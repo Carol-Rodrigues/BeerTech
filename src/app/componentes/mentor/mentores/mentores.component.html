@@ -11,7 +11,7 @@
     <!-- Coluna ID -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let mentor"> {{mentor.id_mentor}} </td>
+      <td mat-cell *matCellDef="let mentor"> #{{mentor.id_mentor}} </td>
     </ng-container>
     <!-- Coluna Nome -->
     <ng-container matColumnDef="nome">
@@ -23,20 +23,20 @@
       <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Cargo </span></th>
       <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.mentor_cargo}}</span> </td>
     </ng-container>
-    <!-- Coluna foto -->
-    <ng-container matColumnDef="foto">
-      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Foto </span></th>
-      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.mentor_foto}}</span> </td>
-    </ng-container>
     <!-- Coluna id_cargo -->
-    <ng-container matColumnDef="mentorado">
+    <ng-container matColumnDef="id_mentorado">
       <th mat-header-cell *matHeaderCellDef> <span class="mx-5">ID Mentorado </span></th>
-      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.id_cargo}}</span> </td>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">#{{mentor.id_cargo}}</span> </td>
     </ng-container>
-    <!-- Coluna ocupado -->
-    <ng-container matColumnDef="ocupado">
-      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Ocupado </span></th>
-      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.tem_cargo}}</span> </td>
+    <!-- Coluna nome cargo -->
+    <ng-container matColumnDef="cargo_mentorado">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Nome do Cargo Mentorado </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.car_nome}}</span> </td>
+    </ng-container>
+    <!-- Coluna atribuicao cargo -->
+    <ng-container matColumnDef="atrib_mentorado">
+      <th mat-header-cell *matHeaderCellDef> <span class="mx-5">Descrição do Cargo Mentorado </span></th>
+      <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.car_atribuicao}}</span> </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

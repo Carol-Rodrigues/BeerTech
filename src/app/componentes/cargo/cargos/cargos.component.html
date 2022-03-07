@@ -13,9 +13,9 @@
           <h2>{{cargo.car_nome}}</h2>
           <div class="desc">{{cargo.car_atribuicao}}</div>
           <div class="actions h-25">
-            <button><i class="fas fa-pencil" title="Editar Cargo" routerLink="/editarCargo/{{cargo.id_cargo}}"></i></button>
-            <button><i class="far fa-trash-alt" title="Excluir Cargo" routerLink="/excluirCargo/{{cargo.id_cargo}}"></i></button>
-            <button><i class="fas fa-user-friends" title="Funcionários" routerLink="/funcCargo/{{cargo.id_cargo}}"></i></button>
+            <button><i class="fas fa-pencil" title="Editar Cargo" routerLink="editar/{{cargo.id_cargo}}"></i></button>
+            <button><i class="far fa-trash-alt" title="Excluir Cargo" routerLink="excluir/{{cargo.id_cargo}}"></i></button>
+            <button><i class="fas fa-user-friends" title="Funcionários" routerLink="funcionario/{{cargo.id_cargo}}"></i></button>
             <button><i class="fa-solid fa-medal" title="Mentor" routerLink="/mentor/{{cargo.id_cargo}}"></i></button>
           </div>
         </div>

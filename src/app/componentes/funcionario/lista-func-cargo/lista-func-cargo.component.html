@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Funcionários do Cargo: {{id_cargo}}</h5>
+    <button routerLink="/funcionario/lista" class="btn btn-danger">Controle de Funcionários</button>
+    <div style="height: 300px; overflow: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID do funcionario</th>
+            <th scope="col">Nome do funcionario</th>
+            <th scope="col">Cidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let func of funcionarios">
+            <th scope="row">{{func.id_funcionario}}</th>
+            <td>{{func.func_nome}}</td>
+            <td>{{func.func_cidade}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

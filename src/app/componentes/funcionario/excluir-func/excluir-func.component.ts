@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { FuncionariosService } from 'src/app/services/funcionarios.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-excluir-func',
@@ -25,7 +26,7 @@ export class ExcluirFuncComponent implements OnInit {
   id_cargo: String = ""
 
   constructor(private funcService: FuncionariosService,
-    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, public dialog: MatDialog, private modalService: NgbModal) {
+    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, public dialog: MatDialog, private modalService: NgbModal, private location: Location) {
 
     this.func.id_funcionario = this.route.snapshot.paramMap.get("id_funcionario");
 
@@ -37,31 +38,31 @@ export class ExcluirFuncComponent implements OnInit {
 
   ngOnInit(): void {
     this.buscarUmFunc();
-    this.buscarIdCargo();
+    // this.buscarIdCargo();
   }
 
   buscarUmFunc(){
     this.funcService.buscarUmFunc(this.func.id_funcionario).subscribe((resultado)=>{
-      console.log(resultado);
+      // console.log(resultado);
       this.func = resultado;
     })
   }
 
-  buscarIdCargo() {
-    this.funcService.buscarIdCargo(this.func.id_funcionario).subscribe((resultado) => {
-      this.id_cargo = resultado;
-    })
-  }
+  // buscarIdCargo() {
+  //   this.funcService.buscarIdCargo(this.func.id_funcionario).subscribe((resultado) => {
+  //     this.id_cargo = resultado;
+  //   })
+  // }
 
   excluirFunc() {
     this.funcService.excluirFunc(this.func.id_funcionario).subscribe({
       complete: () => {
         this.funcService.mensagem("Funcionário(a) excluído(a) com sucesso!")
-        this.router.navigate([`funcCargo/${this.id_cargo}`])
+        this.location.back();
       },
       error: () => {
         this.funcService.mensagem("Erro ao excluir funcionário(a).")
-        this.router.navigate([`funcCargo/${this.id_cargo}`])
+        this.location.back();
       },
       next: () => console.log("Funcionário(a) excluído(a)")
     })

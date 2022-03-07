@@ -18,16 +18,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
-import { traduzirLegendas } from './componentes/views/traducaoPag';
+import { traduzirLegendas } from './template/traducaoPag';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 
-import { HomeComponent } from './componentes/views/home/home.component';
-import { HeaderComponent } from './componentes/views/header/header.component';
+import { HomeComponent } from './template/home/home.component';
+import { HeaderComponent } from './template/header/header.component';
 import { ExcluirCargosComponent } from './componentes/cargo/excluir-cargos/excluir-cargos.component';
 import { EditarCargosComponent } from './componentes/cargo/editar-cargos/editar-cargos.component';
 import { CadastrarCargosComponent } from './componentes/cargo/cadastrar-cargos/cadastrar-cargos.component';
-import { FooterComponent } from './componentes/views/footer/footer.component';
+import { FooterComponent } from './template/footer/footer.component';
 import { CargosComponent } from './componentes/cargo/cargos/cargos.component';
 import { FormsModule } from '@angular/forms';
 import { ListaFuncComponent } from './componentes/funcionario/lista-func/lista-func.component';
@@ -39,6 +39,10 @@ import { ExcluirFuncComponent } from './componentes/funcionario/excluir-func/exc
 import { FuncionariosComponent } from './componentes/funcionario/funcionarios/funcionarios.component';
 import { MentoresComponent } from './componentes/mentor/mentores/mentores.component';
 import { MentoresCargoComponent } from './componentes/mentor/mentores-cargo/mentores-cargo.component';
+import { AtribuirCargoMentorComponent } from './componentes/mentor/atribuir-cargo-mentor/atribuir-cargo-mentor.component';
+import { AtribuirCargoComponent } from './componentes/funcionario/atribuir-cargo/atribuir-cargo.component';
+import { ListaFuncCargoComponent } from './componentes/funcionario/lista-func-cargo/lista-func-cargo.component';
+import { CadastrarMentorComponent } from './componentes/mentor/cadastrar-mentor/cadastrar-mentor.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,11 @@ import { MentoresCargoComponent } from './componentes/mentor/mentores-cargo/ment
     ExcluirFuncComponent,
     FuncionariosComponent,
     MentoresComponent,
-    MentoresCargoComponent
+    MentoresCargoComponent,
+    AtribuirCargoMentorComponent,
+    AtribuirCargoComponent,
+    ListaFuncCargoComponent,
+    CadastrarMentorComponent
   ],
   imports: [
     BrowserModule,

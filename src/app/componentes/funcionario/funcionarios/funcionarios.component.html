@@ -12,7 +12,7 @@
     <!-- Coluna ID -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-      <td mat-cell *matCellDef="let func"> {{func.id_funcionario}} </td>
+      <td mat-cell *matCellDef="let func">{{func.id_funcionario}} </td>
     </ng-container>
     <!-- Coluna Nome -->
     <ng-container matColumnDef="nome">
@@ -24,15 +24,36 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cidade </span></th>
       <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.func_cidade}}</span> </td>
     </ng-container>
+    <!-- Coluna ID do cargo -->
+    <ng-container matColumnDef="id_cargo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">ID Cargo </span></th>
+      <td mat-cell *matCellDef="let func"> <span class="mx-5">#{{func.id_cargo}}</span> </td>
+    </ng-container>
     <!-- Coluna nome do cargo -->
     <ng-container matColumnDef="cargo">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cargo </span></th>
       <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.car_nome}}</span> </td>
     </ng-container>
+    <!-- Coluna atribuir cargo -->
+    <ng-container matColumnDef="atribuir">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Atribuir Cargo </span></th>
+      <td mat-cell *matCellDef="let func"> <button id="botao-atribuir"
+          routerLink="/funcionario/atribuirCargo/{{func.id_funcionario}}/{{func.id_cargo}}">Atribuir Cargos</button>
+      </td>
+    </ng-container>
+    <!-- Coluna ações -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>
+      <td mat-cell *matCellDef="let func">
+        <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}">Editar</button>
+        <button class="bot-card" type="button"
+          routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
+      </td>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <!--Paginação da tabela, utilizando o mat-paginator-->
-  <mat-paginator #paginatorFunc [pageSizeOptions]="[8, 10, 15]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #paginatorFunc [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
 </section>
 <app-footer></app-footer>
