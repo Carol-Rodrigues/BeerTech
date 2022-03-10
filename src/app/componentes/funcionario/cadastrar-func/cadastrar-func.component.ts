@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FuncionariosService } from '../../../services/funcionarios.service';
 import { Funcionario } from '../../../models/funcionariosModel';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cadastrar-func',
@@ -22,7 +23,7 @@ export class CadastrarFuncComponent implements OnInit {
     func_cidade: "",
   }
 
-  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cargoService: CargosService) {
+  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cargoService: CargosService, private location: Location) {
     this.id_cargo = this.route.snapshot.paramMap.get("id_cargo")!
 
     this.form = this.fb.group({
@@ -39,11 +40,11 @@ export class CadastrarFuncComponent implements OnInit {
     this.funcService.cadastrarFunc(this.func).subscribe({
       complete: () => {
         this.funcService.mensagem("Funcionário cadastrado com sucesso!")
-        this.router.navigate([`/funcionarios`])
+        this.location.back()
       },
       error: () => {
         this.funcService.mensagem("Não foi possível cadastrar o funcionário.")
-        this.router.navigate([`/funcionarios`])
+        this.location.back()
       },
       next: () => console.log("Funcionario cadastrado")
     })

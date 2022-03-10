@@ -6,6 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Para estilização da moeda
+import { LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
+import localePt from "@angular/common/locales/pt";
+import { CurrencyPipe, registerLocaleData } from "@angular/common"
+registerLocaleData(localePt)
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
@@ -21,6 +27,8 @@ import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginato
 import { traduzirLegendas } from './template/traducaoPag';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { HomeComponent } from './template/home/home.component';
 import { HeaderComponent } from './template/header/header.component';
@@ -43,6 +51,16 @@ import { AtribuirCargoMentorComponent } from './componentes/mentor/atribuir-carg
 import { AtribuirCargoComponent } from './componentes/funcionario/atribuir-cargo/atribuir-cargo.component';
 import { ListaFuncCargoComponent } from './componentes/funcionario/lista-func-cargo/lista-func-cargo.component';
 import { CadastrarMentorComponent } from './componentes/mentor/cadastrar-mentor/cadastrar-mentor.component';
+import { CadastrarBonificacaoComponent } from './componentes/bonificacao/cadastrar-bonificacao/cadastrar-bonificacao.component';
+import { ExcluirBonificacaoComponent } from './componentes/bonificacao/excluir-bonificacao/excluir-bonificacao.component';
+import { EditarBonificacaoComponent } from './componentes/bonificacao/editar-bonificacao/editar-bonificacao.component';
+import { BonificacaoMentorComponent } from './componentes/bonificacao/bonificacao-mentor/bonificacao-mentor.component';
+
+import { NgxCurrencyModule } from "ngx-currency";
+import { EditarMentorComponent } from './componentes/mentor/editar-mentor/editar-mentor.component';
+import { ExcluirMentorComponent } from './componentes/mentor/excluir-mentor/excluir-mentor.component';
+
+import { CpfPipe } from './pipes/cpf.pipes';
 
 @NgModule({
   declarations: [
@@ -64,7 +82,14 @@ import { CadastrarMentorComponent } from './componentes/mentor/cadastrar-mentor/
     AtribuirCargoMentorComponent,
     AtribuirCargoComponent,
     ListaFuncCargoComponent,
-    CadastrarMentorComponent
+    CadastrarMentorComponent,
+    CadastrarBonificacaoComponent,
+    ExcluirBonificacaoComponent,
+    EditarBonificacaoComponent,
+    BonificacaoMentorComponent,
+    EditarMentorComponent,
+    ExcluirMentorComponent,
+    CpfPipe
   ],
   imports: [
     BrowserModule,
@@ -87,9 +112,15 @@ import { CadastrarMentorComponent } from './componentes/mentor/cadastrar-mentor/
     MatDialogModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule,
+    NgxCurrencyModule,
+    MatRadioModule
   ],
-  providers: [{ provide: MatPaginatorIntl, useValue: traduzirLegendas() }],
+  providers: [{ provide: MatPaginatorIntl, useValue: traduzirLegendas() },
+              {provide: LOCALE_ID, useValue: "pt-BR"},
+              {provide: DEFAULT_CURRENCY_CODE, useValue: "BRL"},
+              CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

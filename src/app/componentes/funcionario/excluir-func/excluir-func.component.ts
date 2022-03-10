@@ -26,7 +26,7 @@ export class ExcluirFuncComponent implements OnInit {
   id_cargo: String = ""
 
   constructor(private funcService: FuncionariosService,
-    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, public dialog: MatDialog, private modalService: NgbModal, private location: Location) {
+    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private modalService: NgbModal, private location: Location) {
 
     this.func.id_funcionario = this.route.snapshot.paramMap.get("id_funcionario");
 

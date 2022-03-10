@@ -41,4 +41,25 @@ export class MentorService {
     const url = `${this.baseUrl}/mentor-nome/${mentor_nome}`
     return this.http.get<Mentor>(url)
   }
+
+  excluirMentor(id_mentor: string): Observable<void> {
+    const URL = `${this.baseUrl}/mentor/${id_mentor}` //tem que ser igual ao DeleteMapping do Eclipse
+    return this.http.delete<void>(URL)
+  }
+
+  // ESTÁ DELETANDO CARGO AO EDITAR MENTOR
+  // editarMentor(mentor: Mentor, id_mentor: string): Observable<Mentor> {
+  //   const URL = `${this.baseUrl}/mentor/${id_mentor}` //tem que ser igual ao PutMapping do Eclipse
+  //   return this.http.put<Mentor>(URL, mentor)
+  // }
+
+  editarMentor(mentor: Mentor, id_mentor: string, id_cargo: String): Observable<Mentor> {
+    const URL = `${this.baseUrl}/mentor/${id_mentor}?cargo=${id_cargo}` //tem que ser igual ao PutMapping do Eclipse
+    return this.http.put<Mentor>(URL, mentor)
+  }
+
+  editarMentorSemCargo(mentor: Mentor, id_mentor:String): Observable<Mentor> {
+    const URL = `${this.baseUrl}/mentorSemCargo/${id_mentor}` //tem que ser igual ao PutMapping do Eclipse
+    return this.http.put<Mentor>(URL, mentor)
+  }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Cargo } from '../../../models/cargosModel';
 import { CargosService } from '../../../services/cargos.service';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-cargos',
@@ -18,7 +19,7 @@ export class EditarCargosComponent implements OnInit {
     car_atribuicao: ""
   }
 
-  constructor(private cargoService: CargosService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {
+  constructor(private cargoService: CargosService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private location: Location) {
     this.form = this.fb.group({
       car_nome: ["", Validators.required],
       car_atribuicao: ["", Validators.required]
@@ -40,11 +41,11 @@ export class EditarCargosComponent implements OnInit {
     this.cargoService.editarCargo(this.cargo).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo editado com sucesso!")
-        this.router.navigate([`/cargo`])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro ao editar o cargo.")
-        this.router.navigate([`/cargo`])
+        this.location.back()
       },
       next: () => console.log("Cargo editado")
     })

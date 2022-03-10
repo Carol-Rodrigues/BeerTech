@@ -1,0 +1,48 @@
+<app-header></app-header>
+<button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página" [ngStyle]="{'color':'white'}" id="botao-voltar">
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+<div class="titulo">
+  <h1>Bonificação do(a) Mentor(a) <strong> {{nomeMentor}}</strong></h1>
+  <button mat-raised-button color="accent" routerLink="cadastrar/" class="mb-2" style="color: white;">Cadastrar bonificação</button>
+</div>
+<div class="container w-50"  style="height: 400px; overflow: auto;">
+  <mat-accordion class="example-headers-align m-3" multi *ngFor="let bonif of bonificacoes">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          #{{bonif.codigo}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{bonif.bo_descricao}}
+          <mat-icon color="warn" *ngIf="bonif.bo_status == 'PENDENTE'" title="Pendente">feedback</mat-icon>
+          <mat-icon *ngIf="bonif.bo_status == 'PAGO'" style="color: green;" title="Pago">check_circle</mat-icon>
+          <mat-icon color="primary" *ngIf="bonif.bo_status == 'CANCELADO'" title="Cancelado">cancel</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p><strong>Data de pagamento:</strong> {{bonif.bo_dataPagamento | date: "dd/MM/yyyy"}}</p>
+      <p><strong>Valor: </strong>{{bonif.bo_valor | currency: "BRL"}}</p>
+      <p><strong>Status atual: </strong> {{bonif.bo_status}}</p>
+      <hr>
+      <mat-card class="row" style="text-align: center;">
+          <button mat-fab (click)="quitarBonificacao(bonif, bonif.codigo)" class="col-2 mx-3 bot" title="Pagar" [disabled]="bonif.bo_status != 'PENDENTE'">
+            <mat-icon>check_circle</mat-icon>
+          </button>
+          <button mat-fab (click)="cancelarBonificacao(bonif, bonif.codigo)" class="col-2 mx-3" color="primary" title="Cancelar" [disabled]="bonif.bo_status != 'PENDENTE'">
+            <mat-icon style="color: white;">cancel</mat-icon>
+          </button>
+          <button mat-fab routerLink="editar/{{bonif.codigo}}" class="col-2 mx-3" title="Editar">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-fab routerLink="excluir/{{bonif.codigo}}" class="col-2 mx-3" color="warn" title="Excluir">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </mat-card>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
+
+<app-footer></app-footer>

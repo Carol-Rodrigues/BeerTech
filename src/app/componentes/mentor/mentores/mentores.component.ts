@@ -14,10 +14,13 @@ export class MentoresComponent implements OnInit {
   displayedColumns: string[] = [
     'id',
     'nome',
+    'cpf',
     'cargo',
+    'foto',
     'id_mentorado',
     'cargo_mentorado',
-    'atrib_mentorado'
+    'bonificacao',
+    'acoes'
   ];
 
   // Variável para armazenar os mentores na tabela
@@ -46,6 +49,7 @@ export class MentoresComponent implements OnInit {
         let mentorComCargo: any = {
           id_mentor: '',
           mentor_nome: '',
+          mentor_cpf: '',
           mentor_cargo: '',
           id_cargo: '',
           car_nome: '',
@@ -55,10 +59,11 @@ export class MentoresComponent implements OnInit {
         mentorComCargo.id_mentor = mentor[0]
         mentorComCargo.mentor_nome = mentor[1]
         mentorComCargo.mentor_cargo = mentor[2]
-        if (mentor[3] != null) {
-          mentorComCargo.id_cargo = mentor[3]
-          mentorComCargo.car_nome = mentor[4]
-          mentorComCargo.car_atribuicao = mentor[5]
+        mentorComCargo.mentor_cpf = mentor[3]
+        if (mentor[4] != null) {
+          mentorComCargo.id_cargo = mentor[4]
+          mentorComCargo.car_nome = mentor[5]
+          mentorComCargo.car_atribuicao = mentor[6]
         } else {
           mentorComCargo.id_cargo = "0"
           mentorComCargo.car_nome = "----"

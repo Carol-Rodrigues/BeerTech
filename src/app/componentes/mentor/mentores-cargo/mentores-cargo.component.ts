@@ -6,6 +6,7 @@ import { MentorService } from './../../../services/mentor.service';
 import { Cargo } from './../../../models/cargosModel';
 import { Mentor } from './../../../models/mentorModel';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-mentores-cargo',
@@ -19,6 +20,7 @@ export class MentoresCargoComponent implements OnInit {
   mentor: Mentor = {
     mentor_nome: "",
     mentor_cargo: "",
+    mentor_cpf: "",
     mentor_foto: ""
   }
 
@@ -35,11 +37,12 @@ export class MentoresCargoComponent implements OnInit {
 
   closeResult = '';
 
-  constructor(private mentorService: MentorService, private route: ActivatedRoute, private router: Router, private cargoService: CargosService, private fb: FormBuilder, private modalService: NgbModal) {
+  constructor(private mentorService: MentorService, private route: ActivatedRoute, private router: Router, private cargoService: CargosService, private fb: FormBuilder, private modalService: NgbModal, private location: Location) {
     this.id_cargo = this.route.snapshot.paramMap.get("id_cargo")
 
     this.form = this.fb.group({
       mentor_nome: ["", Validators.required],
+      mentor_cpf: ["", Validators.required],
       mentor_cargo: ["", Validators.required],
       mentor_foto: [""]
     })
@@ -90,11 +93,11 @@ export class MentoresCargoComponent implements OnInit {
     this.cargoService.atribuirMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
         this.cargoService.mensagem("Mentor atribuído com sucesso.")
-        this.router.navigate(['/cargo'])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro ao atribuir mentor.")
-        this.router.navigate(['/cargo'])
+        this.location.back()
       },
       next: () => console.log("Mentor atribuído")
     })
@@ -104,11 +107,11 @@ export class MentoresCargoComponent implements OnInit {
     this.cargoService.deixarCargoSemMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
         this.cargoService.mensagem("Mentor desvinculado com sucesso.")
-        this.router.navigate(['/cargo'])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro: o mentor não foi retirado do cargo.")
-        this.router.navigate(['/cargo'])
+        this.location.back()
       }
     })
   }

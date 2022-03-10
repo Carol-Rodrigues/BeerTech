@@ -3,25 +3,28 @@
   <div class="card-body">
     <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
     <div class="titulo">
-      <h1>Cadastro de Mentores</h1>
+      <h1>Editor de Mentores</h1>
     </div>
 
     <form class="example-form" [formGroup]="form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nome</mat-label>
-        <input type="text" matInput placeholder="Nome" [(ngModel)]="mentor.mentor_nome" name="mentor_nome" formControlName="mentor_nome">
+        <input type="text" matInput [(ngModel)]="mentor.mentor_nome" name="mentor_nome"
+          formControlName="mentor_nome">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input type="text" matInput placeholder="XXX.XXX.XXX-XX" [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf" formControlName="mentor_cpf">
+        <input type="text" matInput [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf"
+          formControlName="mentor_cpf">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Cargo</mat-label>
-        <input type="text" matInput placeholder="Cargo" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo" formControlName="mentor_cargo">
+        <input type="text" matInput [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"
+          formControlName="mentor_cargo">
       </mat-form-field>
       <div class="botoes">
-        <button mat-raised-button color="accent" (click)="cadastrarMentor()" [disabled]="!form.valid">Cadastrar</button>
-        <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
+        <!-- <button class="btn btn-warning mx-3" (click)="trocarCargo()">Trocar Cargo</button> -->
+        <button mat-raised-button color="accent" [disabled]="!form.valid" (click)="editarMentor()">Atualizar</button>
       </div>
     </form>
   </div>

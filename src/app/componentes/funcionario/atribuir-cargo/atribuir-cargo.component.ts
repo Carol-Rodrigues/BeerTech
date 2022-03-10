@@ -5,6 +5,7 @@ import { Funcionario } from './../../../models/funcionariosModel';
 import { Cargo } from './../../../models/cargosModel';
 import { Component, OnInit } from '@angular/core';
 import { CargosService } from 'src/app/services/cargos.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-atribuir-cargo',
@@ -29,7 +30,7 @@ export class AtribuirCargoComponent implements OnInit {
   constructor(private cargoService: CargosService,
     private funcService: FuncionariosService,
     private route: ActivatedRoute,
-    private router: Router, private modalService: NgbModal) { }
+    private router: Router, private modalService: NgbModal, private location: Location) { }
 
   ngOnInit(): void {
     this.id_funcionario = this.route.snapshot.paramMap.get('id_funcionario')
@@ -67,11 +68,11 @@ export class AtribuirCargoComponent implements OnInit {
     this.funcService.atribuirCargo(this.cargoEscolhido, this.id_funcionario).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo atribuído com sucesso.")
-        this.router.navigate(['/funcionarios'])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro ao atribuir cargo.")
-        this.router.navigate(['/funcionarios'])
+        this.location.back()
       },
       next: () => { console.log("Cargo atribuído.") }
 
@@ -82,11 +83,11 @@ export class AtribuirCargoComponent implements OnInit {
     this.funcService.deixarFuncSemCargo(this.funcionario, this.id_funcionario).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo desvinculado com sucesso.")
-        this.router.navigate(['/funcionarios'])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro: o cargo não foi retirado do(a) funcionário(a).")
-        this.router.navigate(['/funcionarios'])
+        this.location.back()
       },
       next: () => { console.log("Funcionario editado com sucesso") }
 

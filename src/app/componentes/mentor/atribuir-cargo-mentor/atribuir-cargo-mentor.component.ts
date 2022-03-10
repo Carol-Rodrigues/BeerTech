@@ -4,6 +4,7 @@ import { Cargo } from './../../../models/cargosModel';
 import { Mentor } from './../../../models/mentorModel';
 import { Component, OnInit } from '@angular/core';
 import { CargosService } from 'src/app/services/cargos.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-atribuir-cargo-mentor',
@@ -21,6 +22,7 @@ export class AtribuirCargoMentorComponent implements OnInit {
   mentor: Mentor = {
     id_mentor: '',
     mentor_nome: '',
+    mentor_cpf: '',
     mentor_cargo: '',
     mentor_foto: ''
   }
@@ -34,7 +36,8 @@ export class AtribuirCargoMentorComponent implements OnInit {
   constructor(private mentorService: MentorService,
     private route: ActivatedRoute,
     private router: Router,
-    private cargoService: CargosService) { }
+    private cargoService: CargosService,
+    private location: Location) { }
 
   ngOnInit(): void {
 
@@ -86,11 +89,11 @@ export class AtribuirCargoMentorComponent implements OnInit {
     this.cargoService.atribuirMentor(this.cargo, this.cargo.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
         this.cargoService.mensagem("O cargo foi atribuído ao mentor")
-        this.router.navigate(['/mentores/listaMentor'])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro: o cargo não foi atribuído.")
-        this.router.navigate(['/mentores/listaMentor'])
+        this.location.back()
       }
     })
   }

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'empresa-front';
+  title = 'BeerTech';
+  itens = [
+    '11122233344',
+    11122233344,
+    1122233344
+  ];
 }

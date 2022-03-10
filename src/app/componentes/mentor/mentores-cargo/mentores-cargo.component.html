@@ -49,6 +49,11 @@
                 name="mentor_nome" readonly>
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>CPF do(a) Mentor(a)</mat-label>
+              <input class="mentor-input" type="text" matInput placeholder="Mentor" [(ngModel)]="mentor.mentor_cpf"
+                name="mentor_cpf" readonly>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Cargo do(a) Mentor(a)</mat-label>
               <input type="text" matInput placeholder="Cargo" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"
                 readonly>

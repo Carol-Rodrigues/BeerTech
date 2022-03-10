@@ -1,3 +1,9 @@
+import { EditarMentorComponent } from './componentes/mentor/editar-mentor/editar-mentor.component';
+import { ExcluirMentorComponent } from './componentes/mentor/excluir-mentor/excluir-mentor.component';
+import { ExcluirBonificacaoComponent } from './componentes/bonificacao/excluir-bonificacao/excluir-bonificacao.component';
+import { EditarBonificacaoComponent } from './componentes/bonificacao/editar-bonificacao/editar-bonificacao.component';
+import { CadastrarBonificacaoComponent } from './componentes/bonificacao/cadastrar-bonificacao/cadastrar-bonificacao.component';
+import { BonificacaoMentorComponent } from './componentes/bonificacao/bonificacao-mentor/bonificacao-mentor.component';
 import { CadastrarMentorComponent } from './componentes/mentor/cadastrar-mentor/cadastrar-mentor.component';
 import { ListaFuncCargoComponent } from './componentes/funcionario/lista-func-cargo/lista-func-cargo.component';
 import { AtribuirCargoComponent } from './componentes/funcionario/atribuir-cargo/atribuir-cargo.component';
@@ -19,23 +25,37 @@ import { CargosComponent } from './componentes/cargo/cargos/cargos.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
-  {path: "home", component: HomeComponent}, //
-  {path: "cargo", component: CargosComponent}, //
-  {path: "cargo/excluir/:id_cargo", component: ExcluirCargosComponent}, //
-  {path: "cargo/editar/:id_cargo", component: EditarCargosComponent}, //
-  {path: "cargo/cadastrar", component: CadastrarCargosComponent}, //
-  {path: "cargo/funcionario/:id_cargo", component: ListaFuncComponent}, //
-  {path: "funcionario/cadastrar", component: CadastrarFuncComponent},
+  {path: "home", component: HomeComponent},
+
+  // Cargo
+  {path: "cargo", component: CargosComponent},
+  {path: "cargo/excluir/:id_cargo", component: ExcluirCargosComponent},
+  {path: "cargo/editar/:id_cargo", component: EditarCargosComponent},
+  {path: "cargo/cadastrar", component: CadastrarCargosComponent},
+  {path: "cargo/funcionario/:id_cargo", component: ListaFuncComponent},
   {path: "cargo/:id_cargo/funcionario/cadastro", component: CadastrarFuncComponent},
+
+  // Funcionário
+  {path: "funcionario/cadastrar", component: CadastrarFuncComponent},
   {path: "funcionario/editar/:id_funcionario/:id_cargo", component: EditarFuncComponent},
   {path: "funcionario/excluir/:id_funcionario", component: ExcluirFuncComponent},
   {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent}, //ListaAlunosDaTurma
   {path: "funcionarios", component: FuncionariosComponent}, //alunosComTurma
   {path: "funcionario/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
-  {path: "mentores/listaMentor", component: MentoresComponent}, //listaProfessor
+
+  // Mentor
+  {path: "mentores", component: MentoresComponent}, //listaProfessor
   {path: "mentor/:id_cargo", component: MentoresCargoComponent}, //ProfessorDaTurma
   {path: "mentor/atribuirCargo/:id_mentor", component: AtribuirCargoMentorComponent},
-  {path: "mentores/cadastrar", component: CadastrarMentorComponent}, //
+  {path: "mentores/cadastrar", component: CadastrarMentorComponent},
+  {path: "mentores/excluir/:id_mentor", component: ExcluirMentorComponent},
+  {path: "mentores/editar/:id_mentor/:id_cargo", component: EditarMentorComponent},
+
+  // Bonificação
+  {path:"mentores/bonificacao/:id_mentor/cadastrar", component:CadastrarBonificacaoComponent},
+  {path:"mentores/bonificacao/:id_mentor/editar/:codigo", component:EditarBonificacaoComponent},
+  {path:"mentores/bonificacao/:id_mentor/excluir/:codigo", component:ExcluirBonificacaoComponent},
+  {path:"mentores/bonificacao/:id_mentor", component:BonificacaoMentorComponent},
 ];
 
 @NgModule({

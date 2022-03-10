@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MentorService } from './../../../services/mentor.service';
 import { Mentor } from './../../../models/mentorModel';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cadastrar-mentor',
@@ -21,14 +22,16 @@ export class CadastrarMentorComponent implements OnInit {
   mentor: Mentor = {
     mentor_nome: "",
     mentor_cargo: "",
+    mentor_cpf: "",
     mentor_foto: ""
   }
 
   foto !: any
 
-  constructor(private mentorService: MentorService, private router: Router, private cargoService: CargosService, private fb: FormBuilder, private http: HttpClient) {
+  constructor(private mentorService: MentorService, private cargoService: CargosService, private fb: FormBuilder, private http: HttpClient, private location: Location) {
     this.form = this.fb.group({
       mentor_nome: ["", Validators.required],
+      mentor_cpf: ["", Validators.required],
       mentor_cargo: ["", Validators.required]
     })
   }
@@ -45,9 +48,11 @@ export class CadastrarMentorComponent implements OnInit {
           this.idMentorCadastrado = res.id_mentor
           this.mentorCadastrado = true
         })
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro ao cadastrar o mentor")
+        this.location.back()
       },
       next: () => { console.log("Mentor cadastrado.") }
 

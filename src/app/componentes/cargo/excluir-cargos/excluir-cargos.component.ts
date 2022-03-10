@@ -5,6 +5,7 @@ import { CargosService } from '../../../services/cargos.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-excluir-cargos',
@@ -23,7 +24,7 @@ export class ExcluirCargosComponent implements OnInit {
   closeResult = '';
 
   constructor(private cargoService: CargosService,
-    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, public dialog: MatDialog, private modalService: NgbModal) {
+    private route: ActivatedRoute, private router: Router, private fb: FormBuilder, public dialog: MatDialog, private modalService: NgbModal, private location: Location) {
     this.form = this.fb.group({
       car_nome: ["", Validators.required],
       car_atribuicao: ["", Validators.required]
@@ -45,11 +46,11 @@ export class ExcluirCargosComponent implements OnInit {
     this.cargoService.excluirCargo(this.cargo.id_cargo).subscribe({
       complete: () => {
         this.cargoService.mensagem("Cargo excluído com sucesso!")
-        this.router.navigate([`/cargo`])
+        this.location.back()
       },
       error: () => {
         this.cargoService.mensagem("Erro ao excluir o cargo.")
-        this.router.navigate([`/cargo`])
+        this.location.back()
       },
       next: () => console.log("Cargo excluído.")
     })
