@@ -43,16 +43,16 @@ export class CadastrarMentorComponent implements OnInit {
     this.mentorService.cadastrarMentor(this.mentor).subscribe({
       complete: () => {
         this.cargoService.mensagem("Mentor cadastrado com sucesso")
-        this.mentorService.buscarMentorPeloNome(`${this.mentor.mentor_nome}`).subscribe((res) => {
+        this.mentorService.buscarMentorPeloCpf(`${this.mentor.mentor_cpf}`).subscribe((res) => {
           console.log(res)
           this.idMentorCadastrado = res.id_mentor
           this.mentorCadastrado = true
         })
-        this.location.back()
+        // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
       },
       error: () => {
         this.cargoService.mensagem("Erro ao cadastrar o mentor")
-        this.location.back()
+        // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
       },
       next: () => { console.log("Mentor cadastrado.") }
 
@@ -75,11 +75,13 @@ export class CadastrarMentorComponent implements OnInit {
       // dentro do formData, criamos um atributo que chama foto e atribuímos a ele o conteúdo da variável foto
       formData.append("foto", this.foto)
 
-      const nome: string = this.mentor.mentor_nome + "-" + event.target.files[0].name
+      const cpf: string = this.mentor.mentor_cpf + "-" + event.target.files[0].name
 
-      this.http.post(`http://localhost:8080/escola/envio/${this.idMentorCadastrado}?nome=${nome}`, formData).subscribe({
-        complete: () => console.log("Foto enviada com sucesso.")
+      this.http.post(`http://localhost:8080/empresa/envio/${this.idMentorCadastrado}?cpf=${cpf}`, formData).subscribe({
+        complete: () => console.log("Foto enviada com sucesso."),
       })
+      this.cargoService.mensagem("Imagem anexada ao(à) mentor(a)")
+      this.location.back();
     }
   }
 

@@ -1,3 +1,5 @@
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClient } from '@angular/common/http';
 import { Mentor } from './../../../models/mentorModel';
 import { MentorService } from './../../../services/mentor.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,8 +15,9 @@ import { Location } from '@angular/common';
 })
 export class EditarMentorComponent implements OnInit {
 
-
   form!: FormGroup
+
+  closeResult = '';
 
   mentor: Mentor = {
     mentor_nome: "",
@@ -23,9 +26,16 @@ export class EditarMentorComponent implements OnInit {
     mentor_foto: ""
   }
 
+  foto !: any
+
   id_cargo: any
 
-  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private fb: FormBuilder, private location: Location, private mentorService: MentorService) {
+  showDiv = {
+    opcaonao: false,
+    atualizar: true
+  }
+
+  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private fb: FormBuilder, private location: Location, private mentorService: MentorService, private http: HttpClient, private modalService: NgbModal) {
     this.mentor.id_mentor = this.route.snapshot.paramMap.get('id_mentor')!
     this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
 
@@ -52,11 +62,11 @@ export class EditarMentorComponent implements OnInit {
       this.mentorService.editarMentor(this.mentor, this.mentor.id_mentor, this.id_cargo).subscribe({
         complete: () => {
           this.funcService.mensagem("Mentor(a) editado(a) com sucesso!")
-          this.location.back();
+          // this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar mentor(a).")
-          this.location.back();
+          // this.location.back();
         },
         next: () => console.log("Mentor(a) editado(a).")
       })
@@ -64,16 +74,74 @@ export class EditarMentorComponent implements OnInit {
       this.mentorService.editarMentorSemCargo(this.mentor, this.mentor.id_mentor).subscribe({
         complete: () => {
           this.funcService.mensagem("Mentor(a) editado(a) com sucesso!")
-          this.location.back();
+          // this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar mentor(a).")
-          this.location.back();
+          // this.location.back();
         },
         next: () => console.log("Mentor(a) editado(a).")
       })
     }
   }
+
+  importarImg(event: any) {
+
+    // Se o usuário selecionar um arquivo e
+    // Se estiver na posição 0 (o multifiles permite que sejam importados diversos arquivos, que serão registrados em array)
+    if (event.target.files && event.target.files[0]) {
+      this.foto = event.target.files[0]
+
+      console.log(this.foto)
+
+      // variável que aramazena os seguintes atributos -- nome do atributo: , valor do atributo:
+      // é como se estivessemos criando um obj
+      const formData = new FormData
+
+      // dentro do formData, criamos um atributo que chama foto e atribuímos a ele o conteúdo da variável foto
+      formData.append("foto", this.foto)
+
+      const cpf: string = this.mentor.mentor_cpf + "-" + event.target.files[0].name
+
+      this.http.post(`http://localhost:8080/empresa/envio/${this.mentor.id_mentor}?cpf=${cpf}`, formData).subscribe({
+        complete: () => console.log("Foto enviada com sucesso."),
+      })
+      this.funcService.mensagem("Imagem anexada ao(à) mentor(a)")
+      // window.location.reload()
+    }
+  }
+
+  atualizarPg() {
+    window.location.reload();
+  }
+
+  voltar() {
+    this.location.back()
+  }
+
+  // Função para abrir modal
+  open(content: any) {
+    //formato do modal
+    this.modalService.open(content, { size: 'md' }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
+  } //open
+
+  // Função para fechar modal
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  } //getDismissReason
 
 
 }

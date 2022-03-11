@@ -25,6 +25,11 @@
         <input type="text" matInput [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"
           formControlName="mentor_cargo" readonly>
       </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Foto</mat-label>
+        <input type="text" matInput [(ngModel)]="mentor.mentor_foto" name="mentor_foto"
+          formControlName="mentor_foto" readonly>
+      </mat-form-field>
       <div class="botoes">
         <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>
       </div>

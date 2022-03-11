@@ -1,3 +1,6 @@
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MentorService } from './../../../services/mentor.service';
 import { Mentor } from './../../../models/mentorModel';
 import { MatPaginator } from '@angular/material/paginator';
@@ -9,6 +12,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./mentores.component.scss']
 })
 export class MentoresComponent implements OnInit {
+
+  closeResult = '';
 
   // Variável para mat-table
   displayedColumns: string[] = [
@@ -26,6 +31,9 @@ export class MentoresComponent implements OnInit {
   // Variável para armazenar os mentores na tabela
   tabelaMentor: any;
 
+  // sort
+  @ViewChild(MatSort) sort!: MatSort;
+
   // paginator
   @ViewChild("paginatorMentor") paginatorFunc!: MatPaginator;
   // estabelecendo breakpoint do paginator
@@ -33,7 +41,7 @@ export class MentoresComponent implements OnInit {
 
   mentores: any = []
 
-  constructor(private mentorService: MentorService) { }
+  constructor(private mentorService: MentorService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.mostrarTodosMentores()
@@ -50,6 +58,7 @@ export class MentoresComponent implements OnInit {
           id_mentor: '',
           mentor_nome: '',
           mentor_cpf: '',
+          mentor_foto: '',
           mentor_cargo: '',
           id_cargo: '',
           car_nome: '',
@@ -60,10 +69,11 @@ export class MentoresComponent implements OnInit {
         mentorComCargo.mentor_nome = mentor[1]
         mentorComCargo.mentor_cargo = mentor[2]
         mentorComCargo.mentor_cpf = mentor[3]
-        if (mentor[4] != null) {
-          mentorComCargo.id_cargo = mentor[4]
-          mentorComCargo.car_nome = mentor[5]
-          mentorComCargo.car_atribuicao = mentor[6]
+        mentorComCargo.mentor_foto = mentor[4]
+        if (mentor[5] != null) {
+          mentorComCargo.id_cargo = mentor[5]
+          mentorComCargo.car_nome = mentor[6]
+          mentorComCargo.car_atribuicao = mentor[7]
         } else {
           mentorComCargo.id_cargo = "0"
           mentorComCargo.car_nome = "----"
@@ -71,7 +81,13 @@ export class MentoresComponent implements OnInit {
         }
         this.mentores.push(mentorComCargo)
         this.tabelaMentor = this.mentores
+
+        console.log(resultado)
       });
+
+      this.tabelaMentor = new MatTableDataSource(this.mentores);
+      this.tabelaMentor.paginator = this.paginatorFunc;
+      this.tabelaMentor.sort = this.sort;
     })
   }
 
@@ -83,5 +99,29 @@ export class MentoresComponent implements OnInit {
       this.tabelaMentor.paginator.firstPage();
     }
   }
+
+  // Função para abrir modal
+  open(content: any) {
+    //formato do modal
+    this.modalService.open(content, { size: 'md' }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      }
+    );
+  } //open
+
+  // Função para fechar modal
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  } //getDismissReason
 
 }

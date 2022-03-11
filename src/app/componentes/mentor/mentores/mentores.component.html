@@ -32,7 +32,16 @@
     <!-- Coluna Foto do Mentor -->
     <ng-container matColumnDef="foto">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Foto </th>
-      <td mat-cell *matCellDef="let mentor"> {{mentor.mentor_foto}} </td>
+      <!-- <td mat-cell *matCellDef="let mentor"></td> -->
+      <td mat-cell *matCellDef="let mentor"> <button mat-button (click)="open(modalImg)">
+          <mat-icon>image</mat-icon>
+
+          <!-- Modal de confirmação para excluir turma -->
+          <ng-template #modalImg let-modal id="foto-modal">
+            <img src="../../../../{{mentor.mentor_foto}}" alt="">
+          </ng-template>
+
+        </button></td>
     </ng-container>
     <!-- Coluna ID do cargo -->
     <ng-container matColumnDef="id_mentorado">
@@ -56,8 +65,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>
       <td mat-cell *matCellDef="let mentor">
         <button class="bot-card" routerLink="editar/{{mentor.id_mentor}}/{{mentor.id_cargo}}">Editar</button>
-        <button class="bot-card" type="button"
-          routerLink="excluir/{{mentor.id_mentor}}">Excluir</button>
+        <button class="bot-card" type="button" routerLink="excluir/{{mentor.id_mentor}}">Excluir</button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

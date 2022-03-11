@@ -29,6 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { HomeComponent } from './template/home/home.component';
 import { HeaderComponent } from './template/header/header.component';
@@ -115,7 +116,8 @@ import { CpfPipe } from './pipes/cpf.pipes';
     MatSelectModule,
     MatExpansionModule,
     NgxCurrencyModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDividerModule
   ],
   providers: [{ provide: MatPaginatorIntl, useValue: traduzirLegendas() },
               {provide: LOCALE_ID, useValue: "pt-BR"},

@@ -23,6 +23,11 @@
         <button mat-raised-button color="accent" (click)="cadastrarMentor()" [disabled]="!form.valid">Cadastrar</button>
         <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
       </div>
+      <hr>
+      <div class="mb-3">
+        <label class="form-label">Foto do Mentor</label>
+        <input type="file" class="form-control" [disabled]="!mentorCadastrado" (change)="importarImg($event)">
+      </div>
     </form>
   </div>
 </div>

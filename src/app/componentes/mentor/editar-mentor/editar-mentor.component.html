@@ -1,7 +1,9 @@
 <app-header></app-header>
 <div class="card mat-elevation-z4 card-form">
   <div class="card-body">
-    <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+    <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página" [ngStyle]="{'color':'white'}">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
     <div class="titulo">
       <h1>Editor de Mentores</h1>
     </div>
@@ -9,22 +11,48 @@
     <form class="example-form" [formGroup]="form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Nome</mat-label>
-        <input type="text" matInput [(ngModel)]="mentor.mentor_nome" name="mentor_nome"
-          formControlName="mentor_nome">
+        <input type="text" matInput [(ngModel)]="mentor.mentor_nome" name="mentor_nome" formControlName="mentor_nome">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>CPF</mat-label>
-        <input type="text" matInput [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf"
-          formControlName="mentor_cpf">
+        <input type="text" matInput [(ngModel)]="mentor.mentor_cpf" name="mentor_cpf" formControlName="mentor_cpf">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Cargo</mat-label>
         <input type="text" matInput [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"
           formControlName="mentor_cargo">
       </mat-form-field>
-      <div class="botoes">
-        <!-- <button class="btn btn-warning mx-3" (click)="trocarCargo()">Trocar Cargo</button> -->
-        <button mat-raised-button color="accent" [disabled]="!form.valid" (click)="editarMentor()">Atualizar</button>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Foto anterior</mat-label>
+        <input type="text" matInput [(ngModel)]="mentor.mentor_foto" name="mentor_foto" formControlName="mentor_foto"
+          readonly>
+      </mat-form-field>
+      <mat-divider style="margin-left: 13%;"></mat-divider>
+      <div class="div-escondida" *ngIf="showDiv.atualizar">
+        <h3>Deseja alterar a imagem?</h3>
+        <button class="bot-card mx-3" (click)="open(modalEdicao); editarMentor()">Sim</button>
+        <button class="bot-card" type="button"
+          (click)="showDiv.opcaonao = !showDiv.opcaonao;showDiv.atualizar = false">Não</button>
+      </div>
+
+      <!-- Modal de confirmação para editar -->
+      <ng-template #modalEdicao let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="excluir">Alteração de Foto</h4>
+          <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="m-3">
+          <input type="file" class="form-control" (change)="importarImg($event)">
+          <div style="margin: 0 auto; text-align:center" class="mt-3">
+            <button mat-raised-button (click)="modal.dismiss('Cross click'); atualizarPg(); showDiv.opcaonao = !showDiv.opcaonao;showDiv.atualizar = false" color="primary" style="color: white">Confirmar alteração</button>
+          </div>
+        </div>
+      </ng-template>
+      <div class="div-escondida">
+        <button mat-raised-button color="accent" [disabled]="!form.valid" (click)="editarMentor(); voltar()"
+          *ngIf="showDiv.opcaonao">Atualizar</button>
       </div>
     </form>
   </div>

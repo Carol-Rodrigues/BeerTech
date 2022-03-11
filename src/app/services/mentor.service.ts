@@ -37,11 +37,6 @@ export class MentorService {
     return this.http.post<Mentor>(URL, mentor)
   }
 
-  buscarMentorPeloNome(mentor_nome:String):Observable<Mentor>{
-    const url = `${this.baseUrl}/mentor-nome/${mentor_nome}`
-    return this.http.get<Mentor>(url)
-  }
-
   excluirMentor(id_mentor: string): Observable<void> {
     const URL = `${this.baseUrl}/mentor/${id_mentor}` //tem que ser igual ao DeleteMapping do Eclipse
     return this.http.delete<void>(URL)
@@ -61,5 +56,10 @@ export class MentorService {
   editarMentorSemCargo(mentor: Mentor, id_mentor:String): Observable<Mentor> {
     const URL = `${this.baseUrl}/mentorSemCargo/${id_mentor}` //tem que ser igual ao PutMapping do Eclipse
     return this.http.put<Mentor>(URL, mentor)
+  }
+
+  buscarMentorPeloCpf(mentor_cpf:String):Observable<Mentor>{
+    const url = `${this.baseUrl}/mentor-cpf/${mentor_cpf}`
+    return this.http.get<Mentor>(url)
   }
 }
