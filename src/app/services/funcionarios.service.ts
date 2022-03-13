@@ -55,15 +55,18 @@ export class FuncionariosService {
   }
 
   atribuirCargo(cargo: Cargo, id_funcionario:String):Observable<Funcionario>{
-    //http://localhost:8080/escola/aluno/inserirTurma/8
     const url = `${this.baseUrl}/funcionario/inserirCargo/${id_funcionario}`
     return this.http.put<Funcionario>(url,cargo)
   }
 
   deixarFuncSemCargo(func: Funcionario, id_funcionario:String):Observable<Funcionario>{
-    //http://localhost:8080/escola/aluno/deixarSemTurma/4
     const url = `${this.baseUrl}/funcionario/deixarSemCargo/${id_funcionario}`
     return this.http.put<Funcionario>(url,func)
+  }
+
+  buscarFuncPeloCpf(func_cpf:String):Observable<Funcionario>{
+    const url = `${this.baseUrl}/funcionario-cpf/${func_cpf}`
+    return this.http.get<Funcionario>(url)
   }
 
   // Método referente ao MatSnackBar do Material, para mostrar mensagem quando as funções de CRUD funcionarem
@@ -75,6 +78,5 @@ export class FuncionariosService {
       panelClass: ['cor-mensagem']
     })
   }//
-
 
 }

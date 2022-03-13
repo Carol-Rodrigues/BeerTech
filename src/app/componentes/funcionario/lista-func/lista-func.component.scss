@@ -112,3 +112,11 @@ button.bot-card:hover {
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
+
+.picture {
+  border-radius: 50%;
+  width: 95px;
+  height: 95px;
+  background-size: cover;
+  background-position: 50% 5%;
+}

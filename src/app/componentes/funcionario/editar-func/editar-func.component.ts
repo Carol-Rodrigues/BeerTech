@@ -17,6 +17,8 @@ export class EditarFuncComponent implements OnInit {
   func: Funcionario = {
     func_nome: "",
     func_cidade: "",
+    func_cpf: "",
+    func_foto: ""
   }
 
   id_cargo: any = "";
@@ -27,7 +29,8 @@ export class EditarFuncComponent implements OnInit {
 
     this.form = this.fb.group({
       func_nome: ["", Validators.required],
-      func_cidade: ["", Validators.required]
+      func_cidade: ["", Validators.required],
+      func_cpf: ["", Validators.required]
     })
   }
 

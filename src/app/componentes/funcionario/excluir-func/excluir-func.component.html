@@ -16,9 +16,18 @@
           formControlName="func_nome" readonly>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input type="text" matInput placeholder="XXX.XXX.XXX-XX" [(ngModel)]="func.func_cpf" name="func_cpf" formControlName="func_cpf" readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Cidade</mat-label>
         <input type="text" matInput placeholder="Cidade" [(ngModel)]="func.func_cidade" name="func_cidade"
           formControlName="func_cidade" readonly>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Foto</mat-label>
+        <input type="text" matInput [(ngModel)]="func.func_foto" name="func_foto" formControlName="func_foto"
+          readonly>
       </mat-form-field>
       <div class="botoes">
         <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>

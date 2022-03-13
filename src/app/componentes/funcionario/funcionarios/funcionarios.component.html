@@ -1,9 +1,11 @@
 <app-header></app-header>
 
-<div style="text-align: center;" class="mt-4">
-  <h1>Lista completa de Funcionários(as)</h1>
+<img src="../../../../assets/funcionarios2.png" alt="" id="imagem" style="opacity: 65%;">
+<div style="text-align: center;" class="mt-5">
+  <h1><strong>Funcionários(as)</strong></h1>
+  <h2 style="color: #8d6e63;">--- Atribuição de Cargos ---</h2>
 </div>
-<mat-form-field appearance="standard">
+<mat-form-field appearance="standard" class="busca">
   <mat-label>Buscar</mat-label>
   <input matInput (keyup)="filtrar($event)" placeholder="Ex. João da Silva" #input>
 </mat-form-field>
@@ -18,6 +20,11 @@
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
       <td mat-cell *matCellDef="let func"> {{func.func_nome}} </td>
+    </ng-container>
+    <!-- Coluna CPF -->
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF </th>
+      <td mat-cell *matCellDef="let func"> {{func.func_cpf | cpf}} </td>
     </ng-container>
     <!-- Coluna cidade -->
     <ng-container matColumnDef="cidade">
@@ -36,24 +43,26 @@
     </ng-container>
     <!-- Coluna atribuir cargo -->
     <ng-container matColumnDef="atribuir">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Atribuir Cargo </span></th>
-      <td mat-cell *matCellDef="let func"> <button id="botao-atribuir"
-          routerLink="/funcionario/atribuirCargo/{{func.id_funcionario}}/{{func.id_cargo}}">Atribuir Cargos</button>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-4">Ações</span></th>
+      <td mat-cell *matCellDef="let func">
+        <button mat-button routerLink="/atribuirCargo/{{func.id_funcionario}}/{{func.id_cargo}}" title="Atribuir Cargo" color="accent"><mat-icon >work</mat-icon></button>
+        <button mat-button routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}" title="Editar"><mat-icon >edit</mat-icon></button>
+        <button mat-button routerLink="/funcionario/excluir/{{func.id_funcionario}}" title="Excluir" color="warn"><mat-icon >delete</mat-icon></button>
       </td>
     </ng-container>
     <!-- Coluna ações -->
-    <ng-container matColumnDef="acoes">
+    <!-- <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>
       <td mat-cell *matCellDef="let func">
         <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}">Editar</button>
         <button class="bot-card" type="button"
           routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
       </td>
-    </ng-container>
+    </ng-container> -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <!--Paginação da tabela, utilizando o mat-paginator-->
-  <mat-paginator #paginatorFunc [pageSizeOptions]="[7]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #paginatorFunc [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
 </section>
 <app-footer></app-footer>

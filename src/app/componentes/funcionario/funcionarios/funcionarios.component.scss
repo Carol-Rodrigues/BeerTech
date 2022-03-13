@@ -8,7 +8,7 @@
 #botao-atribuir:before {
   content: "» ";
   opacity: 0;
-  margin-left: -15px;
+  margin-left: -1px;
   transition-duration: 0.2s;
 }
 
@@ -60,4 +60,40 @@ button.bot-card:hover::before {
 
 button.bot-card:hover {
   color: #fff;
+}
+
+th{
+  background-color: #f57c00;
+  color: white
+}
+
+td {
+  text-align: left;
+}
+
+.mat-column-id {
+  font-weight: 900;
+}
+
+.mat-column-id_cargo {
+  width: 14%;
+}
+
+.mat-column-cargo {
+  width: 20%;
+}
+
+.table-container {
+  width: 80%;
+}
+
+.busca {
+  margin-left: 10%;
+}
+
+#imagem {
+  width: 230px;
+  position: absolute;
+  left: 75.5%;
+  top: 10.1%
 }

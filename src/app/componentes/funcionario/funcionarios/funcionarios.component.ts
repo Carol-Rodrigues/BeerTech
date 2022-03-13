@@ -20,10 +20,11 @@ export class FuncionariosComponent implements OnInit {
     'id',
     'nome',
     'cidade',
+    'cpf',
     'id_cargo',
     'cargo',
     'atribuir',
-    'acoes'
+    // 'acoes'
   ];
 
   // Variável para armazenar os func na tabela
@@ -73,6 +74,8 @@ export class FuncionariosComponent implements OnInit {
           id_funcionario: "",
           func_nome: "",
           func_cidade: "",
+          func_cpf: "",
+          func_foto: "",
           id_cargo: "",
           car_nome: "",
           car_atribuicao: ""
@@ -81,10 +84,12 @@ export class FuncionariosComponent implements OnInit {
         funcsECargos.id_funcionario = func[0]
         funcsECargos.func_nome = func[1]
         funcsECargos.func_cidade = func[2]
-        if (func[3] != null) {
-          funcsECargos.id_cargo = func[3]
-          funcsECargos.car_nome = func[4]
-          funcsECargos.car_atribuicao = func[5]
+        funcsECargos.func_cpf = func[3]
+        funcsECargos.func_foto = func[4]
+        if (func[5] != null) {
+          funcsECargos.id_cargo = func[5]
+          funcsECargos.car_nome = func[6]
+          funcsECargos.car_atribuicao = func[7]
         } else {
           funcsECargos.id_cargo = "0"
           funcsECargos.car_nome = "----"

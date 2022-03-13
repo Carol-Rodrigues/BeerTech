@@ -20,7 +20,9 @@ export class ExcluirFuncComponent implements OnInit {
 
   func: Funcionario = {
     func_nome: "",
-    func_cidade: ""
+    func_cidade: "",
+    func_cpf: "",
+    func_foto: ""
   }
 
   id_cargo: String = ""
@@ -32,7 +34,9 @@ export class ExcluirFuncComponent implements OnInit {
 
     this.form = this.fb.group({
       func_nome: ["", Validators.required],
-      func_cidade: ["", Validators.required]
+      func_cidade: ["", Validators.required],
+      func_cpf: ["", Validators.required],
+      func_foto:[""]
     })
   }
 
@@ -45,6 +49,7 @@ export class ExcluirFuncComponent implements OnInit {
     this.funcService.buscarUmFunc(this.func.id_funcionario).subscribe((resultado)=>{
       // console.log(resultado);
       this.func = resultado;
+      this.func.func_foto = resultado.func_foto.slice(11,100)
     })
   }
 

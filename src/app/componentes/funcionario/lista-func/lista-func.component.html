@@ -2,6 +2,10 @@
 <div class="row">
   <div class="col-4">
     <div class="card card-foto">
+      <button mat-mini-fab color="primary" routerLink="/cargo" title="Voltar página" [ngStyle]="{'color':'white'}"
+        style="margin-left: 99%; margin-top: -6%;">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
       <!-- <div>
         <button mat-stroked-button class="btn botao-add" routerLink="cargo/{{id_cargo}}/funcionario/cadastro">Adicionar Funcionários</button>
       </div> -->
@@ -11,8 +15,7 @@
     <div class="row m-5">
       <div class="col-4" *ngFor="let func of func">
         <div class="card-pessoa mb-4">
-          <div class="picture">
-            <img src="../../../assets/user.png" alt="" style="width: 100px;">
+          <div class="picture" style="background-image: url('../../../{{func.func_foto}}');">
           </div>
           <div class="name">
             <p>{{func.func_nome}}</p>
@@ -22,10 +25,12 @@
           </div>
           <div class="buttons">
             <div class="button1">
-              <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{id_cargo}}">Editar</button>
+              <button class="bot-card"
+                routerLink="/funcionario/editar/{{func.id_funcionario}}/{{id_cargo}}">Editar</button>
             </div>
             <div class="button2">
-              <button class="bot-card" type="button" routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
+              <button class="bot-card" type="button"
+                routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
             </div>
           </div>
         </div>

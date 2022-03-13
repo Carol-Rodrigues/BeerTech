@@ -41,7 +41,7 @@ const routes: Routes = [
   {path: "funcionario/excluir/:id_funcionario", component: ExcluirFuncComponent},
   {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent}, //ListaAlunosDaTurma
   {path: "funcionarios", component: FuncionariosComponent}, //alunosComTurma
-  {path: "funcionario/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
+  {path: "funcionarios/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
 
   // Mentor
   {path: "mentores", component: MentoresComponent}, //listaProfessor

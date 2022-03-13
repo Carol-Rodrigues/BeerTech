@@ -12,12 +12,21 @@
         <input type="text" matInput placeholder="Nome" [(ngModel)]="func.func_nome" name="func_nome" formControlName="func_nome">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input type="text" matInput placeholder="XXX.XXX.XXX-XX" [(ngModel)]="func.func_cpf" name="func_cpf" formControlName="func_cpf">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Cidade</mat-label>
         <input type="text" matInput placeholder="Cidade" [(ngModel)]="func.func_cidade" name="func_cidade" formControlName="func_cidade">
       </mat-form-field>
       <div class="botoes">
         <button mat-raised-button color="accent" (click)="cadastrarFunc()" [disabled]="!form.valid">Cadastrar</button>
         <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
+      </div>
+      <hr>
+      <div class="mb-3">
+        <label class="form-label">Foto do(a) Funcionário(a)</label>
+        <input type="file" class="form-control" [disabled]="!funcCadastrado" (change)="importarImg($event)">
       </div>
     </form>
   </div>

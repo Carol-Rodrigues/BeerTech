@@ -22,7 +22,9 @@ export class AtribuirCargoComponent implements OnInit {
 
   funcionario: Funcionario = {
     func_nome: '',
-    func_cidade: ''
+    func_cidade: '',
+    func_cpf: "",
+    func_foto: ""
   }
 
   closeResult = '';

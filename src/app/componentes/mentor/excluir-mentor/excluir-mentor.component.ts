@@ -49,6 +49,7 @@ export class ExcluirMentorComponent implements OnInit {
     this.mentorService.buscarUmMentor(this.mentor.id_mentor).subscribe((resultado)=>{
       // console.log(resultado);
       this.mentor = resultado;
+      this.mentor.mentor_foto = resultado.mentor_foto.slice(11,100)
     })
   }
 
