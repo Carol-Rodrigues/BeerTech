@@ -62,14 +62,14 @@ export class ExcluirMentorComponent implements OnInit {
   excluirMentor() {
     this.mentorService.excluirMentor(this.mentor.id_mentor).subscribe({
       complete: () => {
-        this.funcService.mensagem("Mentor(a) excluído(a) com sucesso!")
+        this.funcService.mensagem("Mentorx excluídx com sucesso!")
         this.location.back();
       },
       error: () => {
-        this.funcService.mensagem("Erro ao excluir mentor(a).")
+        this.funcService.mensagem("Erro ao excluir mentorx.")
         this.location.back();
       },
-      next: () => console.log("Mentor(a) excluído(a)")
+      next: () => console.log("Mentorx excluídx")
     })
   }
 

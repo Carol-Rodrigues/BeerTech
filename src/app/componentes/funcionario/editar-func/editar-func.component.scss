@@ -1,3 +1,50 @@
 .card-form {
   margin-top: 4%
 }
+
+button.bot-card {
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  border: 1px solid #f57c00;
+  border-radius: 0.4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9em;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: ease-out 0.5s;
+  z-index: 1;
+  color: #f57c00;
+  margin-right: 5px;
+}
+
+button.bot-card::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #f57c00;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button.bot-card:hover::before {
+  width: 135%;
+}
+
+button.bot-card:hover {
+  color: #fff;
+}
+
+.div-escondida {
+  text-align: center;
+  margin-left: 13%;
+  margin-top: 2%
+}

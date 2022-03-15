@@ -5,7 +5,7 @@
       <mat-icon>keyboard_backspace</mat-icon>
     </button>
     <div class="titulo">
-      <h1>Exclusão de Funcionário(a)</h1>
+      <h1>Exclusão de Funcionárix</h1>
       <h3>#{{func.id_funcionario}} {{func.func_nome}}</h3>
     </div>
 
@@ -33,7 +33,7 @@
         <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>
       </div>
 
-      <!-- Modal de confirmação para excluir turma -->
+      <!-- Modal de confirmação para excluir func -->
       <ng-template #modalExcluir let-modal>
         <div class="modal-header">
           <h4 class="modal-title" id="excluir">Aviso</h4>
@@ -42,7 +42,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Deseja realmente excluir #{{func.id_funcionario}} {{func.func_nome}}?</p>
+          <p>Deseja realmente excluir <strong>#{{func.id_funcionario}} {{func.func_nome}}</strong>?</p>
         </div>
         <div class="modal-footer">
           <button mat-raised-button type="button" (click)="modal.close('Save click')" class="mx-3">Cancelar</button>

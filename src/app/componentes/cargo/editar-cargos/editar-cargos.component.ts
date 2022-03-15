@@ -28,10 +28,10 @@ export class EditarCargosComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargo.id_cargo = this.route.snapshot.paramMap.get('id_cargo')
-    this.mostrarUmaTurma()
+    this.mostrarUmCargo()
   }
 
-  mostrarUmaTurma() {
+  mostrarUmCargo() {
     this.cargoService.mostrarCargo(this.cargo.id_cargo).subscribe((resultado) => {
       this.cargo = resultado;
     })

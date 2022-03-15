@@ -62,14 +62,14 @@ export class ExcluirFuncComponent implements OnInit {
   excluirFunc() {
     this.funcService.excluirFunc(this.func.id_funcionario).subscribe({
       complete: () => {
-        this.funcService.mensagem("Funcionário(a) excluído(a) com sucesso!")
+        this.funcService.mensagem("Funcionárix excluídx com sucesso!")
         this.location.back();
       },
       error: () => {
-        this.funcService.mensagem("Erro ao excluir funcionário(a).")
+        this.funcService.mensagem("Erro ao excluir funcionárix.")
         this.location.back();
       },
-      next: () => console.log("Funcionário(a) excluído(a)")
+      next: () => console.log("Funcionárix excluídx")
     })
   }
 

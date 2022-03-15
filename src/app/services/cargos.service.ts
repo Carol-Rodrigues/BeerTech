@@ -50,7 +50,6 @@ export class CargosService {
   }
 
   buscarCargoDoMentor(id_mentor:String):Observable<Cargo>{
-    //http://localhost:8080/escola/turma/turma-professor/1
     const url = `${this.baseUrl}/cargo/cargo-mentor/${id_mentor}`
     return this.http.get<Cargo>(url)
   }
@@ -62,7 +61,6 @@ export class CargosService {
 
   deixarCargoSemMentor(cargo:Cargo,id_cargo:String, id_mentor:String):Observable<void>{
 
-    //http://localhost:8080/escola/turma/tirarProfessor/3/2
     const url = `${this.baseUrl}/cargo/tirarMentor/${id_cargo}/${id_mentor}`
     return this.http.put<void>(url,cargo);
 

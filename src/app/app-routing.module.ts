@@ -39,13 +39,13 @@ const routes: Routes = [
   {path: "funcionario/cadastrar", component: CadastrarFuncComponent},
   {path: "funcionario/editar/:id_funcionario/:id_cargo", component: EditarFuncComponent},
   {path: "funcionario/excluir/:id_funcionario", component: ExcluirFuncComponent},
-  {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent}, //ListaAlunosDaTurma
-  {path: "funcionarios", component: FuncionariosComponent}, //alunosComTurma
+  {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent},
+  {path: "funcionarios", component: FuncionariosComponent},
   {path: "funcionarios/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
 
   // Mentor
-  {path: "mentores", component: MentoresComponent}, //listaProfessor
-  {path: "mentor/:id_cargo", component: MentoresCargoComponent}, //ProfessorDaTurma
+  {path: "mentores", component: MentoresComponent},
+  {path: "mentor/:id_cargo", component: MentoresCargoComponent},
   {path: "mentor/atribuirCargo/:id_mentor", component: AtribuirCargoMentorComponent},
   {path: "mentores/cadastrar", component: CadastrarMentorComponent},
   {path: "mentores/excluir/:id_mentor", component: ExcluirMentorComponent},

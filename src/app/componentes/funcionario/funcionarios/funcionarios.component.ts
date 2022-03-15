@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FuncionariosService } from '../../../services/funcionarios.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -15,12 +15,15 @@ import { MatSort } from '@angular/material/sort';
 })
 export class FuncionariosComponent implements OnInit {
 
+  closeResult = '';
+
   // Variável para mat-table
   displayedColumns: string[] = [
     'id',
     'nome',
-    'cidade',
     'cpf',
+    'cidade',
+    'foto',
     'id_cargo',
     'cargo',
     'atribuir',
@@ -114,4 +117,28 @@ export class FuncionariosComponent implements OnInit {
       this.tabelaFunc.paginator.firstPage();
     }
   }
+
+    // Função para abrir modal
+    open(content: any) {
+      //formato do modal
+      this.modalService.open(content, { size: 'md' }).result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+    } //open
+
+    // Função para fechar modal
+    private getDismissReason(reason: any): string {
+      if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+      } else {
+        return `with: ${reason}`;
+      }
+    } //getDismissReason
 }

@@ -1,9 +1,11 @@
 <app-header></app-header>
 <div class="card mat-elevation-z4 card-form">
   <div class="card-body">
-    <button mat-mini-fab color="primary" routerLink="/funcionarios" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
+    <button mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página" [ngStyle]="{'color':'white'}">
+      <mat-icon>keyboard_backspace</mat-icon>
+    </button>
     <div class="titulo">
-      <h1>Editor de Funcionários</h1>
+      <h1>Editor de Funcionárixs</h1>
     </div>
 
     <form class="example-form" [formGroup]="form">
@@ -19,9 +21,37 @@
         <mat-label>Cidade</mat-label>
         <input type="text" matInput placeholder="Cidade" [(ngModel)]="func.func_cidade" name="func_cidade" formControlName="func_cidade">
       </mat-form-field>
-      <div class="botoes">
-        <!-- <button class="btn btn-warning mx-3" (click)="trocarCargo()">Trocar Cargo</button> -->
-        <button mat-raised-button color="accent" [disabled]="!form.valid" (click)="editarFunc()">Atualizar</button>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Foto anterior</mat-label>
+        <input type="text" matInput [(ngModel)]="func.func_foto" name="func_foto" formControlName="func_foto"
+          readonly>
+      </mat-form-field>
+      <mat-divider style="margin-left: 13%;"></mat-divider>
+      <div class="div-escondida" *ngIf="showDiv.atualizar">
+        <h3>Deseja alterar a imagem?</h3>
+        <button class="bot-card mx-3" (click)="open(modalEdicao); editarFunc()">Sim</button>
+        <button class="bot-card" type="button"
+          (click)="showDiv.opcaonao = !showDiv.opcaonao;showDiv.atualizar = false">Não</button>
+      </div>
+
+      <!-- Modal de confirmação para editar -->
+      <ng-template #modalEdicao let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="excluir">Alteração de Foto</h4>
+          <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="m-3">
+          <input type="file" class="form-control" (change)="importarImg($event)">
+          <div style="margin: 0 auto; text-align:center" class="mt-3">
+            <button mat-raised-button (click)="modal.dismiss('Cross click'); atualizarPg(); showDiv.opcaonao = !showDiv.opcaonao;showDiv.atualizar = false" color="primary" style="color: white">Confirmar alteração</button>
+          </div>
+        </div>
+      </ng-template>
+      <div class="div-escondida">
+        <button mat-raised-button color="accent" [disabled]="!form.valid" (click)="editarFunc(); voltar()"
+          *ngIf="showDiv.opcaonao">Atualizar</button>
       </div>
     </form>
   </div>

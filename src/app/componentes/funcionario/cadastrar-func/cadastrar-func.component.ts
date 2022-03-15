@@ -47,7 +47,7 @@ export class CadastrarFuncComponent implements OnInit {
   cadastrarFunc() {
     this.funcService.cadastrarFunc(this.func).subscribe({
       complete: () => {
-        this.funcService.mensagem("Funcionário cadastrado com sucesso!")
+        this.funcService.mensagem("Funcionárix cadastradx com sucesso!")
         // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
 
         this.funcService.buscarFuncPeloCpf(`${this.func.func_cpf}`).subscribe((res) => {
@@ -57,10 +57,10 @@ export class CadastrarFuncComponent implements OnInit {
         })
       },
       error: () => {
-        this.funcService.mensagem("Não foi possível cadastrar o funcionário.")
+        this.funcService.mensagem("Não foi possível cadastrar.")
         // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
       },
-      next: () => console.log("Funcionario cadastrado")
+      next: () => console.log("Funcionarix cadastradx")
     })
   }
 
@@ -70,7 +70,7 @@ export class CadastrarFuncComponent implements OnInit {
     })
   }
 
-  escolherTurma(){
+  escolherCargo(){
     console.log(this.cargoEscolhido)
   }
 
@@ -95,7 +95,7 @@ export class CadastrarFuncComponent implements OnInit {
       this.http.post(`http://localhost:8080/empresa/enviar/${this.idFuncCadastrado}?cpf=${cpf}`, formData).subscribe({
         complete: () => console.log("Foto enviada com sucesso."),
       })
-      this.cargoService.mensagem("Imagem anexada ao(à) funcionário(a)")
+      this.cargoService.mensagem("Imagem anexada ax funcionárix")
       this.location.back();
     }
   }

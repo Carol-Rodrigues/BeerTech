@@ -38,7 +38,7 @@
       <td mat-cell *matCellDef="let mentor"> <button mat-button (click)="open(modalImg)">
           <mat-icon>image</mat-icon>
 
-          <!-- Modal de confirmação para excluir turma -->
+          <!-- Modal de foto -->
           <ng-template #modalImg let-modal id="foto-modal">
             <img src="../../../../{{mentor.mentor_foto}}" alt="">
           </ng-template>

@@ -61,26 +61,26 @@ export class EditarMentorComponent implements OnInit {
     if (this.id_cargo != 0) {
       this.mentorService.editarMentor(this.mentor, this.mentor.id_mentor, this.id_cargo).subscribe({
         complete: () => {
-          this.funcService.mensagem("Mentor(a) editado(a) com sucesso!")
+          this.funcService.mensagem("Mentorx editadx com sucesso!")
           // this.location.back();
         },
         error: () => {
-          this.funcService.mensagem("Erro ao editar mentor(a).")
+          this.funcService.mensagem("Erro ao editar mentorx.")
           // this.location.back();
         },
-        next: () => console.log("Mentor(a) editado(a).")
+        next: () => console.log("Mentorx editadx.")
       })
     } else {
       this.mentorService.editarMentorSemCargo(this.mentor, this.mentor.id_mentor).subscribe({
         complete: () => {
-          this.funcService.mensagem("Mentor(a) editado(a) com sucesso!")
+          this.funcService.mensagem("Mentorx editadx com sucesso!")
           // this.location.back();
         },
         error: () => {
-          this.funcService.mensagem("Erro ao editar mentor(a).")
+          this.funcService.mensagem("Erro ao editar mentorx.")
           // this.location.back();
         },
-        next: () => console.log("Mentor(a) editado(a).")
+        next: () => console.log("Mentorx editadx.")
       })
     }
   }
@@ -106,7 +106,7 @@ export class EditarMentorComponent implements OnInit {
       this.http.post(`http://localhost:8080/empresa/envio/${this.mentor.id_mentor}?cpf=${cpf}`, formData).subscribe({
         complete: () => console.log("Foto enviada com sucesso."),
       })
-      this.funcService.mensagem("Imagem anexada ao(à) mentor(a)")
+      this.funcService.mensagem("Imagem anexada ax mentorx")
       // window.location.reload()
     }
   }

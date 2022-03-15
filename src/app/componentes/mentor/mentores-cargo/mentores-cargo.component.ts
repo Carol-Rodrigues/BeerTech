@@ -64,7 +64,7 @@ export class MentoresCargoComponent implements OnInit {
     this.mentorService.buscarMentorCargo(this.id_cargo).subscribe((resultado) => {
 
       if (resultado == undefined) {
-        this.cargoService.mensagem("Para esse cargo não há mentor definido.")
+        this.cargoService.mensagem("Para esse cargo não há mentorx definidx.")
         this.mentorCadastrado = false
       } else {
         this.mentor = resultado
@@ -92,25 +92,25 @@ export class MentoresCargoComponent implements OnInit {
 
     this.cargoService.atribuirMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
-        this.cargoService.mensagem("Mentor atribuído com sucesso.")
+        this.cargoService.mensagem("Mentorx atribuídx com sucesso.")
         this.location.back()
       },
       error: () => {
-        this.cargoService.mensagem("Erro ao atribuir mentor.")
+        this.cargoService.mensagem("Erro ao atribuir mentorx.")
         this.location.back()
       },
-      next: () => console.log("Mentor atribuído")
+      next: () => console.log("Mentorx atribuídx")
     })
   }
 
   deixarCargoSemMentor() {
     this.cargoService.deixarCargoSemMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
       complete: () => {
-        this.cargoService.mensagem("Mentor desvinculado com sucesso.")
+        this.cargoService.mensagem("Mentorx desvinculadx com sucesso.")
         this.location.back()
       },
       error: () => {
-        this.cargoService.mensagem("Erro: o mentor não foi retirado do cargo.")
+        this.cargoService.mensagem("Erro: mentorx não foi retiradx do cargo.")
         this.location.back()
       }
     })

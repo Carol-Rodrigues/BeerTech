@@ -86,3 +86,22 @@ h1 {
   text-align: center;
   margin-left: 20%
 }
+
+button#card-alteracao {
+  background: none;
+  text-decoration: inherit;
+  font-family: system-ui;
+  // font-size: 1rem;
+  // padding: 1rem 2rem;
+  cursor: default
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 2.5px;
+}
+
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, gold, orange);
+}

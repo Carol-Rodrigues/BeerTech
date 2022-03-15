@@ -34,7 +34,7 @@
         <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>
       </div>
 
-      <!-- Modal de confirmação para excluir turma -->
+      <!-- Modal de confirmação para excluir mentor -->
       <ng-template #modalExcluir let-modal>
         <div class="modal-header">
           <h4 class="modal-title" id="excluir">Aviso</h4>
@@ -43,7 +43,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Deseja realmente excluir #{{mentor.id_mentor}} {{mentor.mentor_nome}}?</p>
+          <p>Deseja realmente excluir <strong>#{{mentor.id_mentor}} {{mentor.mentor_nome}}</strong>?</p>
         </div>
         <div class="modal-footer">
           <button mat-raised-button type="button" (click)="modal.close('Save click')" class="mx-3">Cancelar</button>

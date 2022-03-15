@@ -88,10 +88,10 @@ export class AtribuirCargoComponent implements OnInit {
         this.location.back()
       },
       error: () => {
-        this.cargoService.mensagem("Erro: o cargo não foi retirado do(a) funcionário(a).")
+        this.cargoService.mensagem("Erro: o cargo não foi retirado dx funcionárix.")
         this.location.back()
       },
-      next: () => { console.log("Funcionario editado com sucesso") }
+      next: () => { console.log("Cargo desvinculado.") }
 
     });
 

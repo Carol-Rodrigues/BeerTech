@@ -73,7 +73,7 @@ button.bot-card {
   color: #f57c00;
 }
 
-button.bot-card::before {
+button.bot-card:enabled:before {
   content: "";
   width: 0;
   height: 300%;
@@ -93,6 +93,12 @@ button.bot-card:hover::before {
 
 button.bot-card:hover {
   color: #fff;
+}
+
+button.bot-card:disabled {
+  background-color: lightgray;
+  color: gray;
+  border: gray;
 }
 
 select {

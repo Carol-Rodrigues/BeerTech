@@ -42,7 +42,7 @@ export class CadastrarMentorComponent implements OnInit {
   cadastrarMentor() {
     this.mentorService.cadastrarMentor(this.mentor).subscribe({
       complete: () => {
-        this.cargoService.mensagem("Mentor cadastrado com sucesso")
+        this.cargoService.mensagem("Mentorx cadastradx com sucesso")
         this.mentorService.buscarMentorPeloCpf(`${this.mentor.mentor_cpf}`).subscribe((res) => {
           console.log(res)
           this.idMentorCadastrado = res.id_mentor
@@ -51,10 +51,10 @@ export class CadastrarMentorComponent implements OnInit {
         // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
       },
       error: () => {
-        this.cargoService.mensagem("Erro ao cadastrar o mentor")
+        this.cargoService.mensagem("Erro ao cadastrar mentorx")
         // this.location.back() Não redireciona pq precisamos cadastrar foto ainda
       },
-      next: () => { console.log("Mentor cadastrado.") }
+      next: () => { console.log("Mentorx cadastradx.") }
 
     });
   }
@@ -80,7 +80,7 @@ export class CadastrarMentorComponent implements OnInit {
       this.http.post(`http://localhost:8080/empresa/envio/${this.idMentorCadastrado}?cpf=${cpf}`, formData).subscribe({
         complete: () => console.log("Foto enviada com sucesso."),
       })
-      this.cargoService.mensagem("Imagem anexada ao(à) mentor(a)")
+      this.cargoService.mensagem("Imagem anexada ax mentorx")
       this.location.back();
     }
   }

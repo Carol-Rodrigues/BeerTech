@@ -35,92 +35,94 @@
       <div class="card">
         <div class="card-body">
           <div class="titulo">
-            <h1>Mentor(a)</h1>
+            <h1>Mentorx Designadx</h1>
           </div>
           <form class="mentor-form">
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>ID do(a) Mentor(a)</mat-label>
+              <mat-label>ID dx Mentorx</mat-label>
               <input class="mentor-input" type="text" matInput placeholder="#ID" [(ngModel)]="mentor.id_mentor"
                 name="id_mentor" readonly>
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Nome do(a) Mentor(a)</mat-label>
+              <mat-label>Nome dx Mentorx</mat-label>
               <input class="mentor-input" type="text" matInput placeholder="Mentor" [(ngModel)]="mentor.mentor_nome"
                 name="mentor_nome" readonly>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
+            <!-- <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>CPF do(a) Mentor(a)</mat-label>
               <input class="mentor-input" type="text" matInput placeholder="Mentor" [(ngModel)]="mentor.mentor_cpf"
                 name="mentor_cpf" readonly>
-            </mat-form-field>
+            </mat-form-field> -->
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Cargo do(a) Mentor(a)</mat-label>
+              <mat-label>Cargo dx Mentorx</mat-label>
               <input type="text" matInput placeholder="Cargo" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"
                 readonly>
             </mat-form-field>
           </form>
           <hr>
-          <div class="card" id="card-alteracao">
-            <div class="titulo mt-3">
-              <h1>Atualizar Mentor(a)</h1>
-            </div>
-            <div class="card-body">
-              <div class="buttons">
-                <div class="button1 mx-2">
-                  <button class="bot-card" (click)="open(modalAlterar)">Alterar</button>
+          <div style="margin: 0 auto; text-align: center;">
+            <button id="card-alteracao" class="border-gradient border-gradient-purple">
+              <div class="titulo mt-3" style="color: darkorange;">
+                <h2>Atualizar Mentorx</h2>
+              </div>
+              <div class="card-body">
+                <div class="buttons">
+                  <div class="button1 mx-2">
+                    <button class="bot-card" (click)="open(modalAlterar)">Alterar</button>
 
-                  <!-- Modal de confirmação para alterar mentor -->
-                  <ng-template #modalAlterar let-modal>
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="excluir">Escolha o(a) Mentor(a) desejado(a):</h4>
-                      <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body modal-mentor" style="margin: 0 auto;">
-                      <label for="mentorSemCargo">Nome do(a) Mentor(a)</label>
-                      <select [(ngModel)]="mentorSemCargo" name="mentorSemCargo"
-                      (ngModelChange)="mostrarMentor()" id="mentorSemCargo">
-                      <option value="" disabled selected>- - -</option>
-                      <option *ngFor="let mentor of mentoresSemCargo" [ngValue]="mentor">
-                        {{mentor.mentor_nome}} - {{mentor.mentor_cargo}}
-                      </option>
-                    </select>
-                    </div>
-                    <div class="modal-footer">
-                      <button mat-raised-button type="button" (click)="modal.close('Save click')"
-                        class="mx-3">Cancelar</button>
-                      <button mat-raised-button type="button" (click)="atribuirMentor();modal.close('Save click')"
-                        color="accent">Confirmar</button>
-                    </div>
-                  </ng-template>
+                    <!-- Modal de confirmação para alterar mentor -->
+                    <ng-template #modalAlterar let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="excluir">Escolha x Mentorx desejadx:</h4>
+                        <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body modal-mentor" style="margin: 0 auto;">
+                        <label for="mentorSemCargo">Nome dx Mentorx</label>
+                        <select [(ngModel)]="mentorSemCargo" name="mentorSemCargo"
+                        (ngModelChange)="mostrarMentor()" id="mentorSemCargo">
+                        <option value="" disabled selected>- - -</option>
+                        <option *ngFor="let mentor of mentoresSemCargo" [ngValue]="mentor">
+                          {{mentor.mentor_nome}} - {{mentor.mentor_cargo}}
+                        </option>
+                      </select>
+                      </div>
+                      <div class="modal-footer">
+                        <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                          class="mx-3">Cancelar</button>
+                        <button mat-raised-button type="button" (click)="atribuirMentor();modal.close('Save click')"
+                          color="accent">Confirmar</button>
+                      </div>
+                    </ng-template>
 
-                </div>
-                <div class="button2">
-                  <button class="bot-card" type="button" (click)="open(modalExcluir)">Desvincular</button>
+                  </div>
+                  <div class="button2">
+                    <button class="bot-card" type="button" (click)="open(modalExcluir)" [disabled]="mentor.id_mentor == null">Desvincular</button>
 
-                  <!-- Modal de confirmação para excluir mentor -->
-                  <ng-template #modalExcluir let-modal>
-                    <div class="modal-header">
-                      <h4 class="modal-title" id="excluir">Aviso</h4>
-                      <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Deseja realmente desvincular o(a) Mentor(a) <strong>#{{mentor.id_mentor}} {{mentor.mentor_nome}}</strong> do
-                        Cargo selecionado?</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button mat-raised-button type="button" (click)="modal.close('Save click')"
-                        class="mx-3">Cancelar</button>
-                      <button mat-raised-button type="button" (click)="deixarCargoSemMentor();modal.close('Save click')"
-                        color="warn">Excluir</button>
-                    </div>
-                  </ng-template>
+                    <!-- Modal de confirmação para excluir mentor -->
+                    <ng-template #modalExcluir let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="excluir">Aviso</h4>
+                        <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Deseja realmente desvincular x Mentorx <strong>#{{mentor.id_mentor}} {{mentor.mentor_nome}}</strong> do
+                          Cargo selecionado?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                          class="mx-3">Cancelar</button>
+                        <button mat-raised-button type="button" (click)="deixarCargoSemMentor();modal.close('Save click')"
+                          color="warn">Excluir</button>
+                      </div>
+                    </ng-template>
+                  </div>
                 </div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
