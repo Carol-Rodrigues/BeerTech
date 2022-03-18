@@ -1,62 +1,137 @@
 <app-header></app-header>
 <div class="container">
+  <button id="botao-volta" mat-mini-fab color="primary" routerLink="/mentores" title="Voltar página"
+    [ngStyle]="{'color':'white'}">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
   <div class="row">
-    <div class="col-7">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Dados do Mentor</h5>
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Nome do Mentor</label>
-              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_nome" name="mentor_nome">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Cargo do Mentor</label>
-              <input type="text" readonly class="form-control" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo">
-            </div>
-            <button class="btn btn-secondary mx-3">Cancelar</button>
-          </form>
-
-
+    <div class="col-6 mx-5" style="margin-top: 1%">
+      <div class="container-fluid row" id="container-func">
+        <div id="func-card" class="col">
+          <img src="../../../../{{mentor.mentor_foto}}" style="height: 380px;">
         </div>
+        <!-- <div class="card mat-elevation-z4 card-form"> -->
+        <div id="info-func" class="col">
+          <div class="titulo">
+            <h1>Dados dx Mentorx</h1>
+          </div>
+          <form class="cargo-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>ID dx Mentorx</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="mentor.id_mentor"
+                name="id_funcionario">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>CPF dx Mentorx</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="mentor.mentor_cpf"
+                name="cpf_funcionario">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nome dx Funcionárix</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="mentor.mentor_nome"
+                name="func_nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Cargo dx Mentorx</mat-label>
+              <input type="text" matInput readonly class="form-control" [(ngModel)]="mentor.mentor_cargo"
+                name="func_cidade">
+            </mat-form-field>
+          </form>
+        </div>
+        <!-- </div> -->
       </div>
     </div>
-    <div class="col-5">
-      <div class="card">
-        <h5 class="card-title mx-3">Cargo do Mentorado: </h5>
+    <div class="col-5" style="margin-top: 1%">
+      <div class="card" id="card-cargo">
         <div class="card-body">
-
-          <div class="mb-3">
-            <label class="form-label">Nome Cargo</label>
-            <input type="text" readonly [(ngModel)]="cargo.car_nome" class="form-control" name="tu_nome">
+          <div class="titulo">
+            <h1>Cargo</h1>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Descrição da Cargo</label>
-            <input type="text" readonly class="form-control" [(ngModel)]="cargo.car_atribuicao" name="tu_descricao">
-          </div>
+          <form class="mentor-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>ID do Cargo</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargo.id_cargo" name="id_cargo">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nome do Cargo</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargo.car_nome" name="car_nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Atribuição</mat-label>
+              <input class="mentor-input" type="text" matInput readonly class="form-control"
+                [(ngModel)]="cargo.car_atribuicao" name="car_atribuicao">
+            </mat-form-field>
+          </form>
           <hr>
-          <div class="card">
-            <h5 class="card-title my-4"> Escolha uma nova Cargo para o mentor:</h5>
+          <div style="margin: 0 auto; text-align: center;">
+            <button id="card-alteracao" class="border-gradient border-gradient-purple">
+              <div class="titulo mt-3" style="color: darkorange;">
+                <h2>Atualizar Cargo</h2>
+              </div>
+              <div class="card-body">
+                <div class="buttons">
+                  <div class="button1 mx-2">
+                    <button class="bot-card" (click)="open(modalAlterar)">Alterar</button>
 
+                    <!-- Modal de confirmação para alterar cargo -->
+                    <ng-template #modalAlterar let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="excluir">Escolha o Cargo desejado:</h4>
+                        <button type="button" class="close btn" aria-label="Close"
+                          (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body modal-mentor" style="margin: 0 auto;">
+                        <label for="cargoEscolhido">Nome do Cargo</label>
+                        <select [(ngModel)]="cargoSemMentorEscolhido" name="cargoEscolhido" (ngModelChange)="escolherCargo()"
+                          id="cargoEscolhido">
+                          <option value="" disabled selected [ngValue]="cargoSemMentorEscolhido">- - -</option>
+                          <option *ngFor="let cargo of cargosSemMentor" [ngValue]="cargo">
+                            #{{cargo.id_cargo}} - {{cargo.car_nome}}
+                          </option>
+                        </select>
+                      </div>
+                      <div class="modal-footer">
+                        <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                          class="mx-3">Cancelar</button>
+                        <button mat-raised-button type="button" (click)="atribuirCargo();modal.close('Save click')"
+                          color="accent">Confirmar</button>
+                      </div>
+                    </ng-template>
 
-            <div class="card-body">
-              <select [(ngModel)]="cargoSemMentorEscolhido" name="cargoSemMentorEscolhida"
-                (ngModelChange)="escolherCargo()">
-                <option *ngFor="let cargo of cargosSemMentor" [ngValue]="cargo">
-                  {{cargo.tu_nome}} - {{cargo.tu_descricao}}
-                </option>
-              </select>
-              <button (click)=" atribuirCargo()" class="btn btn-primary my-3">Salvar</button>
-            </div>
+                  </div>
+                  <div class="button2">
+                    <button class="bot-card" type="button" (click)="open(modalExcluir)" [disabled]="cargo.id_cargo == ''">Desvincular</button>
+
+                    <!-- Modal de confirmação para excluir cargo -->
+                    <ng-template #modalExcluir let-modal>
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="excluir">Aviso</h4>
+                        <button type="button" class="close btn" aria-label="Close"
+                          (click)="modal.dismiss('Cross click')">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Deseja realmente desvincular o Cargo <strong>#{{cargo.id_cargo}}
+                            {{cargo.car_nome}}
+                          </strong> dx Funcionárix selecionadox?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button mat-raised-button type="button" (click)="modal.close('Save click')"
+                          class="mx-3">Cancelar</button>
+                        <button mat-raised-button type="button"
+                          (click)="deixarCargoSemMentor();modal.close('Save click')" color="warn">Excluir</button>
+                      </div>
+                    </ng-template>
+                  </div>
+                </div>
+              </div>
+            </button>
           </div>
-          <hr>
-          <div class="card my-3">
-            <h5 class="card-title">Deixar Mentor sem Cargo?</h5>
-            <div class="card-body">
-              <button class="btn btn-secondary" (click)="deixarCargoSemMentor()">Confirmar</button>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>

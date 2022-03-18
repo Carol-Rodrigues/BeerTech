@@ -1,0 +1,35 @@
+<app-header-user></app-header-user>
+<div class="mt-5 titulo">
+  <h1 id="titulo">
+    Programa de Mentoria
+  </h1>
+</div>
+<div class="row m-5">
+  <div *ngFor="let mentor of mentores" class="col-3 my-2">
+    <div class="card text-white card-has-bg click-col"
+      style="background-image:url('../../../../assets/fundo-mentor1.jpg')">
+      <div class="card-img-overlay d-flex flex-column">
+        <span class="picture" style="background-image: url('../../../{{mentor.mentor_foto}}');"></span>
+        <!-- <img style="margin-left: 70%" src="../../../{{mentor.mentor_foto}}"
+        alt="imagem mentor"> -->
+        <div class="card-body">
+          <small class="card-meta mb-2">Nome:</small>
+          <h4 class="card-title mt-0 "><a class="text-white" herf="#">{{mentor.mentor_nome}}</a></h4>
+
+          <small class="card-meta mb-2">Cargo:</small>
+          <h4 class="card-title mt-0 "><a class="text-white" herf="#">{{mentor.mentor_cargo}}</a></h4>
+        </div>
+
+        <div class="card-footer">
+          <div class="media">
+            <div class="d-flex justify-content-between ">
+              <h4 class="my-0 d-block" style="color: darkorange;">Responsável por:</h4>
+            </div>
+            <h5 id="nome-mentorado">{{mentor.car_nome}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

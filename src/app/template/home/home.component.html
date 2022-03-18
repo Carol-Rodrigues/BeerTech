@@ -1,27 +1,55 @@
-<div class="fundo-home">
-  <div class="posicao-form">
-    <div class="fundo-form">
-      <div class="logo">
-        <img src="../../../assets/logo.png" style="width: 200px;">
+<!-- <div id="home">
+
+  <img src="../../../assets/logo - Copia.png" alt="" id="logo">
+
+  <div id="btn1">
+    <button mat-raised-button routerLink="/cargo">Trabalhe Conosco</button>
+    <button mat-raised-button routerLink="/card-mentores" >Programa de Mentoria</button>
+  </div>
+  <div id="btn2">
+    <button mat-raised-button routerLink="/login">LOGIN</button>
+  </div>
+</div> -->
+
+<div class="page">
+  <div class="container">
+    <div class="left">
+      <img src="../../../assets/logo - Copia.png" alt="logo">
+    </div>
+    <div class="right">
+      <!-- <div>
+        <button class="learn-more" routerLink="/cargo">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Trabalhe Conosco</span>
+        </button>
+      </div> -->
+      <div>
+        <button class="cta" routerLink="/card-cargo">
+          <span class="hover-underline-animation"> Trabalhe Conosco </span>
+          <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+          </svg>
+        </button>
       </div>
-      <form [formGroup]="form">
-        <div class="fundo-form__form">
-          <div class="fundo-form__row">
-            <svg class="fundo-form__icon login svg-icon" viewBox="0 0 20 20">
-              <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-            </svg>
-            <input type="email" class="fundo-form__input login" placeholder="Login" formControlName="login"/>
-          </div>
-          <div class="fundo-form__row">
-            <svg class="fundo-form__icon pass svg-icon" viewBox="0 0 20 20">
-              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-            </svg>
-            <input type="password" class="fundo-form__input pass" placeholder="Senha" formControlName="senha"/>
-          </div>
-          <button type="button" class="fundo-form__submit" [disabled]="!form.valid" routerLink="/cargo">Entrar</button>
-          <p class="fundo-form__signup">Não é administrador? &nbsp;<a>Clique aqui</a></p>
-        </div>
-      </form>
+      <div>
+        <button class="cta" routerLink="/card-mentores">
+          <span class="hover-underline-animation"> Programa de Mentoria </span>
+          <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+          </svg>
+        </button>
+      </div>
+      <div>
+        <button class="cta" routerLink="/login">
+          <span class="hover-underline-animation"> LOGIN </span>
+          <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -22,7 +22,7 @@
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Valor</mat-label>
         <input type="text" matInput [(ngModel)]="bonificacao.bo_valor" name="bo_valor"
-          formControlName="bo_valor" readonly>
+          formControlName="bo_valor" readonly currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left'}">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Status</mat-label>
@@ -33,7 +33,7 @@
         <button mat-raised-button color="accent" (click)="open(modalExcluir)" [disabled]="!form.valid">Excluir</button>
       </div>
 
-      <!-- Modal de confirmação para excluir turma -->
+      <!-- Modal de confirmação para excluir bonificacao -->
       <ng-template #modalExcluir let-modal>
         <div class="modal-header">
           <h4 class="modal-title" id="excluir">Aviso</h4>

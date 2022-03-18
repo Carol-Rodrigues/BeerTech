@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<!-- <img src="../../../../assets/funcionarios2.png" alt="" id="imagem" style="opacity: 65%;"> -->
+<div style="text-align: center;" class="mt-5">
+  <h1><strong>Cargos</strong></h1>
+</div>
+<mat-form-field appearance="standard" class="busca">
+  <mat-label>Buscar</mat-label>
+  <input matInput (keyup)="filtrar($event)" placeholder="Ex. Mestre Cervejeirx" #input>
+</mat-form-field>
+<section style="overflow-x:auto" class="table-container container mat-elevation-z3 p-0">
+  <table mat-table [dataSource]="tabelaCargo" matSort>
+    <!-- Coluna ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let cargo">{{cargo.id_cargo}} </td>
+    </ng-container>
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+      <td mat-cell *matCellDef="let cargo"> {{cargo.car_nome}} </td>
+    </ng-container>
+    <!-- Coluna cidade -->
+    <ng-container matColumnDef="atribuicao">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Atribuição </span></th>
+      <td mat-cell *matCellDef="let cargo"> <span class="mx-5">{{cargo.car_atribuicao}}</span> </td>
+    </ng-container>
+    <!-- Coluna Nome -->
+    <ng-container matColumnDef="nome_mentor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome dx Mentorx </th>
+      <td mat-cell *matCellDef="let cargo"> {{cargo.mentor_nome}} </td>
+    </ng-container>
+    <!-- Coluna cargo -->
+    <ng-container matColumnDef="cargo_mentor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cargo dx Mentorx </span></th>
+      <td mat-cell *matCellDef="let cargo"> <span class="mx-5">{{cargo.mentor_cargo}}</span> </td>
+    </ng-container>
+    <!-- Coluna acoes -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-4">Ações</span></th>
+      <td mat-cell *matCellDef="let cargo">
+        <!-- <button mat-button routerLink="funcionario/{{cargo.id_cargo}}" title="Funcionárixs"
+          color="accent">
+          <mat-icon>person</mat-icon>
+        </button> -->
+        <button mat-button routerLink="editar/{{cargo.id_cargo}}" title="Editar">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button routerLink="excluir/{{cargo.id_cargo}}" title="Excluir" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <!-- Coluna ações -->
+    <!-- <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>
+      <td mat-cell *matCellDef="let func">
+        <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}">Editar</button>
+        <button class="bot-card" type="button"
+          routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>
+      </td>
+    </ng-container> -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--Paginação da tabela, utilizando o mat-paginator-->
+  <mat-paginator #paginatorCargo [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+</section>
+<app-footer></app-footer>

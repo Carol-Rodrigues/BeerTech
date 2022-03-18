@@ -1,5 +1,5 @@
 .card-foto {
-  background-image: url('../../../../assets/Craft\ beer\ manufacturing-pana_2.png');
+  background-image: url("../../../../assets/Craft\ beer\ manufacturing-pana_2.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
@@ -14,7 +14,7 @@
 .botao-add {
   background-color: white;
   margin-top: 35%;
-  margin-left: 30%
+  margin-left: 30%;
 }
 
 .botao-add:hover {
@@ -42,12 +42,14 @@
 
 .card-pessoa .picture {
   border: 2px solid #4646466b;
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   border-radius: 100%;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 20%;
   transition: all 0.3s;
+  background-size: cover;
+  background-position: 50% 5%;
 }
 
 .card-pessoa .picture p {
@@ -103,20 +105,28 @@ button.bot-card:hover {
 .card-pessoa .name p {
   margin-top: 8%;
   margin-bottom: 5%;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .card-pessoa .jobtitle p {
   margin-bottom: 10%;
-  font-size: 0.54em;
+  font-size: 0.74em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
 
-.picture {
-  border-radius: 50%;
-  width: 95px;
-  height: 95px;
-  background-size: cover;
-  background-position: 50% 5%;
+.card-pessoa {
+  cursor: pointer;
+  width: 190px;
+  height: 254px;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid #ffcd38;
+  transition: all 0.2s;
+  box-shadow: 12px 12px 2px 1px #ffcd38;
+  cursor: default;
+}
+
+.card-pessoa:hover {
+  box-shadow: -12px 12px 2px -1px #ffcd38;
 }

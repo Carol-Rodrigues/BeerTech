@@ -1,3 +1,5 @@
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './template/home/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,7 +33,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDividerModule} from '@angular/material/divider';
 
-import { HomeComponent } from './template/home/home.component';
+import { LoginComponent } from './template/login/login.component';
 import { HeaderComponent } from './template/header/header.component';
 import { ExcluirCargosComponent } from './componentes/cargo/excluir-cargos/excluir-cargos.component';
 import { EditarCargosComponent } from './componentes/cargo/editar-cargos/editar-cargos.component';
@@ -62,11 +64,15 @@ import { EditarMentorComponent } from './componentes/mentor/editar-mentor/editar
 import { ExcluirMentorComponent } from './componentes/mentor/excluir-mentor/excluir-mentor.component';
 
 import { CpfPipe } from './pipes/cpf.pipes';
+import { HomeComponent } from './template/home/home.component';
+import { HeaderUserComponent } from './template/header-user/header-user.component';
+import { ListaMentorComponent } from './componentes/mentor/lista-mentor/lista-mentor.component';
+import { ListaCargoComponent } from './componentes/cargo/lista-cargo/lista-cargo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    LoginComponent,
     HeaderComponent,
     ExcluirCargosComponent,
     EditarCargosComponent,
@@ -90,7 +96,11 @@ import { CpfPipe } from './pipes/cpf.pipes';
     BonificacaoMentorComponent,
     EditarMentorComponent,
     ExcluirMentorComponent,
-    CpfPipe
+    CpfPipe,
+    HomeComponent,
+    HeaderUserComponent,
+    ListaMentorComponent,
+    ListaCargoComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +132,9 @@ import { CpfPipe } from './pipes/cpf.pipes';
   providers: [{ provide: MatPaginatorIntl, useValue: traduzirLegendas() },
               {provide: LOCALE_ID, useValue: "pt-BR"},
               {provide: DEFAULT_CURRENCY_CODE, useValue: "BRL"},
-              CurrencyPipe],
+              CurrencyPipe,
+              AuthService,
+              AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

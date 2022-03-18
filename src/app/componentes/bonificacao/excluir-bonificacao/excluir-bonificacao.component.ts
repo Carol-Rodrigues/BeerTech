@@ -44,6 +44,7 @@ export class ExcluirBonificacaoComponent implements OnInit {
 
   buscarUmaBonificacao() {
     this.bonificacaoService.buscarUmaBonificacao(this.bonificacao.codigo).subscribe((resultado) => {
+      this.bonificacao.bo_dataPagamento = resultado.bo_dataPagamento.slice(0,10) //Para pegarmos apenas a data, sem o UTC
       this.bonificacao = resultado
     })
   }

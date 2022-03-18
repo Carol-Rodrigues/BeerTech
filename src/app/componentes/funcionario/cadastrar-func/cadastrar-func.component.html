@@ -3,7 +3,7 @@
   <div class="card-body">
     <button mat-mini-fab color="primary" routerLink="/cargo" title="Voltar página"[ngStyle]="{'color':'white'}"><mat-icon >keyboard_backspace</mat-icon></button>
     <div class="titulo">
-      <h1>Cadastro de Funcionários</h1>
+      <h1>Cadastro de Funcionárixs</h1>
     </div>
 
     <form class="example-form" [formGroup]="form">
@@ -23,9 +23,9 @@
         <button mat-raised-button color="accent" (click)="cadastrarFunc()" [disabled]="!form.valid">Cadastrar</button>
         <button mat-raised-button color="basic" class="mx-3" type="reset">Limpar</button>
       </div>
-      <hr>
-      <div class="mb-3">
-        <label class="form-label">Foto dx Funcionárix</label>
+      <mat-divider style="margin-left: 13%; margin-top: 3%"></mat-divider>
+      <div class="my-3 div-escondida">
+        <h3 class="form-label">Foto dx Funcionárix</h3>
         <input type="file" class="form-control" [disabled]="!funcCadastrado" (change)="importarImg($event)">
       </div>
     </form>

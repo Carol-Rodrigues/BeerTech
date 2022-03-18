@@ -1,0 +1,99 @@
+#botao-atribuir {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  transition-duration: 0.2s;
+}
+
+#botao-atribuir:before {
+  content: "» ";
+  opacity: 0;
+  margin-left: -1px;
+  transition-duration: 0.2s;
+}
+
+#botao-atribuir:hover:before {
+  margin-left: 0px;
+  opacity: 1;
+}
+
+#botao-atribuir:hover {
+  color: darkorange;
+}
+
+button.bot-card {
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  border: 1px solid #f57c00;
+  border-radius: 0.4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.7em;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: ease-out 0.5s;
+  z-index: 1;
+  color: #f57c00;
+  margin-right: 5px;
+}
+
+button.bot-card::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #f57c00;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button.bot-card:hover::before {
+  width: 105%;
+}
+
+button.bot-card:hover {
+  color: #fff;
+}
+
+th{
+  background-color: #f57c00;
+  color: white
+}
+
+td {
+  text-align: left;
+}
+
+// .mat-column-id {
+//   font-weight: 900;
+// }
+
+// .mat-column-id_cargo {
+//   width: 14%;
+// }
+
+// .mat-column-cargo {
+//   width: 20%;
+// }
+
+.table-container {
+  width: 80%;
+}
+
+.busca {
+  margin-left: 10%;
+}
+
+#imagem {
+  width: 230px;
+  position: absolute;
+  left: 75.5%;
+  top: 10.1%
+}

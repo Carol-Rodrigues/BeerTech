@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="text-light">
+  <img class="logo" src="../../../assets/International Beer Day-pana.png" routerLink="">
+  <img src="../../../assets/nome.png" style="width: 130px;">
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon>keyboard_arrow_down</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/card-cargo">Trabalhe Conosco</button>
+      <button mat-menu-item routerLink="/card-mentores">Programa de Mentoria</button>
+    </mat-menu>
+    <span class="example-spacer"></span>
+    <button mat-button class="example-icon favorite-icon" aria-label="Example icon-button with login icon" routerLink="/login">
+      Login <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>

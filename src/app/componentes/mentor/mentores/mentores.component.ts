@@ -24,7 +24,8 @@ export class MentoresComponent implements OnInit {
     'foto',
     'id_mentorado',
     'cargo_mentorado',
-    'bonificacao'
+    'bonificacao',
+    'acoes'
   ];
 
   // Variável para armazenar os mentores na tabela

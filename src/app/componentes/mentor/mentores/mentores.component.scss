@@ -75,18 +75,29 @@ td {
   font-weight: 900;
 }
 
+.mat-column-nome {
+  width: 14%;
+}
+
+.mat-column-cpf {
+  width: 10%;
+}
+
+.mat-column-id_mentorado {
+  width: 5%;
+}
 
 .table-container {
-  width: 80%;
+  width: 90%;
 }
 
 .busca {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 #imagem {
   width: 230px;
   position: absolute;
-  left: 76.5%;
+  left: 81%;
   top: 10.7%
 }

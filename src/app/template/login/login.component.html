@@ -1,0 +1,27 @@
+<div class="fundo-home">
+  <div class="posicao-form">
+    <div class="fundo-form">
+      <div class="logo">
+        <img src="../../../assets/logo.png" style="width: 200px;">
+      </div>
+      <form [formGroup]="form">
+        <div class="fundo-form__form">
+          <div class="fundo-form__row">
+            <svg class="fundo-form__icon login svg-icon" viewBox="0 0 20 20">
+              <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+            </svg>
+            <input type="email" class="fundo-form__input login" placeholder="Login" formControlName="login" [(ngModel)]="user.nome"/>
+          </div>
+          <div class="fundo-form__row">
+            <svg class="fundo-form__icon pass svg-icon" viewBox="0 0 20 20">
+              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+            </svg>
+            <input type="password" class="fundo-form__input pass" placeholder="Senha" formControlName="senha" [(ngModel)]="user.senha"/>
+          </div>
+          <button type="button" class="fundo-form__submit" [disabled]="!form.valid" (click)="fazerLogin()">Entrar</button>
+          <p class="fundo-form__signup">Não é administrador? &nbsp;<a>Clique aqui</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

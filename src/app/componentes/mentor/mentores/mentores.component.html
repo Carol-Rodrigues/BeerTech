@@ -9,7 +9,7 @@
   <mat-label>Buscar</mat-label>
   <input matInput (keyup)="filtrar($event)" placeholder="Ex. João da Silva" #input>
 </mat-form-field>
-<section style="overflow-x:auto" class="table-container container mat-elevation-z3 p-0">
+<section style="overflow-x:auto" class="table-container container-fluid mat-elevation-z3 p-0">
   <table mat-table [dataSource]="tabelaMentor" matSort>
     <!-- Coluna ID -->
     <ng-container matColumnDef="id">
@@ -55,22 +55,28 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cargo Mentorado</span></th>
       <td mat-cell *matCellDef="let mentor"> <span class="mx-5">{{mentor.car_nome}}</span> </td>
     </ng-container>
-    <!-- Coluna atribuir cargo -->
+    <!-- Coluna nome do cargo -->
     <ng-container matColumnDef="bonificacao">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-4">Ações</span></th>
-      <td mat-cell *matCellDef="let mentor"> <button id="botao-atribuir"
-          routerLink="bonificacao/{{mentor.id_mentor}}">Bonificações</button>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Bonificação</span></th>
+      <td mat-cell *matCellDef="let mentor"> <button class="bot-card"
+          routerLink="bonificacao/{{mentor.id_mentor}}">Bonificações</button> </td>
+    </ng-container>
+    <!-- Coluna atribuir cargo -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-2">Ações</span></th>
+      <td mat-cell *matCellDef="let mentor">
+        <button mat-button routerLink="/mentor/atribuirCargo/{{mentor.id_mentor}}" title="Atribuir Cargo"
+          color="accent">
+          <mat-icon>work</mat-icon>
+        </button>
+        <button mat-button routerLink="editar/{{mentor.id_mentor}}/{{mentor.id_cargo}}" title="Editar">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button routerLink="excluir/{{mentor.id_mentor}}" title="Excluir" color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
       </td>
     </ng-container>
-    <!-- Coluna ações -->
-    <!-- <ng-container matColumnDef="acoes">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>
-      <td mat-cell *matCellDef="let mentor">
-        <button class="bot-card" routerLink="/mentorionario/editar/{{mentor.id_mentorionario}}/{{mentor.id_cargo}}">Editar</button>
-        <button class="bot-card" type="button"
-          routerLink="/mentorionario/excluir/{{mentor.id_mentorionario}}">Excluir</button>
-      </td>
-    </ng-container> -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

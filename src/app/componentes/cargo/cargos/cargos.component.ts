@@ -1,8 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { CargosService } from '../../../services/cargos.service';
-import { Cargo } from '../../../models/cargosModel';
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-cargos',
@@ -23,7 +21,6 @@ export class CargosComponent implements OnInit {
 
   mostrarCargos(){
     this.cargosService.buscarTodosCargos().subscribe(resultado =>{
-      //this.turmas = resultado;
       console.log("aqui")
       console.log(this.cargos)
 

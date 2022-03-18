@@ -1,3 +1,7 @@
+import { ListaCargoComponent } from './componentes/cargo/lista-cargo/lista-cargo.component';
+import { ListaMentorComponent } from './componentes/mentor/lista-mentor/lista-mentor.component';
+import { HomeComponent } from './template/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 import { EditarMentorComponent } from './componentes/mentor/editar-mentor/editar-mentor.component';
 import { ExcluirMentorComponent } from './componentes/mentor/excluir-mentor/excluir-mentor.component';
 import { ExcluirBonificacaoComponent } from './componentes/bonificacao/excluir-bonificacao/excluir-bonificacao.component';
@@ -15,7 +19,7 @@ import { ExcluirFuncComponent } from './componentes/funcionario/excluir-func/exc
 import { EditarFuncComponent } from './componentes/funcionario/editar-func/editar-func.component';
 import { CadastrarFuncComponent } from './componentes/funcionario/cadastrar-func/cadastrar-func.component';
 import { ListaFuncComponent } from './componentes/funcionario/lista-func/lista-func.component';
-import { HomeComponent } from './template/home/home.component';
+import { LoginComponent } from './template/login/login.component';
 import { CadastrarCargosComponent } from './componentes/cargo/cadastrar-cargos/cadastrar-cargos.component';
 import { EditarCargosComponent } from './componentes/cargo/editar-cargos/editar-cargos.component';
 import { ExcluirCargosComponent } from './componentes/cargo/excluir-cargos/excluir-cargos.component';
@@ -24,38 +28,44 @@ import { RouterModule, Routes } from '@angular/router';
 import { CargosComponent } from './componentes/cargo/cargos/cargos.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: "login", component: LoginComponent},
   {path: "home", component: HomeComponent},
 
   // Cargo
-  {path: "cargo", component: CargosComponent},
-  {path: "cargo/excluir/:id_cargo", component: ExcluirCargosComponent},
-  {path: "cargo/editar/:id_cargo", component: EditarCargosComponent},
-  {path: "cargo/cadastrar", component: CadastrarCargosComponent},
+  {path: "card-cargo", component: CargosComponent},
+  {path: "cargo", component: ListaCargoComponent, canActivate: [AuthGuard]},
+  {path: "cargo/excluir/:id_cargo", component: ExcluirCargosComponent, canActivate: [AuthGuard]},
+  {path: "cargo/editar/:id_cargo", component: EditarCargosComponent, canActivate: [AuthGuard]},
+  {path: "cargo/cadastrar", component: CadastrarCargosComponent, canActivate: [AuthGuard]},
   {path: "cargo/funcionario/:id_cargo", component: ListaFuncComponent},
-  {path: "cargo/:id_cargo/funcionario/cadastro", component: CadastrarFuncComponent},
+  {path: "cargo/:id_cargo/funcionario/cadastro", component: CadastrarFuncComponent, canActivate: [AuthGuard]},
 
   // Funcionário
-  {path: "funcionario/cadastrar", component: CadastrarFuncComponent},
-  {path: "funcionario/editar/:id_funcionario/:id_cargo", component: EditarFuncComponent},
-  {path: "funcionario/excluir/:id_funcionario", component: ExcluirFuncComponent},
-  {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent},
-  {path: "funcionarios", component: FuncionariosComponent},
-  {path: "funcionarios/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent},
+  {path: "funcionario/cadastrar", component: CadastrarFuncComponent, canActivate: [AuthGuard]},
+  {path: "funcionario/editar/:id_funcionario/:id_cargo", component: EditarFuncComponent, canActivate: [AuthGuard]},
+  {path: "funcionario/excluir/:id_funcionario", component: ExcluirFuncComponent, canActivate: [AuthGuard]},
+  {path: "funcionario/cargo/:id_cargo", component: ListaFuncCargoComponent, canActivate: [AuthGuard]},
+  {path: "funcionarios", component: FuncionariosComponent, canActivate: [AuthGuard]},
+  {path: "funcionarios/atribuirCargo/:id_funcionario/:id_cargo", component: AtribuirCargoComponent, canActivate: [AuthGuard]},
 
   // Mentor
-  {path: "mentores", component: MentoresComponent},
-  {path: "mentor/:id_cargo", component: MentoresCargoComponent},
-  {path: "mentor/atribuirCargo/:id_mentor", component: AtribuirCargoMentorComponent},
-  {path: "mentores/cadastrar", component: CadastrarMentorComponent},
-  {path: "mentores/excluir/:id_mentor", component: ExcluirMentorComponent},
-  {path: "mentores/editar/:id_mentor/:id_cargo", component: EditarMentorComponent},
+  {path: "mentores", component: MentoresComponent, canActivate: [AuthGuard]},
+  {path: "card-mentores", component: ListaMentorComponent},
+  {path: "mentor/:id_cargo", component: MentoresCargoComponent, canActivate: [AuthGuard]},
+  {path: "mentor/atribuirCargo/:id_mentor", component: AtribuirCargoMentorComponent, canActivate: [AuthGuard]},
+  {path: "mentores/cadastrar", component: CadastrarMentorComponent, canActivate: [AuthGuard]},
+  {path: "mentores/excluir/:id_mentor", component: ExcluirMentorComponent, canActivate: [AuthGuard]},
+  {path: "mentores/editar/:id_mentor/:id_cargo", component: EditarMentorComponent, canActivate: [AuthGuard]},
 
   // Bonificação
-  {path:"mentores/bonificacao/:id_mentor/cadastrar", component:CadastrarBonificacaoComponent},
-  {path:"mentores/bonificacao/:id_mentor/editar/:codigo", component:EditarBonificacaoComponent},
-  {path:"mentores/bonificacao/:id_mentor/excluir/:codigo", component:ExcluirBonificacaoComponent},
-  {path:"mentores/bonificacao/:id_mentor", component:BonificacaoMentorComponent},
+  {path:"mentores/bonificacao/:id_mentor/cadastrar", component:CadastrarBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:"mentores/bonificacao/:id_mentor/editar/:codigo", component:EditarBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:"mentores/bonificacao/:id_mentor/excluir/:codigo", component:ExcluirBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:"mentores/bonificacao/:id_mentor", component:BonificacaoMentorComponent, canActivate: [AuthGuard]},
+
+
+  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: "**", redirectTo: "/home", pathMatch: "full"}, //testar
 ];
 
 @NgModule({

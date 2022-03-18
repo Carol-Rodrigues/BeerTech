@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header-user></app-header-user>
 <div class="row m-5">
   <div *ngFor="let cargo of cargos" class="col-3 my-2">
     <div class="card h-100">
@@ -9,14 +9,16 @@
         <div class="portada">
         </div>
         <div class="title-total">
-          <div class="title">#{{cargo.id_cargo}}</div>
+          <div class="title">
+            <button><i class="fas fa-user-friends" title="Funcionários" routerLink="/cargo/funcionario/{{cargo.id_cargo}}"></i></button>
+          </div>
           <h2>{{cargo.car_nome}}</h2>
           <div class="desc">{{cargo.car_atribuicao}}</div>
           <div class="actions h-25">
-            <button><i class="fas fa-pencil" title="Editar Cargo" routerLink="editar/{{cargo.id_cargo}}"></i></button>
-            <button><i class="far fa-trash-alt" title="Excluir Cargo" routerLink="excluir/{{cargo.id_cargo}}"></i></button>
-            <button><i class="fas fa-user-friends" title="Funcionários" routerLink="funcionario/{{cargo.id_cargo}}"></i></button>
-            <button><i class="fa-solid fa-medal" title="Mentor" routerLink="/mentor/{{cargo.id_cargo}}"></i></button>
+            <!-- <button><i class="fas fa-pencil" title="Editar Cargo" routerLink="editar/{{cargo.id_cargo}}"></i></button>
+            <button><i class="far fa-trash-alt" title="Excluir Cargo" routerLink="excluir/{{cargo.id_cargo}}"></i></button> -->
+
+            <!-- <button><i class="fa-solid fa-medal" title="Mentor" routerLink="/mentor/{{cargo.id_cargo}}"></i></button> -->
           </div>
         </div>
       </div>
