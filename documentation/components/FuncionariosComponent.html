@@ -1,0 +1,1301 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>empresa-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">empresa-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  FuncionariosComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/componentes/funcionario/funcionarios/funcionarios.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-funcionarios</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./funcionarios.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./funcionarios.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bpPaginator" >bpPaginator</a>
+                            </li>
+                            <li>
+                                <a href="#closeResult" >closeResult</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#funcionarios" >funcionarios</a>
+                            </li>
+                            <li>
+                                <a href="#id_cargo" >id_cargo</a>
+                            </li>
+                            <li>
+                                <a href="#paginatorFunc" >paginatorFunc</a>
+                            </li>
+                            <li>
+                                <a href="#sort" >sort</a>
+                            </li>
+                            <li>
+                                <a href="#tabelaFunc" >tabelaFunc</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filtrar" >filtrar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getDismissReason" >getDismissReason</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarTodosFuncs" >mostrarTodosFuncs</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open" >open</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(funcService: <a href="../injectables/FuncionariosService.html" target="_self">FuncionariosService</a>, modalService: NgbModal, observer: BreakpointObserver, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>funcService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FuncionariosService.html" target="_self" >FuncionariosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>observer</td>
+                                                  
+                                                        <td>
+                                                                    <code>BreakpointObserver</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filtrar"></a>
+                    <span class="name">
+                        <span ><b>filtrar</b></span>
+                        <a href="#filtrar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filtrar(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDismissReason"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getDismissReason</b></span>
+                        <a href="#getDismissReason"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDismissReason(reason: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reason</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarTodosFuncs"></a>
+                    <span class="name">
+                        <span ><b>mostrarTodosFuncs</b></span>
+                        <a href="#mostrarTodosFuncs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarTodosFuncs()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(content: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bpPaginator"></a>
+                    <span class="name">
+                        <span ><b>bpPaginator</b></span>
+                        <a href="#bpPaginator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeResult"></a>
+                    <span class="name">
+                        <span ><b>closeResult</b></span>
+                        <a href="#closeResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    &#x27;id&#x27;,
+    &#x27;nome&#x27;,
+    &#x27;cpf&#x27;,
+    &#x27;cidade&#x27;,
+    &#x27;foto&#x27;,
+    &#x27;id_cargo&#x27;,
+    &#x27;cargo&#x27;,
+    &#x27;atribuir&#x27;,
+    // &#x27;acoes&#x27;
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="funcionarios"></a>
+                    <span class="name">
+                        <span ><b>funcionarios</b></span>
+                        <a href="#funcionarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id_cargo"></a>
+                    <span class="name">
+                        <span ><b>id_cargo</b></span>
+                        <a href="#id_cargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="paginatorFunc"></a>
+                    <span class="name">
+                        <span ><b>paginatorFunc</b></span>
+                        <a href="#paginatorFunc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatPaginator</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;paginatorFunc&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatSort</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatSort)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tabelaFunc"></a>
+                    <span class="name">
+                        <span ><b>tabelaFunc</b></span>
+                        <a href="#tabelaFunc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/componentes/funcionario/funcionarios/funcionarios.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { MatTableDataSource } from &#x27;@angular/material/table&#x27;;
+import { NgbModal, ModalDismissReasons } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { FuncionariosService } from &#x27;../../../services/funcionarios.service&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { BreakpointObserver } from &#x27;@angular/cdk/layout&#x27;;
+import { tap } from &#x27;rxjs&#x27;;
+import { MatSort } from &#x27;@angular/material/sort&#x27;;
+
+@Component({
+  selector: &#x27;app-funcionarios&#x27;,
+  templateUrl: &#x27;./funcionarios.component.html&#x27;,
+  styleUrls: [&#x27;./funcionarios.component.scss&#x27;]
+})
+export class FuncionariosComponent implements OnInit {
+
+  closeResult &#x3D; &#x27;&#x27;;
+
+  // Variável para mat-table
+  displayedColumns: string[] &#x3D; [
+    &#x27;id&#x27;,
+    &#x27;nome&#x27;,
+    &#x27;cpf&#x27;,
+    &#x27;cidade&#x27;,
+    &#x27;foto&#x27;,
+    &#x27;id_cargo&#x27;,
+    &#x27;cargo&#x27;,
+    &#x27;atribuir&#x27;,
+    // &#x27;acoes&#x27;
+  ];
+
+  // Variável para armazenar os func na tabela
+  tabelaFunc: any;
+
+  // paginator
+  @ViewChild(&quot;paginatorFunc&quot;) paginatorFunc!: MatPaginator;
+  // estabelecendo breakpoint do paginator
+  bpPaginator: boolean &#x3D; false;
+
+  // sort
+  @ViewChild(MatSort) sort!: MatSort;
+
+  funcionarios: any[] &#x3D; []
+
+  id_cargo: any &#x3D; &quot;&quot;
+
+  constructor(private funcService: FuncionariosService, private modalService: NgbModal, private observer: BreakpointObserver, private route: ActivatedRoute) {
+    this.id_cargo &#x3D; this.route.snapshot.paramMap.get(&quot;id_cargo&quot;)!
+  }
+
+  ngOnInit(): void {
+    this.mostrarTodosFuncs()
+
+    // função para esconder o paginator em telas abaixo de 450px. Se possui a width mínima, a página receberá a variável do paginator criada para cada uma das tabelas. Caso o tamanho seja inferior ao mínimo, o null não permitirá que o paginator apareça.
+    // o observe irá ler o parâmetro que passarmos na string
+    // this.observer.observe([
+    //   &#x27;(min-width: 450px)&#x27;
+    // ]).pipe(
+    //   tap((resultado: any) &#x3D;&gt; this.bpPaginator &#x3D; resultado.matches)
+    // ).subscribe((resultado: any) &#x3D;&gt; {
+    //   if (resultado.matches) {
+    //     this.tabelaFunc.paginator &#x3D; this.tabelaFunc;
+    //   } else {
+    //     this.tabelaFunc.paginator &#x3D; null;
+    //   }
+    // });
+  }
+
+  mostrarTodosFuncs() {
+    this.funcService.buscarTodosFuncs().subscribe((resultado) &#x3D;&gt; {
+      // console.log(resultado)
+
+      resultado.forEach((func: any[]) &#x3D;&gt; {
+
+        let funcsECargos: any &#x3D; {
+          id_funcionario: &quot;&quot;,
+          func_nome: &quot;&quot;,
+          func_cidade: &quot;&quot;,
+          func_cpf: &quot;&quot;,
+          func_foto: &quot;&quot;,
+          id_cargo: &quot;&quot;,
+          car_nome: &quot;&quot;,
+          car_atribuicao: &quot;&quot;
+        }
+
+        funcsECargos.id_funcionario &#x3D; func[0]
+        funcsECargos.func_nome &#x3D; func[1]
+        funcsECargos.func_cidade &#x3D; func[2]
+        funcsECargos.func_cpf &#x3D; func[3]
+        funcsECargos.func_foto &#x3D; func[4]
+        if (func[5] !&#x3D; null) {
+          funcsECargos.id_cargo &#x3D; func[5]
+          funcsECargos.car_nome &#x3D; func[6]
+          funcsECargos.car_atribuicao &#x3D; func[7]
+        } else {
+          funcsECargos.id_cargo &#x3D; &quot;0&quot;
+          funcsECargos.car_nome &#x3D; &quot;----&quot;
+          funcsECargos.car_atribuicao &#x3D; &quot;----&quot;
+        }
+
+        this.funcionarios.push(funcsECargos)
+        console.log(funcsECargos)
+      });
+
+      this.tabelaFunc &#x3D; new MatTableDataSource(this.funcionarios);
+      this.tabelaFunc.paginator &#x3D; this.paginatorFunc;
+      this.tabelaFunc.sort &#x3D; this.sort;
+    })
+  }
+
+  filtrar(event: Event) {
+    const filterValue &#x3D; (event.target as HTMLInputElement).value;
+    this.tabelaFunc.filter &#x3D; filterValue.trim().toLowerCase();
+
+    if (this.tabelaFunc.paginator) {
+      this.tabelaFunc.paginator.firstPage();
+    }
+  }
+
+    // Função para abrir modal
+    open(content: any) {
+      //formato do modal
+      this.modalService.open(content, { size: &#x27;md&#x27; }).result.then(
+        (result) &#x3D;&gt; {
+          this.closeResult &#x3D; &#x60;Closed with: ${result}&#x60;;
+        },
+        (reason) &#x3D;&gt; {
+          this.closeResult &#x3D; &#x60;Dismissed ${this.getDismissReason(reason)}&#x60;;
+        }
+      );
+    } //open
+
+    // Função para fechar modal
+    private getDismissReason(reason: any): string {
+      if (reason &#x3D;&#x3D;&#x3D; ModalDismissReasons.ESC) {
+        return &#x27;by pressing ESC&#x27;;
+      } else if (reason &#x3D;&#x3D;&#x3D; ModalDismissReasons.BACKDROP_CLICK) {
+        return &#x27;by clicking on a backdrop&#x27;;
+      } else {
+        return &#x60;with: ${reason}&#x60;;
+      }
+    } //getDismissReason
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;
+
+&lt;img src&#x3D;&quot;../../../../assets/funcionarios2.png&quot; alt&#x3D;&quot;&quot; id&#x3D;&quot;imagem&quot; style&#x3D;&quot;opacity: 65%;&quot;&gt;
+&lt;div style&#x3D;&quot;text-align: center;&quot; class&#x3D;&quot;mt-5&quot;&gt;
+  &lt;h1&gt;&lt;strong&gt;Funcionárixs&lt;/strong&gt;&lt;/h1&gt;
+  &lt;h2 style&#x3D;&quot;color: #8d6e63;&quot;&gt;--- Atribuição de Cargos ---&lt;/h2&gt;
+&lt;/div&gt;
+&lt;mat-form-field appearance&#x3D;&quot;standard&quot; class&#x3D;&quot;busca&quot;&gt;
+  &lt;mat-label&gt;Buscar&lt;/mat-label&gt;
+  &lt;input matInput (keyup)&#x3D;&quot;filtrar($event)&quot; placeholder&#x3D;&quot;Ex. João da Silva&quot; #input&gt;
+&lt;/mat-form-field&gt;
+&lt;section style&#x3D;&quot;overflow-x:auto&quot; class&#x3D;&quot;table-container container mat-elevation-z3 p-0&quot;&gt;
+  &lt;table mat-table [dataSource]&#x3D;&quot;tabelaFunc&quot; matSort&gt;
+    &lt;!-- Coluna ID --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;id&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; ID &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt;{{func.id_funcionario}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna Nome --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;nome&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Nome &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; {{func.func_nome}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna CPF --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;cpf&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; CPF &lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; {{func.func_cpf | cpf}} &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna cidade --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;cidade&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;Cidade &lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;{{func.func_cidade}}&lt;/span&gt; &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna foto --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;foto&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;Foto &lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; &lt;button mat-button (click)&#x3D;&quot;open(modalImg)&quot;&gt;
+          &lt;mat-icon&gt;image&lt;/mat-icon&gt;
+
+          &lt;!-- Modal de foto --&gt;
+          &lt;ng-template #modalImg let-modal id&#x3D;&quot;foto-modal&quot;&gt;
+            &lt;img src&#x3D;&quot;../../../../{{func.func_foto}}&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/ng-template&gt;
+
+        &lt;/button&gt;&lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna ID do cargo --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;id_cargo&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;ID Cargo &lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;#{{func.id_cargo}}&lt;/span&gt; &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna nome do cargo --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;cargo&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;Cargo &lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;{{func.car_nome}}&lt;/span&gt; &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna atribuir cargo --&gt;
+    &lt;ng-container matColumnDef&#x3D;&quot;atribuir&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-4&quot;&gt;Ações&lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt;
+        &lt;button mat-button routerLink&#x3D;&quot;atribuirCargo/{{func.id_funcionario}}/{{func.id_cargo}}&quot; title&#x3D;&quot;Atribuir Cargo&quot;
+          color&#x3D;&quot;accent&quot;&gt;
+          &lt;mat-icon&gt;work&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;button mat-button routerLink&#x3D;&quot;/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}&quot; title&#x3D;&quot;Editar&quot;&gt;
+          &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+        &lt;/button&gt;
+        &lt;button mat-button routerLink&#x3D;&quot;/funcionario/excluir/{{func.id_funcionario}}&quot; title&#x3D;&quot;Excluir&quot; color&#x3D;&quot;warn&quot;&gt;
+          &lt;mat-icon&gt;delete&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Coluna ações --&gt;
+    &lt;!-- &lt;ng-container matColumnDef&#x3D;&quot;acoes&quot;&gt;
+      &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; &lt;span class&#x3D;&quot;mx-5&quot;&gt;Ações &lt;/span&gt;&lt;/th&gt;
+      &lt;td mat-cell *matCellDef&#x3D;&quot;let func&quot;&gt;
+        &lt;button class&#x3D;&quot;bot-card&quot; routerLink&#x3D;&quot;/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}&quot;&gt;Editar&lt;/button&gt;
+        &lt;button class&#x3D;&quot;bot-card&quot; type&#x3D;&quot;button&quot;
+          routerLink&#x3D;&quot;/funcionario/excluir/{{func.id_funcionario}}&quot;&gt;Excluir&lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/ng-container&gt; --&gt;
+    &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+    &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;!--Paginação da tabela, utilizando o mat-paginator--&gt;
+  &lt;mat-paginator #paginatorFunc [pageSizeOptions]&#x3D;&quot;[5]&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+&lt;/section&gt;
+&lt;app-footer&gt;&lt;/app-footer&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./funcionarios.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#botao-atribuir {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  transition-duration: 0.2s;
+}
+
+#botao-atribuir:before {
+  content: &quot;» &quot;;
+  opacity: 0;
+  margin-left: -1px;
+  transition-duration: 0.2s;
+}
+
+#botao-atribuir:hover:before {
+  margin-left: 0px;
+  opacity: 1;
+}
+
+#botao-atribuir:hover {
+  color: darkorange;
+}
+
+button.bot-card {
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  border: 1px solid #f57c00;
+  border-radius: 0.4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.7em;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: ease-out 0.5s;
+  z-index: 1;
+  color: #f57c00;
+  margin-right: 5px;
+}
+
+button.bot-card::before {
+  content: &quot;&quot;;
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #f57c00;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button.bot-card:hover::before {
+  width: 105%;
+}
+
+button.bot-card:hover {
+  color: #fff;
+}
+
+th{
+  background-color: #f57c00;
+  color: white
+}
+
+td {
+  text-align: left;
+}
+
+// .mat-column-id {
+//   font-weight: 900;
+// }
+
+// .mat-column-id_cargo {
+//   width: 14%;
+// }
+
+// .mat-column-cargo {
+//   width: 20%;
+// }
+
+.table-container {
+  width: 80%;
+}
+
+.busca {
+  margin-left: 10%;
+}
+
+#imagem {
+  width: 230px;
+  position: absolute;
+  left: 75.5%;
+  top: 10.1%
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-header></app-header><img src="../../../../assets/funcionarios2.png" alt="" id="imagem" style="opacity: 65%;"><div style="text-align: center;" class="mt-5">  <h1><strong>Funcionárixs</strong></h1>  <h2 style="color: #8d6e63;">--- Atribuição de Cargos ---</h2></div><mat-form-field appearance="standard" class="busca">  <mat-label>Buscar</mat-label>  <input matInput (keyup)="filtrar($event)" placeholder="Ex. João da Silva" #input></mat-form-field><section style="overflow-x:auto" class="table-container container mat-elevation-z3 p-0">  <table mat-table [dataSource]="tabelaFunc" matSort>    <!-- Coluna ID -->    <ng-container matColumnDef="id">      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>      <td mat-cell *matCellDef="let func">{{func.id_funcionario}} </td>    </ng-container>    <!-- Coluna Nome -->    <ng-container matColumnDef="nome">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>      <td mat-cell *matCellDef="let func"> {{func.func_nome}} </td>    </ng-container>    <!-- Coluna CPF -->    <ng-container matColumnDef="cpf">      <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF </th>      <td mat-cell *matCellDef="let func"> {{func.func_cpf | cpf}} </td>    </ng-container>    <!-- Coluna cidade -->    <ng-container matColumnDef="cidade">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cidade </span></th>      <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.func_cidade}}</span> </td>    </ng-container>    <!-- Coluna foto -->    <ng-container matColumnDef="foto">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Foto </span></th>      <td mat-cell *matCellDef="let func"> <button mat-button (click)="open(modalImg)">          <mat-icon>image</mat-icon>          <!-- Modal de foto -->          <ng-template #modalImg let-modal id="foto-modal">            <img src="../../../../{{func.func_foto}}" alt="">          </ng-template>        </button></td>    </ng-container>    <!-- Coluna ID do cargo -->    <ng-container matColumnDef="id_cargo">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">ID Cargo </span></th>      <td mat-cell *matCellDef="let func"> <span class="mx-5">#{{func.id_cargo}}</span> </td>    </ng-container>    <!-- Coluna nome do cargo -->    <ng-container matColumnDef="cargo">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Cargo </span></th>      <td mat-cell *matCellDef="let func"> <span class="mx-5">{{func.car_nome}}</span> </td>    </ng-container>    <!-- Coluna atribuir cargo -->    <ng-container matColumnDef="atribuir">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-4">Ações</span></th>      <td mat-cell *matCellDef="let func">        <button mat-button routerLink="atribuirCargo/{{func.id_funcionario}}/{{func.id_cargo}}" title="Atribuir Cargo"          color="accent">          <mat-icon>work</mat-icon>        </button>        <button mat-button routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}" title="Editar">          <mat-icon>edit</mat-icon>        </button>        <button mat-button routerLink="/funcionario/excluir/{{func.id_funcionario}}" title="Excluir" color="warn">          <mat-icon>delete</mat-icon>        </button>      </td>    </ng-container>    <!-- Coluna ações -->    <!-- <ng-container matColumnDef="acoes">      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="mx-5">Ações </span></th>      <td mat-cell *matCellDef="let func">        <button class="bot-card" routerLink="/funcionario/editar/{{func.id_funcionario}}/{{func.id_cargo}}">Editar</button>        <button class="bot-card" type="button"          routerLink="/funcionario/excluir/{{func.id_funcionario}}">Excluir</button>      </td>    </ng-container> -->    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>  </table>  <!--Paginação da tabela, utilizando o mat-paginator-->  <mat-paginator #paginatorFunc [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator></section><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtribuirCargoComponent', 'selector': 'app-atribuir-cargo'},{'name': 'AtribuirCargoMentorComponent', 'selector': 'app-atribuir-cargo-mentor'},{'name': 'BonificacaoMentorComponent', 'selector': 'app-bonificacao-mentor'},{'name': 'CadastrarBonificacaoComponent', 'selector': 'app-cadastrar-bonificacao'},{'name': 'CadastrarCargosComponent', 'selector': 'app-cadastrar-cargos'},{'name': 'CadastrarFuncComponent', 'selector': 'app-cadastrar-func'},{'name': 'CadastrarMentorComponent', 'selector': 'app-cadastrar-mentor'},{'name': 'CargosComponent', 'selector': 'app-cargos'},{'name': 'EditarBonificacaoComponent', 'selector': 'app-editar-bonificacao'},{'name': 'EditarCargosComponent', 'selector': 'app-editar-cargos'},{'name': 'EditarFuncComponent', 'selector': 'app-editar-func'},{'name': 'EditarMentorComponent', 'selector': 'app-editar-mentor'},{'name': 'ExcluirBonificacaoComponent', 'selector': 'app-excluir-bonificacao'},{'name': 'ExcluirCargosComponent', 'selector': 'app-excluir-cargos'},{'name': 'ExcluirFuncComponent', 'selector': 'app-excluir-func'},{'name': 'ExcluirMentorComponent', 'selector': 'app-excluir-mentor'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FuncionariosComponent', 'selector': 'app-funcionarios'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderUserComponent', 'selector': 'app-header-user'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaCargoComponent', 'selector': 'app-lista-cargo'},{'name': 'ListaFuncCargoComponent', 'selector': 'app-lista-func-cargo'},{'name': 'ListaFuncComponent', 'selector': 'app-lista-func'},{'name': 'ListaMentorComponent', 'selector': 'app-lista-mentor'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MentoresCargoComponent', 'selector': 'app-mentores-cargo'},{'name': 'MentoresComponent', 'selector': 'app-mentores'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FuncionariosComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FuncionariosComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

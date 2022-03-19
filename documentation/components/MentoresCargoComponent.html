@@ -1,0 +1,1510 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>empresa-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">empresa-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MentoresCargoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-mentores-cargo</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./mentores-cargo.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./mentores-cargo.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargo" >cargo</a>
+                            </li>
+                            <li>
+                                <a href="#closeResult" >closeResult</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#id_cargo" >id_cargo</a>
+                            </li>
+                            <li>
+                                <a href="#mentor" >mentor</a>
+                            </li>
+                            <li>
+                                <a href="#mentorCadastrado" >mentorCadastrado</a>
+                            </li>
+                            <li>
+                                <a href="#mentoresSemCargo" >mentoresSemCargo</a>
+                            </li>
+                            <li>
+                                <a href="#mentorSemCargo" >mentorSemCargo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#atribuirMentor" >atribuirMentor</a>
+                            </li>
+                            <li>
+                                <a href="#buscarCargo" >buscarCargo</a>
+                            </li>
+                            <li>
+                                <a href="#buscarMentorDoCargo" >buscarMentorDoCargo</a>
+                            </li>
+                            <li>
+                                <a href="#buscarMentorSemCargo" >buscarMentorSemCargo</a>
+                            </li>
+                            <li>
+                                <a href="#deixarCargoSemMentor" >deixarCargoSemMentor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getDismissReason" >getDismissReason</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarMentor" >mostrarMentor</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open" >open</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(mentorService: <a href="../injectables/MentorService.html" target="_self">MentorService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, cargoService: <a href="../injectables/CargosService.html" target="_self">CargosService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, modalService: NgbModal, location: <a href="https://angular.io/api/common/Location" target="_blank">Location</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>mentorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MentorService.html" target="_self" >MentorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cargoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CargosService.html" target="_self" >CargosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>location</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/Location" target="_blank" >Location</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="atribuirMentor"></a>
+                    <span class="name">
+                        <span ><b>atribuirMentor</b></span>
+                        <a href="#atribuirMentor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>atribuirMentor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarCargo"></a>
+                    <span class="name">
+                        <span ><b>buscarCargo</b></span>
+                        <a href="#buscarCargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarCargo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarMentorDoCargo"></a>
+                    <span class="name">
+                        <span ><b>buscarMentorDoCargo</b></span>
+                        <a href="#buscarMentorDoCargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarMentorDoCargo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="buscarMentorSemCargo"></a>
+                    <span class="name">
+                        <span ><b>buscarMentorSemCargo</b></span>
+                        <a href="#buscarMentorSemCargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>buscarMentorSemCargo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deixarCargoSemMentor"></a>
+                    <span class="name">
+                        <span ><b>deixarCargoSemMentor</b></span>
+                        <a href="#deixarCargoSemMentor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deixarCargoSemMentor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDismissReason"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getDismissReason</b></span>
+                        <a href="#getDismissReason"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDismissReason(reason: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reason</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarMentor"></a>
+                    <span class="name">
+                        <span ><b>mostrarMentor</b></span>
+                        <a href="#mostrarMentor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarMentor()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(content: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargo"></a>
+                    <span class="name">
+                        <span ><b>cargo</b></span>
+                        <a href="#cargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Cargo.html" target="_self" >Cargo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    car_nome: &quot;&quot;,
+    car_atribuicao: &quot;&quot;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeResult"></a>
+                    <span class="name">
+                        <span ><b>closeResult</b></span>
+                        <a href="#closeResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id_cargo"></a>
+                    <span class="name">
+                        <span ><b>id_cargo</b></span>
+                        <a href="#id_cargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mentor"></a>
+                    <span class="name">
+                        <span ><b>mentor</b></span>
+                        <a href="#mentor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Mentor.html" target="_self" >Mentor</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    mentor_nome: &quot;&quot;,
+    mentor_cargo: &quot;&quot;,
+    mentor_cpf: &quot;&quot;,
+    mentor_foto: &quot;&quot;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mentorCadastrado"></a>
+                    <span class="name">
+                        <span ><b>mentorCadastrado</b></span>
+                        <a href="#mentorCadastrado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mentoresSemCargo"></a>
+                    <span class="name">
+                        <span ><b>mentoresSemCargo</b></span>
+                        <a href="#mentoresSemCargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mentorSemCargo"></a>
+                    <span class="name">
+                        <span ><b>mentorSemCargo</b></span>
+                        <a href="#mentorSemCargo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/componentes/mentor/mentores-cargo/mentores-cargo.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgbModal, ModalDismissReasons } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { FormGroup, Validators, FormBuilder } from &#x27;@angular/forms&#x27;;
+import { CargosService } from &#x27;./../../../services/cargos.service&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { MentorService } from &#x27;./../../../services/mentor.service&#x27;;
+import { Cargo } from &#x27;./../../../models/cargosModel&#x27;;
+import { Mentor } from &#x27;./../../../models/mentorModel&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Location } from &#x27;@angular/common&#x27;;
+
+@Component({
+  selector: &#x27;app-mentores-cargo&#x27;,
+  templateUrl: &#x27;./mentores-cargo.component.html&#x27;,
+  styleUrls: [&#x27;./mentores-cargo.component.scss&#x27;]
+})
+export class MentoresCargoComponent implements OnInit {
+
+  form!: FormGroup
+
+  mentor: Mentor &#x3D; {
+    mentor_nome: &quot;&quot;,
+    mentor_cargo: &quot;&quot;,
+    mentor_cpf: &quot;&quot;,
+    mentor_foto: &quot;&quot;
+  }
+
+  cargo: Cargo &#x3D; {
+    car_nome: &quot;&quot;,
+    car_atribuicao: &quot;&quot;
+  }
+
+  mentorCadastrado: boolean &#x3D; false
+
+  id_cargo: any
+  mentoresSemCargo: any
+  mentorSemCargo: any &#x3D; []
+
+  closeResult &#x3D; &#x27;&#x27;;
+
+  constructor(private mentorService: MentorService, private route: ActivatedRoute, private router: Router, private cargoService: CargosService, private fb: FormBuilder, private modalService: NgbModal, private location: Location) {
+    this.id_cargo &#x3D; this.route.snapshot.paramMap.get(&quot;id_cargo&quot;)
+
+    this.form &#x3D; this.fb.group({
+      mentor_nome: [&quot;&quot;, Validators.required],
+      mentor_cpf: [&quot;&quot;, Validators.required],
+      mentor_cargo: [&quot;&quot;, Validators.required],
+      mentor_foto: [&quot;&quot;]
+    })
+  }
+
+  ngOnInit(): void {
+    this.buscarCargo()
+    this.buscarMentorDoCargo()
+    this.buscarMentorSemCargo()
+  }
+
+  buscarCargo() {
+    this.cargoService.mostrarCargo(this.id_cargo).subscribe(resultado &#x3D;&gt; {
+      this.cargo &#x3D; resultado
+    })
+  }
+
+  buscarMentorDoCargo() {
+    this.mentorService.buscarMentorCargo(this.id_cargo).subscribe((resultado) &#x3D;&gt; {
+
+      if (resultado &#x3D;&#x3D; undefined) {
+        this.cargoService.mensagem(&quot;Para esse cargo não há mentorx definidx.&quot;)
+        this.mentorCadastrado &#x3D; false
+      } else {
+        this.mentor &#x3D; resultado
+        this.mentorCadastrado &#x3D; true
+      }
+    })
+  }
+
+  buscarMentorSemCargo() {
+    this.mentorService.buscarMentorSemCargo().subscribe((resultado) &#x3D;&gt; {
+      this.mentoresSemCargo &#x3D; resultado
+      console.log(this.mentoresSemCargo)
+    })
+  }
+
+  mostrarMentor() {
+    console.log(this.mentorSemCargo)
+    this.mentor &#x3D; this.mentorSemCargo
+  }
+
+  atribuirMentor() {
+    this.cargoService.mostrarCargo(this.id_cargo).subscribe((res) &#x3D;&gt; {
+      this.cargo &#x3D; res
+    })
+
+    this.cargoService.atribuirMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
+      complete: () &#x3D;&gt; {
+        this.cargoService.mensagem(&quot;Mentorx atribuídx com sucesso.&quot;)
+        this.location.back()
+      },
+      error: () &#x3D;&gt; {
+        this.cargoService.mensagem(&quot;Erro ao atribuir mentorx.&quot;)
+        this.location.back()
+      },
+      next: () &#x3D;&gt; console.log(&quot;Mentorx atribuídx&quot;)
+    })
+  }
+
+  deixarCargoSemMentor() {
+    this.cargoService.deixarCargoSemMentor(this.cargo, this.id_cargo, this.mentor.id_mentor).subscribe({
+      complete: () &#x3D;&gt; {
+        this.cargoService.mensagem(&quot;Mentorx desvinculadx com sucesso.&quot;)
+        this.location.back()
+      },
+      error: () &#x3D;&gt; {
+        this.cargoService.mensagem(&quot;Erro: mentorx não foi retiradx do cargo.&quot;)
+        this.location.back()
+      }
+    })
+  }
+
+  // Função para abrir modal
+  open(content: any) {
+    //formato do modal
+    this.modalService.open(content, { size: &#x27;md&#x27; }).result.then(
+      (result) &#x3D;&gt; {
+        this.closeResult &#x3D; &#x60;Closed with: ${result}&#x60;;
+      },
+      (reason) &#x3D;&gt; {
+        this.closeResult &#x3D; &#x60;Dismissed ${this.getDismissReason(reason)}&#x60;;
+      }
+    );
+  } //open
+
+  // Função para fechar modal
+  private getDismissReason(reason: any): string {
+    if (reason &#x3D;&#x3D;&#x3D; ModalDismissReasons.ESC) {
+      return &#x27;by pressing ESC&#x27;;
+    } else if (reason &#x3D;&#x3D;&#x3D; ModalDismissReasons.BACKDROP_CLICK) {
+      return &#x27;by clicking on a backdrop&#x27;;
+    } else {
+      return &#x60;with: ${reason}&#x60;;
+    }
+  } //getDismissReason
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-6 mx-5&quot; style&#x3D;&quot;margin-top: 6%&quot;&gt;
+      &lt;div class&#x3D;&quot;card&quot;&gt;
+        &lt;div class&#x3D;&quot;topo-card&quot;&gt;
+          &lt;button mat-mini-fab color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/cargo&quot; title&#x3D;&quot;Voltar página&quot; [ngStyle]&#x3D;&quot;{&#x27;color&#x27;:&#x27;white&#x27;}&quot;
+            style&#x3D;&quot;margin-right: 92%; margin-top: 1%;&quot;&gt;
+            &lt;mat-icon&gt;keyboard_backspace&lt;/mat-icon&gt;
+          &lt;/button&gt;
+          &lt;h1&gt;Programa de Mentoria&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;card mat-elevation-z4 card-form&quot;&gt; --&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;!-- &lt;button mat-mini-fab color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/cargo&quot; title&#x3D;&quot;Voltar página&quot;[ngStyle]&#x3D;&quot;{&#x27;color&#x27;:&#x27;white&#x27;}&quot;&gt;&lt;mat-icon &gt;keyboard_backspace&lt;/mat-icon&gt;&lt;/button&gt; --&gt;
+          &lt;div class&#x3D;&quot;titulo&quot;&gt;
+            &lt;h1&gt;Dados do Cargo #{{cargo.id_cargo}}&lt;/h1&gt;
+          &lt;/div&gt;
+          &lt;form class&#x3D;&quot;cargo-form&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;Nome do Cargo&lt;/mat-label&gt;
+              &lt;input type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Cargo&quot; [(ngModel)]&#x3D;&quot;cargo.car_nome&quot; name&#x3D;&quot;car_nome&quot; readonly&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;Atribuição&lt;/mat-label&gt;
+              &lt;input type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Atribuição&quot; [(ngModel)]&#x3D;&quot;cargo.car_atribuicao&quot;
+                name&#x3D;&quot;car_atribuicao&quot; readonly&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;!-- &lt;/div&gt; --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-5&quot; style&#x3D;&quot;margin-top: 6%&quot;&gt;
+      &lt;div class&#x3D;&quot;card&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;div class&#x3D;&quot;titulo&quot;&gt;
+            &lt;h1&gt;Mentorx Designadx&lt;/h1&gt;
+          &lt;/div&gt;
+          &lt;form class&#x3D;&quot;mentor-form&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;ID dx Mentorx&lt;/mat-label&gt;
+              &lt;input class&#x3D;&quot;mentor-input&quot; type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;#ID&quot; [(ngModel)]&#x3D;&quot;mentor.id_mentor&quot;
+                name&#x3D;&quot;id_mentor&quot; readonly&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;Nome dx Mentorx&lt;/mat-label&gt;
+              &lt;input class&#x3D;&quot;mentor-input&quot; type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Mentor&quot; [(ngModel)]&#x3D;&quot;mentor.mentor_nome&quot;
+                name&#x3D;&quot;mentor_nome&quot; readonly&gt;
+            &lt;/mat-form-field&gt;
+            &lt;!-- &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;CPF do(a) Mentor(a)&lt;/mat-label&gt;
+              &lt;input class&#x3D;&quot;mentor-input&quot; type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Mentor&quot; [(ngModel)]&#x3D;&quot;mentor.mentor_cpf&quot;
+                name&#x3D;&quot;mentor_cpf&quot; readonly&gt;
+            &lt;/mat-form-field&gt; --&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot; appearance&#x3D;&quot;fill&quot;&gt;
+              &lt;mat-label&gt;Cargo dx Mentorx&lt;/mat-label&gt;
+              &lt;input type&#x3D;&quot;text&quot; matInput placeholder&#x3D;&quot;Cargo&quot; [(ngModel)]&#x3D;&quot;mentor.mentor_cargo&quot; name&#x3D;&quot;mentor_cargo&quot;
+                readonly&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/form&gt;
+          &lt;hr&gt;
+          &lt;div style&#x3D;&quot;margin: 0 auto; text-align: center;&quot;&gt;
+            &lt;button id&#x3D;&quot;card-alteracao&quot; class&#x3D;&quot;border-gradient border-gradient-purple&quot;&gt;
+              &lt;div class&#x3D;&quot;titulo mt-3&quot; style&#x3D;&quot;color: darkorange;&quot;&gt;
+                &lt;h2&gt;Atualizar Mentorx&lt;/h2&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;div class&#x3D;&quot;button1 mx-2&quot;&gt;
+                    &lt;button class&#x3D;&quot;bot-card&quot; (click)&#x3D;&quot;open(modalAlterar)&quot;&gt;Alterar&lt;/button&gt;
+
+                    &lt;!-- Modal de confirmação para alterar mentor --&gt;
+                    &lt;ng-template #modalAlterar let-modal&gt;
+                      &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;excluir&quot;&gt;Escolha x Mentorx desejadx:&lt;/h4&gt;
+                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close btn&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modal.dismiss(&#x27;Cross click&#x27;)&quot;&gt;
+                          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;modal-body modal-mentor&quot; style&#x3D;&quot;margin: 0 auto;&quot;&gt;
+                        &lt;label for&#x3D;&quot;mentorSemCargo&quot;&gt;Nome dx Mentorx&lt;/label&gt;
+                        &lt;select [(ngModel)]&#x3D;&quot;mentorSemCargo&quot; name&#x3D;&quot;mentorSemCargo&quot;
+                        (ngModelChange)&#x3D;&quot;mostrarMentor()&quot; id&#x3D;&quot;mentorSemCargo&quot;&gt;
+                        &lt;option value&#x3D;&quot;&quot; disabled selected&gt;- - -&lt;/option&gt;
+                        &lt;option *ngFor&#x3D;&quot;let mentor of mentoresSemCargo&quot; [ngValue]&#x3D;&quot;mentor&quot;&gt;
+                          {{mentor.mentor_nome}} - {{mentor.mentor_cargo}}
+                        &lt;/option&gt;
+                      &lt;/select&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;modal.close(&#x27;Save click&#x27;)&quot;
+                          class&#x3D;&quot;mx-3&quot;&gt;Cancelar&lt;/button&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;atribuirMentor();modal.close(&#x27;Save click&#x27;)&quot;
+                          color&#x3D;&quot;accent&quot;&gt;Confirmar&lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/ng-template&gt;
+
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;button2&quot;&gt;
+                    &lt;button class&#x3D;&quot;bot-card&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;open(modalExcluir)&quot; [disabled]&#x3D;&quot;mentor.id_mentor &#x3D;&#x3D; null&quot;&gt;Desvincular&lt;/button&gt;
+
+                    &lt;!-- Modal de confirmação para excluir mentor --&gt;
+                    &lt;ng-template #modalExcluir let-modal&gt;
+                      &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                        &lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;excluir&quot;&gt;Aviso&lt;/h4&gt;
+                        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close btn&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;modal.dismiss(&#x27;Cross click&#x27;)&quot;&gt;
+                          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+                        &lt;/button&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                        &lt;p&gt;Deseja realmente desvincular x Mentorx &lt;strong&gt;#{{mentor.id_mentor}} {{mentor.mentor_nome}}&lt;/strong&gt; do
+                          Cargo selecionado?&lt;/p&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;modal.close(&#x27;Save click&#x27;)&quot;
+                          class&#x3D;&quot;mx-3&quot;&gt;Cancelar&lt;/button&gt;
+                        &lt;button mat-raised-button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;deixarCargoSemMentor();modal.close(&#x27;Save click&#x27;)&quot;
+                          color&#x3D;&quot;warn&quot;&gt;Excluir&lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/ng-template&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;app-footer&gt;&lt;/app-footer&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./mentores-cargo.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// .fundo {
+//   height: 730px;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   position: relative;
+//   height: 100%;
+//   overflow: auto;
+// }
+
+.topo-card {
+  background-image: url(&#x27;../../../../assets/mentoria.jpg&#x27;);
+  background-size: cover;
+  height: 230px;
+  text-align: center;
+}
+
+.topo-card h1 {
+  margin-top: 11%;
+  font-weight: 900;
+  font-family: &#x27;Trebuchet MS&#x27;, &#x27;Lucida Sans Unicode&#x27;, &#x27;Lucida Grande&#x27;, &#x27;Lucida Sans&#x27;, Arial, sans-serif;
+  color: white;
+}
+
+.card {
+  position: relative;
+  // height: 100%;
+  background: linear-gradient(to bottom, rgba(245, 245, 245, 0.8) 0%, white 100%);
+  transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+}
+
+.titulo h1 {
+  font-weight: 600;
+}
+
+.mentor-form mat-form-field, .modal-mentor mat-form-field {
+  margin-left: 0
+}
+
+.cargo-form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cargo-form mat-form-field {
+  margin-left: 0;
+  width: 85%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5px;
+}
+
+button.bot-card {
+  padding: 0.5em;
+  outline: none;
+  background: transparent;
+  border: 1px solid #f57c00;
+  border-radius: 0.4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9em;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  transition: ease-out 0.5s;
+  z-index: 1;
+  color: #f57c00;
+}
+
+button.bot-card:enabled:before {
+  content: &quot;&quot;;
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #f57c00;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button.bot-card:hover::before {
+  width: 105%;
+}
+
+button.bot-card:hover {
+  color: #fff;
+}
+
+button.bot-card:disabled {
+  background-color: lightgray;
+  color: gray;
+  border: gray;
+}
+
+select {
+  -moz-appearance: none;
+  /* -webkit-appearance: none;
+  appearance: none; */
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-bottom: 1px solid ;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - (10px));
+  background-position-y: center;
+  border-bottom: 1.5px solid darkgray;
+}
+
+select:focus {
+  background: transparent;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-header></app-header><div class="container">  <div class="row">    <div class="col-6 mx-5" style="margin-top: 6%">      <div class="card">        <div class="topo-card">          <button mat-mini-fab color="primary" routerLink="/cargo" title="Voltar página" [ngStyle]="{\'color\':\'white\'}"            style="margin-right: 92%; margin-top: 1%;">            <mat-icon>keyboard_backspace</mat-icon>          </button>          <h1>Programa de Mentoria</h1>        </div>        <!-- <div class="card mat-elevation-z4 card-form"> -->        <div class="card-body">          <!-- <button mat-mini-fab color="primary" routerLink="/cargo" title="Voltar página"[ngStyle]="{\'color\':\'white\'}"><mat-icon >keyboard_backspace</mat-icon></button> -->          <div class="titulo">            <h1>Dados do Cargo #{{cargo.id_cargo}}</h1>          </div>          <form class="cargo-form">            <mat-form-field class="example-full-width" appearance="fill">              <mat-label>Nome do Cargo</mat-label>              <input type="text" matInput placeholder="Cargo" [(ngModel)]="cargo.car_nome" name="car_nome" readonly>            </mat-form-field>            <mat-form-field class="example-full-width" appearance="fill">              <mat-label>Atribuição</mat-label>              <input type="text" matInput placeholder="Atribuição" [(ngModel)]="cargo.car_atribuicao"                name="car_atribuicao" readonly>            </mat-form-field>          </form>        </div>        <!-- </div> -->      </div>    </div>    <div class="col-5" style="margin-top: 6%">      <div class="card">        <div class="card-body">          <div class="titulo">            <h1>Mentorx Designadx</h1>          </div>          <form class="mentor-form">            <mat-form-field class="example-full-width" appearance="fill">              <mat-label>ID dx Mentorx</mat-label>              <input class="mentor-input" type="text" matInput placeholder="#ID" [(ngModel)]="mentor.id_mentor"                name="id_mentor" readonly>            </mat-form-field>            <mat-form-field class="example-full-width" appearance="fill">              <mat-label>Nome dx Mentorx</mat-label>              <input class="mentor-input" type="text" matInput placeholder="Mentor" [(ngModel)]="mentor.mentor_nome"                name="mentor_nome" readonly>            </mat-form-field>            <!-- <mat-form-field class="example-full-width" appearance="fill">              <mat-label>CPF do(a) Mentor(a)</mat-label>              <input class="mentor-input" type="text" matInput placeholder="Mentor" [(ngModel)]="mentor.mentor_cpf"                name="mentor_cpf" readonly>            </mat-form-field> -->            <mat-form-field class="example-full-width" appearance="fill">              <mat-label>Cargo dx Mentorx</mat-label>              <input type="text" matInput placeholder="Cargo" [(ngModel)]="mentor.mentor_cargo" name="mentor_cargo"                readonly>            </mat-form-field>          </form>          <hr>          <div style="margin: 0 auto; text-align: center;">            <button id="card-alteracao" class="border-gradient border-gradient-purple">              <div class="titulo mt-3" style="color: darkorange;">                <h2>Atualizar Mentorx</h2>              </div>              <div class="card-body">                <div class="buttons">                  <div class="button1 mx-2">                    <button class="bot-card" (click)="open(modalAlterar)">Alterar</button>                    <!-- Modal de confirmação para alterar mentor -->                    <ng-template #modalAlterar let-modal>                      <div class="modal-header">                        <h4 class="modal-title" id="excluir">Escolha x Mentorx desejadx:</h4>                        <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss(\'Cross click\')">                          <span aria-hidden="true">&times;</span>                        </button>                      </div>                      <div class="modal-body modal-mentor" style="margin: 0 auto;">                        <label for="mentorSemCargo">Nome dx Mentorx</label>                        <select [(ngModel)]="mentorSemCargo" name="mentorSemCargo"                        (ngModelChange)="mostrarMentor()" id="mentorSemCargo">                        <option value="" disabled selected>- - -</option>                        <option *ngFor="let mentor of mentoresSemCargo" [ngValue]="mentor">                          {{mentor.mentor_nome}} - {{mentor.mentor_cargo}}                        </option>                      </select>                      </div>                      <div class="modal-footer">                        <button mat-raised-button type="button" (click)="modal.close(\'Save click\')"                          class="mx-3">Cancelar</button>                        <button mat-raised-button type="button" (click)="atribuirMentor();modal.close(\'Save click\')"                          color="accent">Confirmar</button>                      </div>                    </ng-template>                  </div>                  <div class="button2">                    <button class="bot-card" type="button" (click)="open(modalExcluir)" [disabled]="mentor.id_mentor == null">Desvincular</button>                    <!-- Modal de confirmação para excluir mentor -->                    <ng-template #modalExcluir let-modal>                      <div class="modal-header">                        <h4 class="modal-title" id="excluir">Aviso</h4>                        <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss(\'Cross click\')">                          <span aria-hidden="true">&times;</span>                        </button>                      </div>                      <div class="modal-body">                        <p>Deseja realmente desvincular x Mentorx <strong>#{{mentor.id_mentor}} {{mentor.mentor_nome}}</strong> do                          Cargo selecionado?</p>                      </div>                      <div class="modal-footer">                        <button mat-raised-button type="button" (click)="modal.close(\'Save click\')"                          class="mx-3">Cancelar</button>                        <button mat-raised-button type="button" (click)="deixarCargoSemMentor();modal.close(\'Save click\')"                          color="warn">Excluir</button>                      </div>                    </ng-template>                  </div>                </div>              </div>            </button>          </div>        </div>      </div>    </div>  </div></div><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AtribuirCargoComponent', 'selector': 'app-atribuir-cargo'},{'name': 'AtribuirCargoMentorComponent', 'selector': 'app-atribuir-cargo-mentor'},{'name': 'BonificacaoMentorComponent', 'selector': 'app-bonificacao-mentor'},{'name': 'CadastrarBonificacaoComponent', 'selector': 'app-cadastrar-bonificacao'},{'name': 'CadastrarCargosComponent', 'selector': 'app-cadastrar-cargos'},{'name': 'CadastrarFuncComponent', 'selector': 'app-cadastrar-func'},{'name': 'CadastrarMentorComponent', 'selector': 'app-cadastrar-mentor'},{'name': 'CargosComponent', 'selector': 'app-cargos'},{'name': 'EditarBonificacaoComponent', 'selector': 'app-editar-bonificacao'},{'name': 'EditarCargosComponent', 'selector': 'app-editar-cargos'},{'name': 'EditarFuncComponent', 'selector': 'app-editar-func'},{'name': 'EditarMentorComponent', 'selector': 'app-editar-mentor'},{'name': 'ExcluirBonificacaoComponent', 'selector': 'app-excluir-bonificacao'},{'name': 'ExcluirCargosComponent', 'selector': 'app-excluir-cargos'},{'name': 'ExcluirFuncComponent', 'selector': 'app-excluir-func'},{'name': 'ExcluirMentorComponent', 'selector': 'app-excluir-mentor'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FuncionariosComponent', 'selector': 'app-funcionarios'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderUserComponent', 'selector': 'app-header-user'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListaCargoComponent', 'selector': 'app-lista-cargo'},{'name': 'ListaFuncCargoComponent', 'selector': 'app-lista-func-cargo'},{'name': 'ListaFuncComponent', 'selector': 'app-lista-func'},{'name': 'ListaMentorComponent', 'selector': 'app-lista-mentor'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MentoresCargoComponent', 'selector': 'app-mentores-cargo'},{'name': 'MentoresComponent', 'selector': 'app-mentores'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MentoresCargoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MentoresCargoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

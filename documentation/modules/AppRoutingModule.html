@@ -1,0 +1,229 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>empresa-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">empresa-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li>Modules</li>
+    <li >AppRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/app-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ListaCargoComponent } from &#x27;./componentes/cargo/lista-cargo/lista-cargo.component&#x27;;
+import { ListaMentorComponent } from &#x27;./componentes/mentor/lista-mentor/lista-mentor.component&#x27;;
+import { HomeComponent } from &#x27;./template/home/home.component&#x27;;
+import { AuthGuard } from &#x27;./guards/auth.guard&#x27;;
+import { EditarMentorComponent } from &#x27;./componentes/mentor/editar-mentor/editar-mentor.component&#x27;;
+import { ExcluirMentorComponent } from &#x27;./componentes/mentor/excluir-mentor/excluir-mentor.component&#x27;;
+import { ExcluirBonificacaoComponent } from &#x27;./componentes/bonificacao/excluir-bonificacao/excluir-bonificacao.component&#x27;;
+import { EditarBonificacaoComponent } from &#x27;./componentes/bonificacao/editar-bonificacao/editar-bonificacao.component&#x27;;
+import { CadastrarBonificacaoComponent } from &#x27;./componentes/bonificacao/cadastrar-bonificacao/cadastrar-bonificacao.component&#x27;;
+import { BonificacaoMentorComponent } from &#x27;./componentes/bonificacao/bonificacao-mentor/bonificacao-mentor.component&#x27;;
+import { CadastrarMentorComponent } from &#x27;./componentes/mentor/cadastrar-mentor/cadastrar-mentor.component&#x27;;
+import { ListaFuncCargoComponent } from &#x27;./componentes/funcionario/lista-func-cargo/lista-func-cargo.component&#x27;;
+import { AtribuirCargoComponent } from &#x27;./componentes/funcionario/atribuir-cargo/atribuir-cargo.component&#x27;;
+import { AtribuirCargoMentorComponent } from &#x27;./componentes/mentor/atribuir-cargo-mentor/atribuir-cargo-mentor.component&#x27;;
+import { MentoresCargoComponent } from &#x27;./componentes/mentor/mentores-cargo/mentores-cargo.component&#x27;;
+import { MentoresComponent } from &#x27;./componentes/mentor/mentores/mentores.component&#x27;;
+import { FuncionariosComponent } from &#x27;./componentes/funcionario/funcionarios/funcionarios.component&#x27;;
+import { ExcluirFuncComponent } from &#x27;./componentes/funcionario/excluir-func/excluir-func.component&#x27;;
+import { EditarFuncComponent } from &#x27;./componentes/funcionario/editar-func/editar-func.component&#x27;;
+import { CadastrarFuncComponent } from &#x27;./componentes/funcionario/cadastrar-func/cadastrar-func.component&#x27;;
+import { ListaFuncComponent } from &#x27;./componentes/funcionario/lista-func/lista-func.component&#x27;;
+import { LoginComponent } from &#x27;./template/login/login.component&#x27;;
+import { CadastrarCargosComponent } from &#x27;./componentes/cargo/cadastrar-cargos/cadastrar-cargos.component&#x27;;
+import { EditarCargosComponent } from &#x27;./componentes/cargo/editar-cargos/editar-cargos.component&#x27;;
+import { ExcluirCargosComponent } from &#x27;./componentes/cargo/excluir-cargos/excluir-cargos.component&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { CargosComponent } from &#x27;./componentes/cargo/cargos/cargos.component&#x27;;
+
+const routes: Routes &#x3D; [
+  {path: &quot;login&quot;, component: LoginComponent},
+  {path: &quot;home&quot;, component: HomeComponent},
+
+  // Cargo
+  {path: &quot;card-cargo&quot;, component: CargosComponent},
+  {path: &quot;cargo&quot;, component: ListaCargoComponent, canActivate: [AuthGuard]},
+  {path: &quot;cargo/excluir/:id_cargo&quot;, component: ExcluirCargosComponent, canActivate: [AuthGuard]},
+  {path: &quot;cargo/editar/:id_cargo&quot;, component: EditarCargosComponent, canActivate: [AuthGuard]},
+  {path: &quot;cargo/cadastrar&quot;, component: CadastrarCargosComponent, canActivate: [AuthGuard]},
+  {path: &quot;cargo/funcionario/:id_cargo&quot;, component: ListaFuncComponent},
+  {path: &quot;cargo/:id_cargo/funcionario/cadastro&quot;, component: CadastrarFuncComponent, canActivate: [AuthGuard]},
+
+  // Funcionário
+  {path: &quot;funcionario/cadastrar&quot;, component: CadastrarFuncComponent, canActivate: [AuthGuard]},
+  {path: &quot;funcionario/editar/:id_funcionario/:id_cargo&quot;, component: EditarFuncComponent, canActivate: [AuthGuard]},
+  {path: &quot;funcionario/excluir/:id_funcionario&quot;, component: ExcluirFuncComponent, canActivate: [AuthGuard]},
+  {path: &quot;funcionario/cargo/:id_cargo&quot;, component: ListaFuncCargoComponent, canActivate: [AuthGuard]},
+  {path: &quot;funcionarios&quot;, component: FuncionariosComponent, canActivate: [AuthGuard]},
+  {path: &quot;funcionarios/atribuirCargo/:id_funcionario/:id_cargo&quot;, component: AtribuirCargoComponent, canActivate: [AuthGuard]},
+
+  // Mentor
+  {path: &quot;mentores&quot;, component: MentoresComponent, canActivate: [AuthGuard]},
+  {path: &quot;card-mentores&quot;, component: ListaMentorComponent},
+  {path: &quot;mentor/:id_cargo&quot;, component: MentoresCargoComponent, canActivate: [AuthGuard]},
+  {path: &quot;mentor/atribuirCargo/:id_mentor&quot;, component: AtribuirCargoMentorComponent, canActivate: [AuthGuard]},
+  {path: &quot;mentores/cadastrar&quot;, component: CadastrarMentorComponent, canActivate: [AuthGuard]},
+  {path: &quot;mentores/excluir/:id_mentor&quot;, component: ExcluirMentorComponent, canActivate: [AuthGuard]},
+  {path: &quot;mentores/editar/:id_mentor/:id_cargo&quot;, component: EditarMentorComponent, canActivate: [AuthGuard]},
+
+  // Bonificação
+  {path:&quot;mentores/bonificacao/:id_mentor/cadastrar&quot;, component:CadastrarBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:&quot;mentores/bonificacao/:id_mentor/editar/:codigo&quot;, component:EditarBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:&quot;mentores/bonificacao/:id_mentor/excluir/:codigo&quot;, component:ExcluirBonificacaoComponent, canActivate: [AuthGuard]},
+  {path:&quot;mentores/bonificacao/:id_mentor&quot;, component:BonificacaoMentorComponent, canActivate: [AuthGuard]},
+
+
+  {path: &quot;&quot;, redirectTo: &quot;/home&quot;, pathMatch: &quot;full&quot;},
+  {path: &quot;**&quot;, redirectTo: &quot;/home&quot;, pathMatch: &quot;full&quot;}, //testar
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
