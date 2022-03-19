@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Mentor } from './../../../models/mentorModel';
 import { MentorService } from './../../../services/mentor.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FuncionariosService } from './../../../services/funcionarios.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
@@ -35,7 +35,7 @@ export class EditarMentorComponent implements OnInit {
     atualizar: true
   }
 
-  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private fb: FormBuilder, private location: Location, private mentorService: MentorService, private http: HttpClient, private modalService: NgbModal) {
+  constructor(private funcService: FuncionariosService, private route: ActivatedRoute, private fb: FormBuilder, private location: Location, private mentorService: MentorService, private http: HttpClient, private modalService: NgbModal, private router: Router) {
     this.mentor.id_mentor = this.route.snapshot.paramMap.get('id_mentor')!
     this.id_cargo = this.route.snapshot.paramMap.get('id_cargo')!
 
@@ -62,11 +62,11 @@ export class EditarMentorComponent implements OnInit {
       this.mentorService.editarMentor(this.mentor, this.mentor.id_mentor, this.id_cargo).subscribe({
         complete: () => {
           this.funcService.mensagem("Mentorx editadx com sucesso!")
-          // this.location.back();
+          this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar mentorx.")
-          // this.location.back();
+          this.location.back();
         },
         next: () => console.log("Mentorx editadx.")
       })
@@ -74,11 +74,11 @@ export class EditarMentorComponent implements OnInit {
       this.mentorService.editarMentorSemCargo(this.mentor, this.mentor.id_mentor).subscribe({
         complete: () => {
           this.funcService.mensagem("Mentorx editadx com sucesso!")
-          // this.location.back();
+          this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar mentorx.")
-          // this.location.back();
+          this.location.back();
         },
         next: () => console.log("Mentorx editadx.")
       })
@@ -112,11 +112,13 @@ export class EditarMentorComponent implements OnInit {
   }
 
   atualizarPg() {
-    window.location.reload();
+    // window.location.reload();
+    this.router.navigate(['/mentores'])
   }
 
   voltar() {
-    this.location.back()
+    // this.location.back()
+    // this.router.navigate(['/mentores'])
   }
 
   // Função para abrir modal

@@ -61,11 +61,11 @@ export class EditarFuncComponent implements OnInit {
       this.funcService.editarFunc(this.func, this.func.id_funcionario, this.id_cargo).subscribe({
         complete: () => {
           this.funcService.mensagem("Funcionárix editadx com sucesso!")
-          // this.location.back();
+          this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar funcionárix.")
-          // this.location.back();
+          this.location.back();
         },
         next: () => console.log("Funcionárix editadx.")
       })
@@ -73,11 +73,11 @@ export class EditarFuncComponent implements OnInit {
       this.funcService.editarFuncSemCargo(this.func, this.func.id_funcionario).subscribe({
         complete: () => {
           this.funcService.mensagem("Funcionárix editadx com sucesso!")
-          // this.location.back();
+          this.location.back();
         },
         error: () => {
           this.funcService.mensagem("Erro ao editar funcionárix.")
-          // this.location.back();
+          this.location.back();
         },
         next: () => console.log("Funcionárix editadx.")
       })
@@ -110,11 +110,12 @@ export class EditarFuncComponent implements OnInit {
   }
 
   atualizarPg() {
-    window.location.reload();
+    // window.location.reload();
+    this.router.navigate(['/funcionarios'])
   }
 
   voltar() {
-    this.location.back()
+    // this.location.back()
   }
 
   // Função para abrir modal

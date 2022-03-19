@@ -73,7 +73,7 @@ export class AtribuirCargoMentorComponent implements OnInit {
     this.cargoService.mostrarCargosSemMentor().subscribe((resultado) => {
 
       this.cargosSemMentor = resultado
-      console.log("aqui")
+      // console.log("aqui")
       console.log(resultado);
 
     })
